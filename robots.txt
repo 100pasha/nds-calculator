@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://100pasha.github.io/nds-calculator/sitemap.xml
+Sitemap: https://nds-nds.ru/sitemap.xml
