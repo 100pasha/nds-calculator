@@ -3,19 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Калькулятор НДС 22%</title>
+<title>Калькулятор НДС 22% онлайн — расчёт НДС от суммы с формулами</title>
+<meta name="description" content="Бесплатный калькулятор НДС онлайн: считает цену с НДС, сумму налога и цену без НДС по ставкам 22%, 20%, 10%, 0%, 5% и 7%. Формулы расчёта и примеры на цифрах.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://100pasha.github.io/nds-calculator/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор НДС 22% онлайн">
+<meta property="og:description" content="Считает цену с НДС, сумму налога и цену без НДС по всем действующим в России ставкам. Формулы и примеры расчёта.">
+<meta property="og:url" content="https://100pasha.github.io/nds-calculator/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Калькулятор НДС 22% онлайн">
+<meta name="twitter:description" content="Считает цену с НДС, сумму налога и цену без НДС по всем действующим в России ставкам.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор НДС",
+  "url": "https://100pasha.github.io/nds-calculator/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор НДС: расчёт цены с НДС, суммы налога и цены без НДС по ставкам 22%, 20%, 10%, 0%, 5% и 7%.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "RUB"
+  },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как посчитать НДС от суммы?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Чтобы получить цену с НДС, умножьте цену без НДС на (1 + ставка). При ставке 22% формула выглядит так: цена с НДС = цена без НДС × 1,22. Сумма самого налога равна цене без НДС, умноженной на ставку: НДС = цена без НДС × 0,22."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как выделить НДС из суммы (из цены с НДС)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Цена без НДС = цена с НДС × 100 / (100 + ставка). При ставке 22% это цена с НДС × 100 / 122. Сумма налога — это разница между ценой с НДС и ценой без НДС."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем ставка НДС 22% отличается от 20%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "20% — основная ставка НДС, действовавшая в России до 2026 года. С 1 января 2026 года основная ставка повышена до 22%. Ставка 10% для отдельных социально значимых товаров сохраняется."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кто применяет ставки НДС 5% и 7%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Пониженные ставки 5% и 7% применяют организации и ИП на УСН, чей доход превышает установленный порог для освобождения от НДС. Ставка 5% — при доходе примерно от 60 млн до 250 млн ₽ в год, 7% — при доходе от 250 млн до 450 млн ₽ в год. При этих ставках нет права на вычет входного НДС."
+      }
+    }
+  ]
+}
+</script>
 <style>
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     background: #f2f4f7;
     color: #1a1a1a;
-    padding: 24px;
+    padding: 40px 16px 64px;
+  }
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
   }
   .card {
     background: #ffffff;
@@ -24,6 +95,7 @@
     padding: 32px;
     width: 100%;
     max-width: 420px;
+    margin: 0 auto 48px;
   }
   h1 {
     font-size: 20px;
@@ -106,9 +178,85 @@
     text-align: center;
     margin-top: 8px;
   }
+
+  .article h2 {
+    font-size: 19px;
+    margin: 36px 0 12px;
+  }
+  .article h2:first-child {
+    margin-top: 0;
+  }
+  .article h3 {
+    font-size: 15px;
+    margin: 20px 0 8px;
+  }
+  .article p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0 0 12px;
+  }
+  .formula-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 0 0 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    overflow-x: auto;
+  }
+  .rates-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .rates-table th, .rates-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eef0f3;
+  }
+  .rates-table th {
+    background: #f8f9fb;
+    color: #374151;
+    font-weight: 600;
+  }
+  .rates-table td {
+    color: #4b5563;
+  }
+  .rates-table tr:last-child td {
+    border-bottom: none;
+  }
+  .faq details {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+  }
+  .faq summary {
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .faq p {
+    margin: 10px 0 0;
+  }
+  .disclaimer {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 32px;
+    line-height: 1.5;
+  }
 </style>
 </head>
 <body>
+<div class="page">
   <div class="card">
     <h1 id="title">Калькулятор НДС</h1>
     <p class="subtitle">Введите значение в любое поле — остальные пересчитаются автоматически</p>
@@ -120,8 +268,8 @@
         <option value="20" data-hint="Основная ставка, действовавшая до 2026 года">20% — основная (до 2026 года)</option>
         <option value="10" data-hint="Продукты питания, детские товары, лекарства, книги">10% — льготная</option>
         <option value="0" data-hint="Экспорт, международная перевозка и др.">0% — экспорт и др.</option>
-        <option value="7" data-hint="УСН при доходе свыше 20 млн ₽ в год, без права вычета">7% — для плательщиков УСН</option>
-        <option value="5" data-hint="УСН при доходе от 10 до 20 млн ₽ в год, без права вычета">5% — для плательщиков УСН</option>
+        <option value="7" data-hint="УСН при доходе от 250 до 450 млн ₽ в год, без права вычета">7% — для плательщиков УСН</option>
+        <option value="5" data-hint="УСН при доходе от 60 до 250 млн ₽ в год, без права вычета">5% — для плательщиков УСН</option>
         <option value="custom" data-hint="Введите свою ставку">Другое значение</option>
       </select>
       <div class="input-wrap" id="customRateWrap" style="display:none; margin-top: 10px;">
@@ -157,6 +305,57 @@
 
     <p class="footer-note" id="formulaNote">Цена с НДС = Цена без НДС × 1,22</p>
   </div>
+
+  <article class="article">
+    <h2>Что такое НДС</h2>
+    <p>НДС (налог на добавленную стоимость) — косвенный налог, который закладывается в стоимость товаров, работ и услуг на каждом этапе их продажи. Фактически налог платит конечный покупатель — он уже включён в цену, — а перечисляет его в бюджет продавец или исполнитель.</p>
+
+    <h2>Как посчитать НДС от суммы: формулы</h2>
+    <p>Есть три связанные величины: цена без НДС, сумма самого налога и цена с НДС. Зная любую из них и ставку налога, можно вычислить остальные две.</p>
+    <div class="formula-box">Цена с НДС = Цена без НДС × (1 + ставка)</div>
+    <div class="formula-box">НДС = Цена с НДС − Цена без НДС</div>
+    <div class="formula-box">Цена без НДС = Цена с НДС × 100 / (100 + ставка)</div>
+    <p>Пример для ставки 22%: если цена без НДС — 1000 ₽, то цена с НДС составит 1000 × 1,22 = 1220 ₽, а сумма налога — 1220 − 1000 = 220 ₽. И наоборот: если известна цена с НДС 1220 ₽, цена без НДС находится как 1220 × 100 / 122 = 1000 ₽.</p>
+
+    <h2>Ставки НДС в России в 2026 году</h2>
+    <table class="rates-table">
+      <thead>
+        <tr><th>Ставка</th><th>Когда применяется</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>22%</td><td>Основная ставка с 1 января 2026 года</td></tr>
+        <tr><td>20%</td><td>Основная ставка, действовавшая до 2026 года</td></tr>
+        <tr><td>10%</td><td>Продукты питания, детские товары, лекарства, медицинские изделия, книги и периодика</td></tr>
+        <tr><td>0%</td><td>Экспорт товаров, международная перевозка и ряд других операций</td></tr>
+        <tr><td>5%</td><td>УСН при доходе примерно от 60 до 250 млн ₽ в год, без права на вычет входного НДС</td></tr>
+        <tr><td>7%</td><td>УСН при доходе примерно от 250 до 450 млн ₽ в год, без права на вычет входного НДС</td></tr>
+      </tbody>
+    </table>
+    <p>Пороговые значения дохода для ставок 5% и 7% индексируются и могут меняться — точные актуальные суммы стоит сверять на сайте ФНС.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как посчитать НДС от суммы?</summary>
+        <p>Умножьте цену без НДС на (1 + ставка). При ставке 22% это цена без НДС × 1,22 — так получится цена с НДС. Сама сумма налога — это разница между ценой с НДС и ценой без НДС.</p>
+      </details>
+      <details>
+        <summary>Как выделить НДС из суммы, если известна цена с НДС?</summary>
+        <p>Цена без НДС = цена с НДС × 100 / (100 + ставка). При ставке 22% — цена с НДС × 100 / 122. Разница между исходной суммой и результатом и есть сумма налога.</p>
+      </details>
+      <details>
+        <summary>Чем ставка НДС 22% отличается от 20%?</summary>
+        <p>20% — основная ставка, которая действовала в России до 2026 года. С 1 января 2026 года основная ставка повышена до 22%. Льготная ставка 10% на социально значимые товары при этом сохраняется.</p>
+      </details>
+      <details>
+        <summary>Кто применяет ставки НДС 5% и 7%?</summary>
+        <p>Это пониженные ставки для организаций и ИП на УСН, чей годовой доход превышает порог освобождения от НДС. Ставка 5% применяется при доходе примерно от 60 до 250 млн ₽ в год, 7% — при доходе от 250 до 450 млн ₽. При выборе этих ставок нет права на вычет входного НДС.</p>
+      </details>
+    </div>
+
+    <p class="disclaimer">Материал носит справочный характер и не заменяет консультацию с бухгалтером или налоговым юристом. Актуальные ставки и пороги всегда стоит сверять с Налоговым кодексом РФ и разъяснениями ФНС.</p>
+  </article>
+</div>
 
 <script>
   const withoutVatEl = document.getElementById('withoutVat');
@@ -216,7 +415,7 @@
     }
 
     const withVat = base * (1 + rate);
-    const vat = withVat * rate;
+    const vat = base * rate;
 
     if (source !== 'withoutVat') withoutVatEl.value = base ? format(base) : '';
     if (source !== 'withVat') withVatEl.value = base ? format(withVat) : '';
