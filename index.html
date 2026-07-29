@@ -166,6 +166,23 @@
     font-size: 14px;
     pointer-events: none;
   }
+  .currency.copy-btn {
+    pointer-events: auto;
+    background: none;
+    border: none;
+    font: inherit;
+    padding: 4px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .currency.copy-btn:hover {
+    color: #2563eb;
+  }
+  .currency.copy-btn:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
   .field.vat input {
     color: #2563eb;
     font-weight: 600;
@@ -220,6 +237,16 @@
     line-height: 1.7;
     color: #374151;
     margin: 0 0 12px;
+  }
+  .article ul {
+    padding-left: 20px;
+    margin: 0 0 12px;
+  }
+  .article li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 4px;
   }
   .formula-box {
     background: #ffffff;
@@ -310,6 +337,58 @@
   .site-footer a {
     color: #6b7280;
   }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #0f1115;
+      color: #e5e7eb;
+      color-scheme: dark;
+    }
+    .card, .formula-box, .rates-table, .faq details {
+      background: #1a1d24;
+      border-color: #2a2e37;
+    }
+    .card {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    label {
+      color: #cbd5e1;
+    }
+    input[type="text"], select {
+      background-color: #12151b;
+      border-color: #2a2e37;
+      color: #e5e7eb;
+    }
+    select {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    }
+    .subtitle, .rate-hint, .footer-note, .disclaimer, .site-footer {
+      color: #9ca3af;
+    }
+    .article p, .article li, .rates-table td {
+      color: #cbd5e1;
+    }
+    .rates-table th {
+      background: #12151b;
+      color: #cbd5e1;
+    }
+    .rates-table th, .rates-table td {
+      border-bottom-color: #2a2e37;
+    }
+    .share-btn {
+      background: #1e2a4a;
+      color: #93c5fd;
+    }
+    .share-btn:hover {
+      background: #26355e;
+    }
+    .site-footer {
+      border-top-color: #2a2e37;
+    }
+    .site-footer a {
+      color: #9ca3af;
+    }
+  }
 </style>
 </head>
 <body>
@@ -340,7 +419,7 @@
       <label for="withVat">Цена с НДС</label>
       <div class="input-wrap">
         <input type="text" id="withVat" inputmode="decimal" placeholder="0">
-        <span class="currency">₽</span>
+        <button type="button" class="currency copy-btn" data-copy="withVat" title="Скопировать значение">₽</button>
       </div>
     </div>
 
@@ -348,7 +427,7 @@
       <label for="vat" id="vatLabel">НДС (22%)</label>
       <div class="input-wrap">
         <input type="text" id="vat" inputmode="decimal" placeholder="0">
-        <span class="currency">₽</span>
+        <button type="button" class="currency copy-btn" data-copy="vat" title="Скопировать значение">₽</button>
       </div>
     </div>
 
@@ -356,7 +435,7 @@
       <label for="withoutVat">Цена без НДС</label>
       <div class="input-wrap">
         <input type="text" id="withoutVat" inputmode="decimal" placeholder="0">
-        <span class="currency">₽</span>
+        <button type="button" class="currency copy-btn" data-copy="withoutVat" title="Скопировать значение">₽</button>
       </div>
     </div>
 
@@ -413,6 +492,13 @@
       </details>
     </div>
 
+    <h2>Читайте также</h2>
+    <ul>
+      <li><a href="nds-eksport.html">НДС при экспорте товаров: ставка 0%</a></li>
+      <li><a href="schet-faktura.html">Как выставить счёт-фактуру с НДС</a></li>
+      <li><a href="usn-nds.html">НДС для ИП и организаций на УСН</a></li>
+    </ul>
+
     <p class="disclaimer">Материал носит справочный характер и не заменяет консультацию с бухгалтером или налоговым юристом. Актуальные ставки и пороги всегда стоит сверять с Налоговым кодексом РФ и разъяснениями ФНС.</p>
   </article>
 
@@ -439,7 +525,10 @@
   }
 
   function format(n) {
-    return (Math.round(n * 100) / 100).toString().replace('.', ',');
+    const rounded = Math.round(n * 100) / 100;
+    const parts = rounded.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return parts.join(',');
   }
 
   function getRatePercent() {
@@ -486,20 +575,76 @@
     if (source !== 'vat') vatEl.value = base ? format(vat) : '';
   }
 
+  function reformatOwnValue(el) {
+    const n = parse(el.value);
+    el.value = n ? format(n) : el.value;
+  }
+
   withoutVatEl.addEventListener('input', () => recalcFrom('withoutVat'));
   withVatEl.addEventListener('input', () => recalcFrom('withVat'));
   vatEl.addEventListener('input', () => recalcFrom('vat'));
 
+  withoutVatEl.addEventListener('blur', () => reformatOwnValue(withoutVatEl));
+  withVatEl.addEventListener('blur', () => reformatOwnValue(withVatEl));
+  vatEl.addEventListener('blur', () => reformatOwnValue(vatEl));
+
+  const RATE_STORAGE_KEY = 'nds_rate';
+  const CUSTOM_RATE_STORAGE_KEY = 'nds_custom_rate';
+
+  function saveRatePreference() {
+    try {
+      localStorage.setItem(RATE_STORAGE_KEY, rateSelectEl.value);
+      if (rateSelectEl.value === 'custom') {
+        localStorage.setItem(CUSTOM_RATE_STORAGE_KEY, customRateEl.value);
+      }
+    } catch (err) {
+      // localStorage недоступен (приватный режим) — молча игнорируем
+    }
+  }
+
+  function restoreRatePreference() {
+    try {
+      const savedRate = localStorage.getItem(RATE_STORAGE_KEY);
+      if (savedRate && [...rateSelectEl.options].some(o => o.value === savedRate)) {
+        rateSelectEl.value = savedRate;
+        if (savedRate === 'custom') {
+          const savedCustom = localStorage.getItem(CUSTOM_RATE_STORAGE_KEY);
+          if (savedCustom) customRateEl.value = savedCustom;
+        }
+      }
+    } catch (err) {
+      // localStorage недоступен (приватный режим) — молча игнорируем
+    }
+  }
+
   rateSelectEl.addEventListener('change', () => {
     updateRateUI();
     recalcFrom('withoutVat');
+    saveRatePreference();
   });
   customRateEl.addEventListener('input', () => {
     updateRateUI();
     recalcFrom('withoutVat');
+    saveRatePreference();
   });
 
+  restoreRatePreference();
   updateRateUI();
+
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const targetEl = document.getElementById(btn.dataset.copy);
+      if (!targetEl.value) return;
+      const originalText = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(targetEl.value);
+        btn.textContent = '✓';
+      } catch (err) {
+        prompt('Скопируйте значение:', targetEl.value);
+      }
+      setTimeout(() => { btn.textContent = originalText; }, 1200);
+    });
+  });
 
   const shareBtn = document.getElementById('shareBtn');
   shareBtn.addEventListener('click', async () => {

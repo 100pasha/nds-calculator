@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как выставить счёт-фактуру с НДС: реквизиты и сроки</title>
+<meta name="description" content="Обязательные реквизиты счёта-фактуры с НДС, срок выставления, разница между бумажным и электронным документом. С примером расчёта суммы налога.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nds-nds.ru/schet-faktura.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Как выставить счёт-фактуру с НДС">
+<meta property="og:description" content="Обязательные реквизиты, срок выставления и разница между бумажным и электронным счётом-фактурой.">
+<meta property="og:url" content="https://nds-nds.ru/schet-faktura.html">
+<meta property="og:image" content="https://nds-nds.ru/og-image.png">
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f2f4f7;
+    color: #1a1a1a;
+    padding: 40px 16px 64px;
+  }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 32px;
+  }
+  h1 { font-size: 24px; margin: 0 0 20px; }
+  h2 { font-size: 18px; margin: 28px 0 10px; }
+  h2:first-of-type { margin-top: 0; }
+  p, li { font-size: 14px; line-height: 1.7; color: #374151; }
+  ul { padding-left: 20px; margin: 0 0 12px; }
+  a { color: #2563eb; }
+  .formula-box {
+    background: #f8f9fb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 0 0 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    overflow-x: auto;
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 12px 20px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .disclaimer {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 28px;
+    line-height: 1.5;
+  }
+  .related {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 14px;
+  }
+  .related a { display: block; margin-top: 6px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; }
+    .card { background: #1a1d24; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .formula-box { background: #12151b; border-color: #2a2e37; }
+    p, li { color: #cbd5e1; }
+    .related { border-top-color: #2a2e37; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <h1>Как выставить счёт-фактуру с НДС</h1>
+
+    <h2>Когда нужна счёт-фактура</h2>
+    <p>Счёт-фактуру обязаны выставлять плательщики НДС при реализации товаров, работ, услуг, а также при получении авансов — если операция облагается налогом (включая ставку 0%). Организации и ИП, освобождённые от НДС, счета-фактуры, как правило, не выставляют.</p>
+
+    <h2>Обязательные реквизиты</h2>
+    <ul>
+      <li>Порядковый номер и дата составления</li>
+      <li>Наименование, адрес и ИНН продавца и покупателя</li>
+      <li>Номер платёжно-расчётного документа — если был аванс</li>
+      <li>Наименование товара (работы, услуги), единица измерения и количество</li>
+      <li>Цена за единицу без НДС</li>
+      <li>Стоимость всего количества без НДС</li>
+      <li>Налоговая ставка</li>
+      <li>Сумма НДС</li>
+      <li>Стоимость с учётом НДС</li>
+      <li>Страна происхождения товара и номер декларации на товары — для импортных товаров</li>
+    </ul>
+
+    <h2>Срок выставления</h2>
+    <p>Счёт-фактуру нужно выставить не позднее 5 календарных дней со дня отгрузки товара, выполнения работ, оказания услуг или получения аванса.</p>
+
+    <h2>Бумажный или электронный</h2>
+    <p>Счёт-фактуру можно выставлять в бумажном виде или в электронном формате через оператора электронного документооборота — если на это согласны обе стороны сделки и есть техническая возможность обмена. Электронный формат сейчас стал стандартом для большинства компаний.</p>
+
+    <h2>Как посчитать суммы для счёта-фактуры</h2>
+    <p>Для каждой позиции нужно знать три величины: цену без НДС, сумму налога и цену с НДС. Формулы расчёта:</p>
+    <div class="formula-box">Цена с НДС = Цена без НДС × (1 + ставка)</div>
+    <div class="formula-box">НДС = Цена с НДС − Цена без НДС</div>
+    <p>Чтобы не считать вручную, можно ввести любую известную сумму в калькулятор — остальные два значения пересчитаются автоматически для нужной ставки.</p>
+    <a class="cta" href="index.html">Открыть калькулятор НДС</a>
+
+    <p class="disclaimer">Материал носит справочный характер и не заменяет консультацию с бухгалтером или налоговым юристом. Актуальный перечень реквизитов и правила заполнения счетов-фактур установлены статьёй 169 Налогового кодекса РФ и постановлением Правительства РФ №1137.</p>
+
+    <div class="related">
+      Читайте также:
+      <a href="nds-eksport.html">НДС при экспорте товаров: ставка 0%</a>
+      <a href="usn-nds.html">НДС для ИП и организаций на УСН</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
