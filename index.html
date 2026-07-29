@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор НДС 22%</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f2f4f7;
+    color: #1a1a1a;
+    padding: 24px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 32px;
+    width: 100%;
+    max-width: 420px;
+  }
+  h1 {
+    font-size: 20px;
+    margin: 0 0 4px;
+  }
+  .subtitle {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0 0 28px;
+  }
+  .field {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+  }
+  .input-wrap {
+    position: relative;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 40px 12px 14px;
+    font-size: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  input[type="text"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  .currency {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 14px;
+    pointer-events: none;
+  }
+  .field.vat input {
+    color: #2563eb;
+    font-weight: 600;
+  }
+  select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: #1a1a1a;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  .rate-hint {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 6px;
+  }
+  .footer-note {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="title">Калькулятор НДС</h1>
+    <p class="subtitle">Введите значение в любое поле — остальные пересчитаются автоматически</p>
+
+    <div class="field">
+      <label for="rateSelect">Ставка НДС</label>
+      <select id="rateSelect">
+        <option value="22" data-hint="Основная ставка с 1 января 2026 года">22% — основная (с 2026 года)</option>
+        <option value="20" data-hint="Основная ставка, действовавшая до 2026 года">20% — основная (до 2026 года)</option>
+        <option value="10" data-hint="Продукты питания, детские товары, лекарства, книги">10% — льготная</option>
+        <option value="0" data-hint="Экспорт, международная перевозка и др.">0% — экспорт и др.</option>
+        <option value="7" data-hint="УСН при доходе свыше 20 млн ₽ в год, без права вычета">7% — для плательщиков УСН</option>
+        <option value="5" data-hint="УСН при доходе от 10 до 20 млн ₽ в год, без права вычета">5% — для плательщиков УСН</option>
+        <option value="custom" data-hint="Введите свою ставку">Другое значение</option>
+      </select>
+      <div class="input-wrap" id="customRateWrap" style="display:none; margin-top: 10px;">
+        <input type="text" id="customRate" inputmode="decimal" placeholder="Ставка, %">
+        <span class="currency">%</span>
+      </div>
+      <p class="rate-hint" id="rateHint">Основная ставка с 1 января 2026 года</p>
+    </div>
+
+    <div class="field">
+      <label for="withVat">Цена с НДС</label>
+      <div class="input-wrap">
+        <input type="text" id="withVat" inputmode="decimal" placeholder="0">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field vat">
+      <label for="vat" id="vatLabel">НДС (22%)</label>
+      <div class="input-wrap">
+        <input type="text" id="vat" inputmode="decimal" placeholder="0">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="withoutVat">Цена без НДС</label>
+      <div class="input-wrap">
+        <input type="text" id="withoutVat" inputmode="decimal" placeholder="0">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <p class="footer-note" id="formulaNote">Цена с НДС = Цена без НДС × 1,22</p>
+  </div>
+
+<script>
+  const withoutVatEl = document.getElementById('withoutVat');
+  const vatEl = document.getElementById('vat');
+  const withVatEl = document.getElementById('withVat');
+  const rateSelectEl = document.getElementById('rateSelect');
+  const customRateWrap = document.getElementById('customRateWrap');
+  const customRateEl = document.getElementById('customRate');
+  const rateHintEl = document.getElementById('rateHint');
+  const vatLabelEl = document.getElementById('vatLabel');
+  const formulaNoteEl = document.getElementById('formulaNote');
+  const titleEl = document.getElementById('title');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(',', '.').replace(/\s/g, ''));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return (Math.round(n * 100) / 100).toString().replace('.', ',');
+  }
+
+  function getRatePercent() {
+    if (rateSelectEl.value === 'custom') {
+      return parse(customRateEl.value);
+    }
+    return parse(rateSelectEl.value);
+  }
+
+  function updateRateUI() {
+    const isCustom = rateSelectEl.value === 'custom';
+    customRateWrap.style.display = isCustom ? '' : 'none';
+    const selectedOption = rateSelectEl.options[rateSelectEl.selectedIndex];
+    rateHintEl.textContent = isCustom ? 'Введите свою ставку в поле выше' : selectedOption.dataset.hint;
+
+    const ratePercent = getRatePercent();
+    const rateLabel = format(ratePercent) + '%';
+    titleEl.textContent = 'Калькулятор НДС ' + rateLabel;
+    vatLabelEl.textContent = 'НДС (' + rateLabel + ')';
+    formulaNoteEl.textContent = 'Цена с НДС = Цена без НДС × ' + format(1 + ratePercent / 100);
+  }
+
+  function recalcFrom(source) {
+    const rate = getRatePercent() / 100;
+    let base; // цена без НДС
+
+    if (source === 'withoutVat') {
+      base = parse(withoutVatEl.value);
+    } else if (source === 'withVat') {
+      const withVat = parse(withVatEl.value);
+      base = rate === -1 ? 0 : withVat * 100 / (100 + rate * 100);
+    } else if (source === 'vat') {
+      const vat = parse(vatEl.value);
+      base = rate === 0 ? 0 : vat / rate;
+    } else {
+      base = parse(withoutVatEl.value);
+    }
+
+    const withVat = base * (1 + rate);
+    const vat = withVat * rate;
+
+    if (source !== 'withoutVat') withoutVatEl.value = base ? format(base) : '';
+    if (source !== 'withVat') withVatEl.value = base ? format(withVat) : '';
+    if (source !== 'vat') vatEl.value = base ? format(vat) : '';
+  }
+
+  withoutVatEl.addEventListener('input', () => recalcFrom('withoutVat'));
+  withVatEl.addEventListener('input', () => recalcFrom('withVat'));
+  vatEl.addEventListener('input', () => recalcFrom('vat'));
+
+  rateSelectEl.addEventListener('change', () => {
+    updateRateUI();
+    recalcFrom('withoutVat');
+  });
+  customRateEl.addEventListener('input', () => {
+    updateRateUI();
+    recalcFrom('withoutVat');
+  });
+
+  updateRateUI();
+</script>
+</body>
+</html>
