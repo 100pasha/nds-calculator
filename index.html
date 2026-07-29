@@ -10,15 +10,24 @@
 <meta name="google-site-verification" content="dva4WliETWz_Ky9qgqxlhZXeaKUem5Q_urhogoks3zM" />
 <meta name="google-site-verification" content="NBA9F5YgETa77WGGCS6t3A4MopSsApC7QCJtmFQB5M0" />
 
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Калькулятор НДС 22% онлайн">
 <meta property="og:description" content="Считает цену с НДС, сумму налога и цену без НДС по всем действующим в России ставкам. Формулы и примеры расчёта.">
 <meta property="og:url" content="https://nds-nds.ru/">
+<meta property="og:image" content="https://nds-nds.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Калькулятор НДС 22% онлайн">
 <meta name="twitter:description" content="Считает цену с НДС, сумму налога и цену без НДС по всем действующим в России ставкам.">
+<meta name="twitter:image" content="https://nds-nds.ru/og-image.png">
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -269,6 +278,38 @@
     margin-top: 32px;
     line-height: 1.5;
   }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  .share-btn {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+    background: #eef2ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  .share-btn:hover {
+    background: #e0e7ff;
+  }
+  .site-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    line-height: 1.6;
+  }
+  .site-footer a {
+    color: #6b7280;
+  }
 </style>
 </head>
 <body>
@@ -320,6 +361,7 @@
     </div>
 
     <p class="footer-note" id="formulaNote">Цена с НДС = Цена без НДС × 1,22</p>
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
   </div>
 
   <article class="article">
@@ -334,19 +376,21 @@
     <p>Пример для ставки 22%: если цена без НДС — 1000 ₽, то цена с НДС составит 1000 × 1,22 = 1220 ₽, а сумма налога — 1220 − 1000 = 220 ₽. И наоборот: если известна цена с НДС 1220 ₽, цена без НДС находится как 1220 × 100 / 122 = 1000 ₽.</p>
 
     <h2>Ставки НДС в России в 2026 году</h2>
-    <table class="rates-table">
-      <thead>
-        <tr><th>Ставка</th><th>Когда применяется</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>22%</td><td>Основная ставка с 1 января 2026 года</td></tr>
-        <tr><td>20%</td><td>Основная ставка, действовавшая до 2026 года</td></tr>
-        <tr><td>10%</td><td>Продукты питания, детские товары, лекарства, медицинские изделия, книги и периодика</td></tr>
-        <tr><td>0%</td><td>Экспорт товаров, международная перевозка и ряд других операций</td></tr>
-        <tr><td>5%</td><td>УСН при доходе примерно от 60 до 250 млн ₽ в год, без права на вычет входного НДС</td></tr>
-        <tr><td>7%</td><td>УСН при доходе примерно от 250 до 450 млн ₽ в год, без права на вычет входного НДС</td></tr>
-      </tbody>
-    </table>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead>
+          <tr><th>Ставка</th><th>Когда применяется</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>22%</td><td>Основная ставка с 1 января 2026 года</td></tr>
+          <tr><td>20%</td><td>Основная ставка, действовавшая до 2026 года</td></tr>
+          <tr><td>10%</td><td>Продукты питания, детские товары, лекарства, медицинские изделия, книги и периодика</td></tr>
+          <tr><td>0%</td><td>Экспорт товаров, международная перевозка и ряд других операций</td></tr>
+          <tr><td>5%</td><td>УСН при доходе примерно от 60 до 250 млн ₽ в год, без права на вычет входного НДС</td></tr>
+          <tr><td>7%</td><td>УСН при доходе примерно от 250 до 450 млн ₽ в год, без права на вычет входного НДС</td></tr>
+        </tbody>
+      </table>
+    </div>
     <p>Пороговые значения дохода для ставок 5% и 7% индексируются и могут меняться — точные актуальные суммы стоит сверять на сайте ФНС.</p>
 
     <h2>Часто задаваемые вопросы</h2>
@@ -371,6 +415,10 @@
 
     <p class="disclaimer">Материал носит справочный характер и не заменяет консультацию с бухгалтером или налоговым юристом. Актуальные ставки и пороги всегда стоит сверять с Налоговым кодексом РФ и разъяснениями ФНС.</p>
   </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор НДС · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
 </div>
 
 <script>
@@ -452,6 +500,31 @@
   });
 
   updateRateUI();
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async () => {
+    const shareData = {
+      title: 'Калькулятор НДС',
+      text: 'Онлайн-калькулятор НДС по всем ставкам, действующим в России',
+      url: location.href
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // пользователь закрыл диалог — ничего не делаем
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(() => { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) {
+        prompt('Скопируйте ссылку:', location.href);
+      }
+    }
+  });
 </script>
 </body>
 </html>
