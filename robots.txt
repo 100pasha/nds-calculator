@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nds-nds.ru/sitemap.xml
+Sitemap: https://onecalc.ru/sitemap.xml
