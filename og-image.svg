@@ -31,5 +31,5 @@
   <text x="640" y="470" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" fill="#6b7280">Цена с НДС = Цена без НДС × (1 + ставка)</text>
   <text x="640" y="504" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" fill="#6b7280">НДС = Цена с НДС − Цена без НДС</text>
 
-  <text x="640" y="580" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#2563eb">nds-nds.ru</text>
+  <text x="640" y="580" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#2563eb">onecalc.ru</text>
 </svg>
