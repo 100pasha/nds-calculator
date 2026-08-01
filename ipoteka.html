@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор ипотеки онлайн — расчёт платежа и переплаты</title>
+<meta name="description" content="Бесплатный калькулятор ипотеки: рассчитайте ежемесячный платёж, переплату по процентам и график погашения по аннуитетной и дифференцированной схеме.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/ipoteka.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор ипотеки онлайн">
+<meta property="og:description" content="Расчёт ежемесячного платежа, переплаты и графика погашения по ипотечному кредиту — аннуитетные и дифференцированные платежи.">
+<meta property="og:url" content="https://onecalc.ru/ipoteka.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор ипотеки онлайн">
+<meta name="twitter:description" content="Расчёт ежемесячного платежа, переплаты и графика погашения по ипотечному кредиту.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор ипотеки",
+  "url": "https://onecalc.ru/ipoteka.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор ипотеки: расчёт ежемесячного платежа, переплаты по процентам и графика погашения по аннуитетной и дифференцированной схеме.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "RUB"
+  },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как рассчитывается ежемесячный платёж по ипотеке?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для аннуитетного платежа используется формула: платёж = сумма кредита × (i × (1+i)^n) / ((1+i)^n − 1), где i — ставка за месяц (годовая ставка ÷ 12 ÷ 100), n — срок кредита в месяцах. Для дифференцированного платежа основной долг делится поровну на весь срок, а проценты начисляются на остаток долга и уменьшаются каждый месяц."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "В чём разница между аннуитетными и дифференцированными платежами?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "При аннуитетном платеже сумма ежемесячного взноса одинакова весь срок кредита, но в начале в ней преобладают проценты, а не основной долг. При дифференцированном платеже сумма уменьшается от месяца к месяцу: первые платежи выше, зато переплата по процентам меньше. Банки чаще предлагают аннуитетную схему."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как первоначальный взнос влияет на переплату?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Чем больше первоначальный взнос, тем меньше сумма кредита — а значит, меньше и переплата по процентам, и ежемесячный платёж. Увеличение взноса даже на 10% от стоимости жилья заметно снижает общую переплату за весь срок."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли уменьшить переплату по ипотеке?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Переплату снижают досрочные частичные погашения (уменьшают либо срок, либо платёж), выбор дифференцированной схемы вместо аннуитетной, больший первоначальный взнос и более короткий срок кредита. Точный эффект зависит от условий конкретного банка."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f2f4f7;
+    color: #1a1a1a;
+    padding: 40px 16px 64px;
+  }
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 32px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 48px;
+  }
+  h1 {
+    font-size: 20px;
+    margin: 0 0 4px;
+  }
+  .subtitle {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0 0 28px;
+  }
+  .breadcrumb {
+    font-size: 13px;
+    margin: 0 0 14px;
+  }
+  .breadcrumb a {
+    color: #6b7280;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    color: #2563eb;
+  }
+  .field {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+  }
+  .input-wrap {
+    position: relative;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 44px 12px 14px;
+    font-size: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  input[type="text"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  input[type="text"][readonly] {
+    cursor: default;
+  }
+  .currency {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 14px;
+    pointer-events: none;
+  }
+  .currency.copy-btn {
+    pointer-events: auto;
+    background: none;
+    border: none;
+    font: inherit;
+    padding: 4px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .currency.copy-btn:hover {
+    color: #2563eb;
+  }
+  .currency.copy-btn:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: #1a1a1a;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  .rate-hint {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 6px;
+  }
+  .footer-note {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 24px 0;
+  }
+  .results {
+    background: #f8f9fb;
+    border-radius: 12px;
+    padding: 16px 16px 4px;
+    margin-bottom: 20px;
+  }
+  .field.result input {
+    color: #2563eb;
+    font-weight: 600;
+  }
+  .field.result:last-child {
+    margin-bottom: 12px;
+  }
+  .schedule-toggle {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    background: #f2f4f7;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    margin-bottom: 12px;
+  }
+  .schedule-toggle:hover {
+    background: #e5e7eb;
+  }
+  .schedule-wrap {
+    display: none;
+    max-height: 320px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+  }
+  .schedule-wrap.open {
+    display: block;
+  }
+  .share-btn {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+    background: #eef2ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  .share-btn:hover {
+    background: #e0e7ff;
+  }
+
+  .article h2 {
+    font-size: 19px;
+    margin: 36px 0 12px;
+  }
+  .article h2:first-child {
+    margin-top: 0;
+  }
+  .article h3 {
+    font-size: 15px;
+    margin: 20px 0 8px;
+  }
+  .article p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0 0 12px;
+  }
+  .article ul {
+    padding-left: 20px;
+    margin: 0 0 12px;
+  }
+  .article li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 4px;
+  }
+  .formula-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 0 0 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    overflow-x: auto;
+  }
+  .rates-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .rates-table th, .rates-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eef0f3;
+  }
+  .rates-table th {
+    background: #f8f9fb;
+    color: #374151;
+    font-weight: 600;
+  }
+  .rates-table td {
+    color: #4b5563;
+  }
+  .rates-table tr:last-child td {
+    border-bottom: none;
+  }
+  .schedule-table th {
+    position: sticky;
+    top: 0;
+  }
+  .faq details {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+  }
+  .faq summary {
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .faq p {
+    margin: 10px 0 0;
+  }
+  .disclaimer {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 32px;
+    line-height: 1.5;
+  }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  .site-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    line-height: 1.6;
+  }
+  .site-footer a {
+    color: #6b7280;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #0f1115;
+      color: #e5e7eb;
+      color-scheme: dark;
+    }
+    .card, .formula-box, .rates-table, .faq details {
+      background: #1a1d24;
+      border-color: #2a2e37;
+    }
+    .card {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .results {
+      background: #12151b;
+    }
+    .schedule-toggle {
+      background: #12151b;
+      color: #cbd5e1;
+    }
+    .schedule-toggle:hover {
+      background: #1e222b;
+    }
+    label {
+      color: #cbd5e1;
+    }
+    input[type="text"], select {
+      background-color: #12151b;
+      border-color: #2a2e37;
+      color: #e5e7eb;
+    }
+    select {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    }
+    .subtitle, .rate-hint, .footer-note, .disclaimer, .site-footer {
+      color: #9ca3af;
+    }
+    .breadcrumb a {
+      color: #9ca3af;
+    }
+    .breadcrumb a:hover {
+      color: #93c5fd;
+    }
+    .divider {
+      border-top-color: #2a2e37;
+    }
+    .article p, .article li, .rates-table td {
+      color: #cbd5e1;
+    }
+    .rates-table th {
+      background: #12151b;
+      color: #cbd5e1;
+    }
+    .rates-table th, .rates-table td {
+      border-bottom-color: #2a2e37;
+    }
+    .share-btn {
+      background: #1e2a4a;
+      color: #93c5fd;
+    }
+    .share-btn:hover {
+      background: #26355e;
+    }
+    .site-footer {
+      border-top-color: #2a2e37;
+    }
+    .site-footer a {
+      color: #9ca3af;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор ипотеки</h1>
+    <p class="subtitle">Введите параметры кредита — платёж, переплата и график погашения пересчитаются автоматически</p>
+
+    <div class="field">
+      <label for="price">Стоимость недвижимости</label>
+      <div class="input-wrap">
+        <input type="text" id="price" inputmode="decimal" value="8 000 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="downPayment">Первоначальный взнос</label>
+      <div class="input-wrap">
+        <input type="text" id="downPayment" inputmode="decimal" value="1 600 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint" id="downPaymentHint">20% от стоимости</p>
+    </div>
+
+    <div class="field">
+      <label for="rate">Процентная ставка</label>
+      <div class="input-wrap">
+        <input type="text" id="rate" inputmode="decimal" value="20">
+        <span class="currency">% годовых</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="years">Срок кредита</label>
+      <div class="input-wrap">
+        <input type="text" id="years" inputmode="decimal" value="20">
+        <span class="currency">лет</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="paymentType">Тип платежа</label>
+      <select id="paymentType">
+        <option value="annuity">Аннуитетный (равными платежами)</option>
+        <option value="differentiated">Дифференцированный (убывающий)</option>
+      </select>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="loanAmount">Сумма кредита</label>
+        <div class="input-wrap">
+          <input type="text" id="loanAmount" readonly>
+          <button type="button" class="currency copy-btn" data-copy="loanAmount" title="Скопировать значение">₽</button>
+        </div>
+      </div>
+
+      <div class="field result" id="monthlyPaymentRow">
+        <label for="monthlyPayment">Ежемесячный платёж</label>
+        <div class="input-wrap">
+          <input type="text" id="monthlyPayment" readonly>
+          <button type="button" class="currency copy-btn" data-copy="monthlyPayment" title="Скопировать значение">₽</button>
+        </div>
+      </div>
+
+      <div class="field result" id="firstPaymentRow" style="display:none;">
+        <label for="firstPayment">Первый / последний платёж</label>
+        <div class="input-wrap">
+          <input type="text" id="firstPayment" readonly>
+          <button type="button" class="currency copy-btn" data-copy="firstPayment" title="Скопировать значение">₽</button>
+        </div>
+        <p class="rate-hint" id="lastPaymentHint">—</p>
+      </div>
+
+      <div class="field result">
+        <label for="overpayment">Переплата по процентам</label>
+        <div class="input-wrap">
+          <input type="text" id="overpayment" readonly>
+          <button type="button" class="currency copy-btn" data-copy="overpayment" title="Скопировать значение">₽</button>
+        </div>
+      </div>
+
+      <div class="field result">
+        <label for="totalPaid">Общая сумма выплат</label>
+        <div class="input-wrap">
+          <input type="text" id="totalPaid" readonly>
+          <button type="button" class="currency copy-btn" data-copy="totalPaid" title="Скопировать значение">₽</button>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="schedule-toggle" id="scheduleToggleBtn">Показать график платежей по годам</button>
+    <div class="schedule-wrap table-wrap" id="scheduleWrap">
+      <table class="rates-table schedule-table">
+        <thead>
+          <tr><th>Год</th><th>Долг</th><th>Проценты</th><th>Остаток</th></tr>
+        </thead>
+        <tbody id="scheduleBody"></tbody>
+      </table>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор ипотеки</h2>
+    <p>Калькулятор считает ежемесячный платёж по ипотечному кредиту, переплату по процентам за весь срок и год за годом показывает, как уменьшается долг. Достаточно указать стоимость недвижимости, первоначальный взнос, процентную ставку и срок кредита — сумма кредита и все итоговые показатели пересчитываются мгновенно, без отправки данных на сервер.</p>
+
+    <h2>Формулы расчёта ипотечного платежа</h2>
+    <p>Сумма кредита — это стоимость недвижимости за вычетом первоначального взноса. Дальнейший расчёт зависит от схемы платежей.</p>
+    <h3>Аннуитетный платёж (равными суммами)</h3>
+    <div class="formula-box">Платёж = Сумма кредита × (i × (1+i)^n) / ((1+i)^n − 1)</div>
+    <p>Здесь <b>i</b> — ставка за месяц (годовая ставка ÷ 12 ÷ 100), <b>n</b> — срок кредита в месяцах. Платёж одинаков весь срок, но в первых платежах доля процентов выше, а доля основного долга — ниже.</p>
+    <h3>Дифференцированный платёж (убывающий)</h3>
+    <div class="formula-box">Платёж месяца = Сумма кредита / n + Остаток долга × i</div>
+    <p>Основной долг гасится равными частями каждый месяц, а проценты начисляются на оставшуюся сумму долга. Поскольку остаток долга уменьшается, платёж становится меньше от месяца к месяцу.</p>
+
+    <h2>Аннуитетный и дифференцированный платёж: в чём разница</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead>
+          <tr><th>Параметр</th><th>Аннуитетный</th><th>Дифференцированный</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Размер платежа</td><td>Одинаковый весь срок</td><td>Уменьшается каждый месяц</td></tr>
+          <tr><td>Первые платежи</td><td>Ниже</td><td>Выше</td></tr>
+          <tr><td>Переплата по процентам</td><td>Больше</td><td>Меньше</td></tr>
+          <tr><td>Где встречается</td><td>Большинство ипотечных программ</td><td>Реже, обычно по отдельному запросу к банку</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>От чего зависит размер ипотечного платежа</h2>
+    <ul>
+      <li><b>Сумма кредита</b> — чем больше первоначальный взнос, тем меньше нужно занимать и тем ниже переплата.</li>
+      <li><b>Процентная ставка</b> — устанавливается банком и зависит от программы (рыночная, льготная, семейная и др.), первоначального взноса и оценки заёмщика.</li>
+      <li><b>Срок кредита</b> — при увеличении срока ежемесячный платёж снижается, но переплата по процентам растёт.</li>
+      <li><b>Тип платежа</b> — аннуитетный или дифференцированный, влияет на распределение суммы по месяцам и на итоговую переплату.</li>
+      <li><b>Страхование и комиссии</b> — калькулятор их не учитывает: страховка жизни и имущества обычно оплачивается отдельно и может входить в реальный ежемесячный платёж по требованию банка.</li>
+    </ul>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как рассчитывается ежемесячный платёж по ипотеке?</summary>
+        <p>Для аннуитетного платежа используется формула: платёж = сумма кредита × (i × (1+i)^n) / ((1+i)^n − 1), где i — ставка за месяц, n — срок в месяцах. Для дифференцированного платежа основной долг делится поровну на весь срок, а проценты начисляются на остаток долга и уменьшаются каждый месяц.</p>
+      </details>
+      <details>
+        <summary>В чём разница между аннуитетными и дифференцированными платежами?</summary>
+        <p>При аннуитетном платеже сумма взноса одинакова весь срок, но в начале в ней преобладают проценты. При дифференцированном платеже сумма уменьшается от месяца к месяцу: первые платежи выше, зато переплата по процентам меньше. Банки чаще предлагают аннуитетную схему.</p>
+      </details>
+      <details>
+        <summary>Как первоначальный взнос влияет на переплату?</summary>
+        <p>Чем больше первоначальный взнос, тем меньше сумма кредита — а значит, меньше и переплата по процентам, и ежемесячный платёж. Увеличение взноса даже на 10% от стоимости жилья заметно снижает общую переплату за весь срок.</p>
+      </details>
+      <details>
+        <summary>Можно ли уменьшить переплату по ипотеке?</summary>
+        <p>Переплату снижают досрочные частичные погашения, выбор дифференцированной схемы вместо аннуитетной, больший первоначальный взнос и более короткий срок кредита. Точный эффект зависит от условий конкретного банка.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="nds.html">Калькулятор НДС →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Материал и расчёт носят справочный характер и не являются предложением банка. Реальная ставка, размер платежа и требования к заёмщику определяются банком по результатам андеррайтинга и могут отличаться от результата калькулятора; расчёт не учитывает страхование и комиссии.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор ипотеки · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const priceEl = document.getElementById('price');
+  const downPaymentEl = document.getElementById('downPayment');
+  const downPaymentHintEl = document.getElementById('downPaymentHint');
+  const rateEl = document.getElementById('rate');
+  const yearsEl = document.getElementById('years');
+  const paymentTypeEl = document.getElementById('paymentType');
+
+  const loanAmountEl = document.getElementById('loanAmount');
+  const monthlyPaymentRow = document.getElementById('monthlyPaymentRow');
+  const monthlyPaymentEl = document.getElementById('monthlyPayment');
+  const firstPaymentRow = document.getElementById('firstPaymentRow');
+  const firstPaymentEl = document.getElementById('firstPayment');
+  const lastPaymentHintEl = document.getElementById('lastPaymentHint');
+  const overpaymentEl = document.getElementById('overpayment');
+  const totalPaidEl = document.getElementById('totalPaid');
+
+  const scheduleToggleBtn = document.getElementById('scheduleToggleBtn');
+  const scheduleWrap = document.getElementById('scheduleWrap');
+  const scheduleBody = document.getElementById('scheduleBody');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    const rounded = Math.round(n);
+    return String(rounded).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function format1(n) {
+    const rounded = Math.round(n * 10) / 10;
+    const parts = rounded.toFixed(1).split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return parts.join(',');
+  }
+
+  function buildSchedule(principal, monthlyRate, months, isAnnuity, annuityPayment) {
+    const rows = [];
+    let balance = principal;
+    const principalPart = principal / months;
+    for (let m = 1; m <= months; m++) {
+      const interestPaid = balance * monthlyRate;
+      let principalPaid = isAnnuity ? (annuityPayment - interestPaid) : principalPart;
+      if (m === months || principalPaid > balance) principalPaid = balance;
+      balance = Math.max(0, balance - principalPaid);
+      rows.push({ interestPaid: interestPaid, principalPaid: principalPaid, balance: balance });
+    }
+    return rows;
+  }
+
+  function renderYearlySchedule(schedule) {
+    const totalYears = Math.ceil(schedule.length / 12);
+    let html = '';
+    for (let y = 0; y < totalYears; y++) {
+      const yearRows = schedule.slice(y * 12, y * 12 + 12);
+      const interest = yearRows.reduce(function (s, r) { return s + r.interestPaid; }, 0);
+      const principal = yearRows.reduce(function (s, r) { return s + r.principalPaid; }, 0);
+      const balance = yearRows[yearRows.length - 1].balance;
+      html += '<tr><td>' + (y + 1) + '</td><td>' + format(principal) + ' ₽</td><td>' + format(interest) + ' ₽</td><td>' + format(balance) + ' ₽</td></tr>';
+    }
+    scheduleBody.innerHTML = html;
+  }
+
+  function clearResults() {
+    [loanAmountEl, monthlyPaymentEl, firstPaymentEl, overpaymentEl, totalPaidEl].forEach(function (el) { el.value = ''; });
+    lastPaymentHintEl.textContent = '—';
+    scheduleBody.innerHTML = '';
+  }
+
+  function calculate() {
+    const price = parse(priceEl.value);
+    const downPayment = parse(downPaymentEl.value);
+    const ratePercent = parse(rateEl.value);
+    const years = parse(yearsEl.value);
+    const isAnnuity = paymentTypeEl.value === 'annuity';
+
+    downPaymentHintEl.textContent = price > 0 ? format1(downPayment / price * 100) + '% от стоимости' : '—';
+
+    const principal = price - downPayment;
+    const months = Math.round(years * 12);
+
+    monthlyPaymentRow.style.display = isAnnuity ? '' : 'none';
+    firstPaymentRow.style.display = isAnnuity ? 'none' : '';
+
+    if (principal <= 0 || months <= 0 || ratePercent < 0) {
+      clearResults();
+      return;
+    }
+
+    const monthlyRate = ratePercent / 100 / 12;
+    loanAmountEl.value = format(principal);
+
+    let annuityPayment = 0;
+    if (monthlyRate === 0) {
+      annuityPayment = principal / months;
+    } else {
+      const k = Math.pow(1 + monthlyRate, months);
+      annuityPayment = principal * monthlyRate * k / (k - 1);
+    }
+
+    const schedule = buildSchedule(principal, monthlyRate, months, isAnnuity, annuityPayment);
+    const totalInterest = schedule.reduce(function (s, r) { return s + r.interestPaid; }, 0);
+    const totalPaid = principal + totalInterest;
+
+    if (isAnnuity) {
+      monthlyPaymentEl.value = format(annuityPayment);
+    } else {
+      const first = schedule[0].interestPaid + schedule[0].principalPaid;
+      const last = schedule[schedule.length - 1].interestPaid + schedule[schedule.length - 1].principalPaid;
+      firstPaymentEl.value = format(first);
+      lastPaymentHintEl.textContent = 'Последний платёж: ' + format(last) + ' ₽';
+    }
+
+    overpaymentEl.value = format(totalInterest);
+    totalPaidEl.value = format(totalPaid);
+
+    renderYearlySchedule(schedule);
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'mortgage_calculation');
+    }, 1200);
+  }
+
+  [priceEl, downPaymentEl, rateEl, yearsEl].forEach(function (el) {
+    el.addEventListener('input', calculate);
+  });
+  paymentTypeEl.addEventListener('change', calculate);
+
+  scheduleToggleBtn.addEventListener('click', function () {
+    const isOpen = scheduleWrap.classList.toggle('open');
+    scheduleToggleBtn.textContent = isOpen ? 'Скрыть график платежей' : 'Показать график платежей по годам';
+  });
+
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', async function () {
+      const targetEl = document.getElementById(btn.dataset.copy);
+      if (!targetEl.value) return;
+      const originalText = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(targetEl.value);
+        btn.textContent = '✓';
+      } catch (err) {
+        prompt('Скопируйте значение:', targetEl.value);
+      }
+      setTimeout(function () { btn.textContent = originalText; }, 1200);
+    });
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор ипотеки',
+      text: 'Онлайн-калькулятор ипотеки: платёж, переплата и график погашения',
+      url: location.href
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // пользователь закрыл диалог — ничего не делаем
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) {
+        prompt('Скопируйте ссылку:', location.href);
+      }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
