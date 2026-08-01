@@ -577,6 +577,16 @@
     if (source !== 'withoutVat') withoutVatEl.value = base ? format(base) : '';
     if (source !== 'withVat') withVatEl.value = base ? format(withVat) : '';
     if (source !== 'vat') vatEl.value = base ? format(vat) : '';
+
+    if (base) trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(() => {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'vat_calculation');
+    }, 1200);
   }
 
   function reformatOwnValue(el) {
