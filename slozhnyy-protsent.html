@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор сложного процента — рост вклада с капитализацией</title>
+<meta name="description" content="Бесплатный калькулятор сложного процента: рассчитайте рост вклада или инвестиций с капитализацией и регулярными пополнениями, с графиком по годам.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/slozhnyy-protsent.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор сложного процента">
+<meta property="og:description" content="Рост вклада или инвестиций с капитализацией и регулярными пополнениями.">
+<meta property="og:url" content="https://onecalc.ru/slozhnyy-protsent.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор сложного процента">
+<meta name="twitter:description" content="Рост вклада с капитализацией и пополнениями.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор сложного процента",
+  "url": "https://onecalc.ru/slozhnyy-protsent.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор сложного процента: рост вклада или инвестиций с капитализацией и регулярными пополнениями, график по годам.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что такое сложный процент?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Сложный процент — это начисление процентов не только на первоначальную сумму, но и на уже начисленные ранее проценты. За счёт этого капитал растёт быстрее, чем при простом проценте, где проценты каждый раз считаются только от исходной суммы."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как капитализация влияет на итоговую сумму?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Чем чаще происходит капитализация (ежемесячно вместо ежегодно), тем быстрее проценты сами начинают приносить проценты, и итоговая сумма получается немного выше при одной и той же годовой ставке."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Учитывает ли калькулятор налог на доходы по вкладам?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет, калькулятор показывает доход до налогообложения. НДФЛ с процентов по вкладам удерживается отдельно, если совокупный процентный доход по всем вкладам за год превышает необлагаемый лимит, зависящий от ключевой ставки ЦБ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что даёт регулярное пополнение вклада?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Даже небольшие ежемесячные пополнения существенно увеличивают итоговую сумму на длинном горизонте, потому что каждое пополнение тоже успевает поучаствовать в начислении процентов на оставшийся срок."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .schedule-toggle { display: block; width: 100%; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #374151; background: #f2f4f7; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; margin-bottom: 12px; }
+  .schedule-toggle:hover { background: #e5e7eb; }
+  .schedule-wrap { display: none; max-height: 280px; overflow-y: auto; margin-bottom: 12px; }
+  .schedule-wrap.open { display: block; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; position: sticky; top: 0; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    .schedule-toggle { background: #12151b; color: #cbd5e1; }
+    .schedule-toggle:hover { background: #1e222b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор сложного процента</h1>
+    <p class="subtitle">Введите параметры вклада — итоговая сумма пересчитается автоматически</p>
+
+    <div class="field">
+      <label for="initial">Начальная сумма</label>
+      <div class="input-wrap">
+        <input type="text" id="initial" inputmode="decimal" value="500 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="monthly">Ежемесячное пополнение</label>
+      <div class="input-wrap">
+        <input type="text" id="monthly" inputmode="decimal" value="10 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="rate">Годовая ставка</label>
+      <div class="input-wrap">
+        <input type="text" id="rate" inputmode="decimal" value="18">
+        <span class="currency">% годовых</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="years">Срок</label>
+      <div class="input-wrap">
+        <input type="text" id="years" inputmode="decimal" value="5">
+        <span class="currency">лет</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="compounding">Капитализация</label>
+      <select id="compounding">
+        <option value="1">Ежемесячная</option>
+        <option value="3">Ежеквартальная</option>
+        <option value="12">Ежегодная</option>
+      </select>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="finalBalance">Итоговая сумма</label>
+        <div class="input-wrap">
+          <input type="text" id="finalBalance" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="totalContributed">Внесено всего</label>
+        <div class="input-wrap">
+          <input type="text" id="totalContributed" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="totalInterest">Начислено процентов</label>
+        <div class="input-wrap">
+          <input type="text" id="totalInterest" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="schedule-toggle" id="scheduleToggleBtn">Показать рост по годам</button>
+    <div class="schedule-wrap table-wrap" id="scheduleWrap">
+      <table class="rates-table">
+        <thead><tr><th>Год</th><th>Внесено</th><th>Проценты за год</th><th>Остаток</th></tr></thead>
+        <tbody id="scheduleBody"></tbody>
+      </table>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает рост вклада или инвестиций со сложным процентом: проценты капитализируются и сами начинают приносить проценты в следующих периодах. Можно добавить регулярные ежемесячные пополнения и выбрать периодичность капитализации.</p>
+
+    <h2>Формула сложного процента</h2>
+    <div class="formula-box">Сумма = Начальная сумма × (1 + ставка / n)^(n × лет)</div>
+    <p>Здесь <b>n</b> — число периодов капитализации в году. При регулярных пополнениях каждое из них тоже участвует в начислении процентов на оставшийся срок, поэтому итоговая сумма растёт быстрее, чем просто сумма всех взносов.</p>
+
+    <h2>Как капитализация влияет на доходность</h2>
+    <p>При одинаковой годовой ставке более частая капитализация (ежемесячная против ежегодной) даёт чуть более высокую итоговую сумму — эффективная доходность оказывается выше номинальной ставки, потому что проценты успевают сработать несколько раз за год.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Что такое сложный процент?</summary>
+        <p>Начисление процентов не только на исходную сумму, но и на уже накопленные проценты — за счёт этого капитал растёт быстрее простого процента.</p>
+      </details>
+      <details>
+        <summary>Как капитализация влияет на итоговую сумму?</summary>
+        <p>Чем чаще капитализация, тем быстрее проценты сами начинают приносить проценты, и итог получается немного выше при той же ставке.</p>
+      </details>
+      <details>
+        <summary>Учитывает ли калькулятор налог на доходы по вкладам?</summary>
+        <p>Нет, показана сумма до налогообложения. НДФЛ с процентов удерживается отдельно при превышении необлагаемого лимита.</p>
+      </details>
+      <details>
+        <summary>Что даёт регулярное пополнение?</summary>
+        <p>Даже небольшие ежемесячные взносы заметно увеличивают итог на длинном горизонте, поскольку тоже участвуют в начислении процентов.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="ipoteka.html">Калькулятор ипотеки →</a></p>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер, не учитывает налог на процентный доход и не является инвестиционной рекомендацией. Реальная доходность зависит от условий конкретного банка или инструмента.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор сложного процента · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const initialEl = document.getElementById('initial');
+  const monthlyEl = document.getElementById('monthly');
+  const rateEl = document.getElementById('rate');
+  const yearsEl = document.getElementById('years');
+  const compoundingEl = document.getElementById('compounding');
+  const finalBalanceEl = document.getElementById('finalBalance');
+  const totalContributedEl = document.getElementById('totalContributed');
+  const totalInterestEl = document.getElementById('totalInterest');
+  const scheduleToggleBtn = document.getElementById('scheduleToggleBtn');
+  const scheduleWrap = document.getElementById('scheduleWrap');
+  const scheduleBody = document.getElementById('scheduleBody');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function simulate(initial, monthlyContribution, ratePercent, years, compoundingMonths) {
+    const totalMonths = Math.round(years * 12);
+    const monthlyRate = ratePercent / 100 / 12;
+    let balance = initial;
+    let accrued = 0;
+    let contributed = 0;
+    const yearly = [];
+    let yearContrib = 0;
+    let yearInterest = 0;
+
+    for (let m = 1; m <= totalMonths; m++) {
+      balance += monthlyContribution;
+      contributed += monthlyContribution;
+      yearContrib += monthlyContribution;
+      const interestThisMonth = balance * monthlyRate;
+      accrued += interestThisMonth;
+      yearInterest += interestThisMonth;
+      if (m % compoundingMonths === 0) {
+        balance += accrued;
+        accrued = 0;
+      }
+      if (m % 12 === 0) {
+        yearly.push({ contrib: yearContrib, interest: yearInterest, balance: balance + accrued });
+        yearContrib = 0;
+        yearInterest = 0;
+      }
+    }
+    balance += accrued;
+    if (totalMonths % 12 !== 0 && (yearContrib > 0 || yearInterest > 0)) {
+      yearly.push({ contrib: yearContrib, interest: yearInterest, balance: balance });
+    }
+
+    return { finalBalance: balance, contributed: contributed, yearly: yearly };
+  }
+
+  function renderSchedule(yearly) {
+    let html = '';
+    yearly.forEach(function (row, idx) {
+      html += '<tr><td>' + (idx + 1) + '</td><td>' + format(row.contrib) + ' ₽</td><td>' + format(row.interest) + ' ₽</td><td>' + format(row.balance) + ' ₽</td></tr>';
+    });
+    scheduleBody.innerHTML = html;
+  }
+
+  function calculate() {
+    const initial = parse(initialEl.value);
+    const monthly = Math.max(0, parse(monthlyEl.value));
+    const rate = parse(rateEl.value);
+    const years = parse(yearsEl.value);
+    const compoundingMonths = parseInt(compoundingEl.value, 10);
+
+    if (initial < 0 || years <= 0) {
+      [finalBalanceEl, totalContributedEl, totalInterestEl].forEach(function (el) { el.value = ''; });
+      scheduleBody.innerHTML = '';
+      return;
+    }
+
+    const result = simulate(initial, monthly, rate, years, compoundingMonths);
+    const totalContributed = initial + result.contributed;
+
+    finalBalanceEl.value = format(result.finalBalance);
+    totalContributedEl.value = format(totalContributed);
+    totalInterestEl.value = format(result.finalBalance - totalContributed);
+
+    renderSchedule(result.yearly);
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'compound_interest_calculation');
+    }, 1200);
+  }
+
+  [initialEl, monthlyEl, rateEl, yearsEl].forEach(function (el) { el.addEventListener('input', calculate); });
+  compoundingEl.addEventListener('change', calculate);
+
+  scheduleToggleBtn.addEventListener('click', function () {
+    const isOpen = scheduleWrap.classList.toggle('open');
+    scheduleToggleBtn.textContent = isOpen ? 'Скрыть рост по годам' : 'Показать рост по годам';
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор сложного процента',
+      text: 'Онлайн-калькулятор роста вклада со сложным процентом',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
