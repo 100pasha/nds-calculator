@@ -175,6 +175,42 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://onecalc.ru/gosposhlina.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://onecalc.ru/gosposhlina-v-sud.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onecalc.ru/lgoty-po-gosposhline.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onecalc.ru/vozvrat-gosposhliny.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onecalc.ru/gosposhlina-cherez-gosuslugi.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onecalc.ru/gosposhlina-za-vydachu-prav.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://onecalc.ru/stati.html</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
