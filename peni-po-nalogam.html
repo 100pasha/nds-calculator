@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор пени по налогам — расчёт по ст. 75 НК РФ</title>
+<meta name="description" content="Бесплатный калькулятор пени по налогам: рассчитайте сумму пени по недоимке, ключевой ставке ЦБ и количеству дней просрочки — отдельно для физлиц, ИП и организаций.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/peni-po-nalogam.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор пени по налогам">
+<meta property="og:description" content="Расчёт пени по недоимке, ключевой ставке ЦБ и дням просрочки.">
+<meta property="og:url" content="https://onecalc.ru/peni-po-nalogam.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор пени по налогам">
+<meta name="twitter:description" content="Расчёт пени по ст. 75 НК РФ.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор пени по налогам",
+  "url": "https://onecalc.ru/peni-po-nalogam.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор пени по налогам (ст. 75 НК РФ): расчёт по недоимке, ключевой ставке ЦБ и количеству дней просрочки для физлиц, ИП и организаций.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как считаются пени по налогам?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Пеня = сумма недоимки × 1/300 ключевой ставки ЦБ × количество дней просрочки. Для физлиц и ИП эта формула действует за весь период просрочки. Для организаций начиная с 31-го дня просрочки ставка удваивается до 1/150 ключевой ставки в день."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем отличается расчёт пени для физлиц и организаций?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "У физлиц и ИП пеня считается по 1/300 ключевой ставки за каждый день просрочки без изменений. У организаций первые 30 календарных дней просрочки пеня также считается по 1/300, а с 31-го дня — по 1/150 ключевой ставки, то есть в два раза быстрее."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "С какого дня начинают начисляться пени?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Со дня, следующего за установленным сроком уплаты налога, и по день фактической уплаты недоимки включительно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Начисляются ли пени, если ставка ЦБ менялась в период просрочки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, если ключевая ставка менялась, пеня считается отдельно за каждый период действия своей ставки, а затем суммируется. Калькулятор использует одну введённую ставку — для точного расчёта при изменении ставки период стоит разбить на отрезки и посчитать каждый отдельно."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Пени по налогам</h1>
+    <p class="subtitle">Введите сумму недоимки и срок просрочки — пеня пересчитается автоматически</p>
+
+    <div class="field">
+      <label for="debt">Сумма недоимки</label>
+      <div class="input-wrap">
+        <input type="text" id="debt" inputmode="decimal" value="100 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="days">Дней просрочки</label>
+      <div class="input-wrap">
+        <input type="text" id="days" inputmode="decimal" value="45">
+        <span class="currency">дн.</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="keyRate">Ключевая ставка ЦБ</label>
+      <div class="input-wrap">
+        <input type="text" id="keyRate" inputmode="decimal" value="20">
+        <span class="currency">%</span>
+      </div>
+      <p class="rate-hint">Действующая на момент просрочки — уточните на сайте ЦБ РФ</p>
+    </div>
+
+    <div class="field">
+      <label for="payerType">Тип плательщика</label>
+      <select id="payerType">
+        <option value="individual">Физлицо или ИП (1/300 весь период)</option>
+        <option value="organization">Организация (1/300, с 31 дня — 1/150)</option>
+      </select>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="penaltyFirst">Пеня за первые 30 дней</label>
+        <div class="input-wrap">
+          <input type="text" id="penaltyFirst" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result" id="penaltySecondRow">
+        <label for="penaltySecond">Пеня с 31-го дня</label>
+        <div class="input-wrap">
+          <input type="text" id="penaltySecond" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="penaltyTotal">Пеня всего</label>
+        <div class="input-wrap">
+          <input type="text" id="penaltyTotal" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает пени за просрочку уплаты налога по статье 75 НК РФ — по сумме недоимки, ключевой ставке ЦБ, действовавшей в период просрочки, и количеству дней просрочки. Для организаций после 30-го дня ставка пени автоматически удваивается, как того требует закон.</p>
+
+    <h2>Формула расчёта</h2>
+    <div class="formula-box">Пеня (физлицо/ИП) = Недоимка × 1/300 ставки ЦБ × Дни просрочки</div>
+    <div class="formula-box">Пеня (организация, 1–30 день) = Недоимка × 1/300 ставки ЦБ × 30</div>
+    <div class="formula-box">Пеня (организация, с 31 дня) = Недоимка × 1/150 ставки ЦБ × (Дни − 30)</div>
+    <p>Например, при недоимке 100 000 ₽, ключевой ставке 20% и просрочке 45 дней у физлица или ИП пеня составит 100 000 × 0,2/300 × 45 = 3 000 ₽. У организации пеня за те же 45 дней будет выше: 2 000 ₽ за первые 30 дней плюс 2 000 ₽ за оставшиеся 15 дней по удвоенной ставке — итого 4 000 ₽.</p>
+
+    <h2>Особенности расчёта</h2>
+    <ul>
+      <li>Пеня начисляется со дня, следующего за сроком уплаты налога, по день фактической уплаты недоимки включительно</li>
+      <li>Если ключевая ставка менялась в период просрочки, точный расчёт нужно делать отдельно за каждый отрезок времени со своей ставкой</li>
+      <li>Сумма пеней не может превышать размер самой недоимки, по которой она начислена</li>
+    </ul>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как считаются пени по налогам?</summary>
+        <p>Недоимка × 1/300 ключевой ставки ЦБ × дни просрочки. У организаций с 31-го дня ставка удваивается до 1/150.</p>
+      </details>
+      <details>
+        <summary>Чем отличается расчёт для физлиц и организаций?</summary>
+        <p>У физлиц и ИП всегда действует 1/300. У организаций первые 30 дней — 1/300, а дальше — 1/150 ключевой ставки.</p>
+      </details>
+      <details>
+        <summary>С какого дня начинают начисляться пени?</summary>
+        <p>Со следующего дня после установленного срока уплаты налога и по день фактической уплаты включительно.</p>
+      </details>
+      <details>
+        <summary>Что если ставка ЦБ менялась в период просрочки?</summary>
+        <p>Расчёт нужно делать отдельно по каждому периоду действия своей ставки, а результаты сложить. Калькулятор использует одну введённую ставку для всего периода.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="ndfl.html">Калькулятор НДФЛ →</a></p>
+    <p><a href="nds.html">Калькулятор НДС →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и использует одну введённую ставку ЦБ на весь период. Для точного расчёта при изменении ставки в течение просрочки обратитесь к личному кабинету налогоплательщика на сайте ФНС.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор пени · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const debtEl = document.getElementById('debt');
+  const daysEl = document.getElementById('days');
+  const keyRateEl = document.getElementById('keyRate');
+  const payerTypeEl = document.getElementById('payerType');
+  const penaltyFirstEl = document.getElementById('penaltyFirst');
+  const penaltySecondRow = document.getElementById('penaltySecondRow');
+  const penaltySecondEl = document.getElementById('penaltySecond');
+  const penaltyTotalEl = document.getElementById('penaltyTotal');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    const rounded = Math.round(n);
+    return String(rounded).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function calculate() {
+    const debt = parse(debtEl.value);
+    const days = Math.max(0, Math.round(parse(daysEl.value)));
+    const rate = parse(keyRateEl.value) / 100;
+    const isOrg = payerTypeEl.value === 'organization';
+
+    penaltySecondRow.style.display = isOrg ? '' : 'none';
+
+    if (debt <= 0 || days <= 0) {
+      [penaltyFirstEl, penaltySecondEl, penaltyTotalEl].forEach(function (el) { el.value = ''; });
+      return;
+    }
+
+    let penaltyFirst, penaltySecond;
+    if (isOrg) {
+      const days1 = Math.min(days, 30);
+      const days2 = Math.max(0, days - 30);
+      penaltyFirst = debt * (rate / 300) * days1;
+      penaltySecond = debt * (rate / 150) * days2;
+    } else {
+      penaltyFirst = debt * (rate / 300) * days;
+      penaltySecond = 0;
+    }
+
+    penaltyFirstEl.value = format(penaltyFirst);
+    penaltySecondEl.value = format(penaltySecond);
+    penaltyTotalEl.value = format(penaltyFirst + penaltySecond);
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'penalty_calculation');
+    }, 1200);
+  }
+
+  [debtEl, daysEl, keyRateEl].forEach(function (el) { el.addEventListener('input', calculate); });
+  payerTypeEl.addEventListener('change', calculate);
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор пени по налогам',
+      text: 'Онлайн-калькулятор пени по недоимке и ключевой ставке ЦБ',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
