@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор трудового и страхового стажа по датам работы</title>
+<meta name="description" content="Бесплатный калькулятор стажа: рассчитайте общий трудовой или страховой стаж по нескольким периодам работы в годах, месяцах и днях.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/trudovoy-stazh.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор трудового стажа">
+<meta property="og:description" content="Расчёт общего стажа по нескольким периодам работы в годах, месяцах и днях.">
+<meta property="og:url" content="https://onecalc.ru/trudovoy-stazh.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор трудового стажа">
+<meta name="twitter:description" content="Расчёт стажа по периодам работы.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор трудового стажа",
+  "url": "https://onecalc.ru/trudovoy-stazh.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор трудового и страхового стажа: расчёт общего стажа по нескольким периодам работы в годах, месяцах и днях.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как считается общий стаж по нескольким периодам работы?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Каждый период считается отдельно в годах, месяцах и днях (день увольнения включается), затем все периоды складываются: дни переводятся в месяцы по 30 дней, а месяцы — в годы по 12 месяцев."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Учитываются ли периоды без работы, например декрет или армия?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "В страховой стаж для больничного и пенсии засчитываются не только периоды работы, но и некоторые «нестраховые» периоды — служба в армии по призыву, отпуск по уходу за ребёнком до 1,5 лет (не более 6 лет суммарно на всех детей) и другие, перечисленные в законе. Калькулятор считает только введённые вами периоды."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что если периоды работы пересекаются по датам?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Калькулятор суммирует периоды независимо, поэтому пересекающиеся даты будут учтены дважды. Для корректного результата вводите периоды, которые не пересекаются, — при работе по совместительству для целей стажа обычно учитывается только один из параллельных периодов."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Где взять точные даты для расчёта стажа?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Даты приёма и увольнения указаны в трудовой книжке или в выписке из электронной трудовой книжки, которую можно получить на Госуслугах или в личном кабинете СФР."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 460px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .period-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 8px;
+    align-items: end;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eef0f3;
+  }
+  .period-row:last-of-type { border-bottom: none; }
+  .field { margin-bottom: 0; }
+  label { display: block; font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  input[type="date"] {
+    width: 100%;
+    padding: 10px 8px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    color: #1a1a1a;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  input[type="date"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .remove-period-btn {
+    font: inherit;
+    background: #fef2f2;
+    color: #b91c1c;
+    border: none;
+    border-radius: 8px;
+    width: 34px;
+    height: 38px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .remove-period-btn:hover { background: #fee2e2; }
+  .period-hint { grid-column: 1 / -1; font-size: 12px; color: #9ca3af; margin-top: -2px; }
+  .add-period-btn {
+    display: block;
+    width: 100%;
+    margin: 6px 0 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+    background: #eef2ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  .add-period-btn:hover { background: #e0e7ff; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 20px; margin-bottom: 20px; text-align: center; }
+  .total-stazh { font-size: 24px; font-weight: 700; color: #2563eb; }
+  .total-label { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .period-row { border-bottom-color: #2a2e37; }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="date"] { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; color-scheme: dark; }
+    .remove-period-btn { background: #2a1414; color: #fca5a5; }
+    .remove-period-btn:hover { background: #3a1a1a; }
+    .add-period-btn { background: #1e2a4a; color: #93c5fd; }
+    .add-period-btn:hover { background: #26355e; }
+    .subtitle, .period-hint, .total-label, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li { color: #cbd5e1; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор трудового стажа</h1>
+    <p class="subtitle">Добавьте периоды работы — общий стаж пересчитается автоматически</p>
+
+    <div id="periodsContainer">
+      <div class="period-row" data-index="0">
+        <div class="field">
+          <label>Начало периода</label>
+          <input type="date" class="period-start" value="2010-03-01">
+        </div>
+        <div class="field">
+          <label>Окончание периода</label>
+          <input type="date" class="period-end" value="2015-08-31">
+        </div>
+        <button type="button" class="remove-period-btn" title="Удалить период">✕</button>
+        <p class="period-hint"></p>
+      </div>
+      <div class="period-row" data-index="1">
+        <div class="field">
+          <label>Начало периода</label>
+          <input type="date" class="period-start" value="2016-01-10">
+        </div>
+        <div class="field">
+          <label>Окончание периода</label>
+          <input type="date" class="period-end" value="2020-12-25">
+        </div>
+        <button type="button" class="remove-period-btn" title="Удалить период">✕</button>
+        <p class="period-hint"></p>
+      </div>
+    </div>
+
+    <button type="button" class="add-period-btn" id="addPeriodBtn">+ Добавить период</button>
+
+    <hr class="divider">
+
+    <div class="results">
+      <p class="total-label">Общий стаж</p>
+      <p class="total-stazh" id="totalStazh">—</p>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает общий трудовой или страховой стаж по нескольким периодам работы. Каждый период считается в годах, месяцах и днях с учётом дня увольнения включительно, а затем все периоды складываются с переводом дней в месяцы и месяцев в годы.</p>
+
+    <h2>Формула расчёта одного периода</h2>
+    <div class="formula-box">Дней = День окончания − День начала + 1</div>
+    <p>Если получилось отрицательное число дней, занимается один месяц (30 дней предыдущего календарного месяца) и вычитается из месяцев. Аналогично при отрицательном числе месяцев занимается год. При сложении нескольких периодов каждые 30 дней переводятся в месяц, а каждые 12 месяцев — в год.</p>
+
+    <h2>Что не учитывает калькулятор</h2>
+    <ul>
+      <li>Пересечение периодов — если два периода частично совпадают по датам, они всё равно суммируются независимо</li>
+      <li>Нестраховые периоды без указания дат (уход за пожилыми людьми старше 80 лет, за ребёнком-инвалидом и другие)</li>
+      <li>Льготный (северный, за вредные условия труда) коэффициент стажа для досрочной пенсии — это отдельный расчёт со своими правилами</li>
+    </ul>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как считается общий стаж по нескольким периодам?</summary>
+        <p>Каждый период считается отдельно в годах, месяцах и днях, включая день увольнения, а затем периоды складываются с переводом дней в месяцы (по 30) и месяцев в годы (по 12).</p>
+      </details>
+      <details>
+        <summary>Учитываются ли декрет и армия?</summary>
+        <p>Да, в страховой стаж входят и нестраховые периоды — служба в армии, отпуск по уходу за ребёнком до 1,5 лет (не более 6 лет суммарно) и другие. Калькулятор считает только введённые вами периоды.</p>
+      </details>
+      <details>
+        <summary>Что если периоды пересекаются?</summary>
+        <p>Они будут учтены дважды — для корректного результата периоды не должны пересекаться по датам.</p>
+      </details>
+      <details>
+        <summary>Где взять точные даты?</summary>
+        <p>В трудовой книжке или в выписке из электронной трудовой книжки на Госуслугах или в личном кабинете СФР.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="ndfl.html">Калькулятор НДФЛ →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер. Официальный подсчёт стажа для пенсии выполняет Социальный фонд России на основании данных индивидуального лицевого счёта.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор стажа · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const periodsContainer = document.getElementById('periodsContainer');
+  const addPeriodBtn = document.getElementById('addPeriodBtn');
+  const totalStazhEl = document.getElementById('totalStazh');
+  let periodIndex = 2;
+
+  function parseDate(value) {
+    if (!value) return null;
+    const parts = value.split('-');
+    if (parts.length !== 3) return null;
+    return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+  }
+
+  function daysInMonth(year, month) {
+    return new Date(year, month + 1, 0).getDate();
+  }
+
+  function periodLength(start, end) {
+    if (!start || !end || end < start) return null;
+    let d = end.getDate() - start.getDate() + 1;
+    let m = end.getMonth() - start.getMonth();
+    let y = end.getFullYear() - start.getFullYear();
+    if (d <= 0) {
+      m -= 1;
+      const prevMonthDate = new Date(end.getFullYear(), end.getMonth(), 0);
+      d += prevMonthDate.getDate();
+    }
+    if (m < 0) {
+      y -= 1;
+      m += 12;
+    }
+    return { years: y, months: m, days: d };
+  }
+
+  function pluralize(n, one, few, many) {
+    const mod10 = n % 10;
+    const mod100 = n % 100;
+    if (mod10 === 1 && mod100 !== 11) return one;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return few;
+    return many;
+  }
+
+  function formatPeriod(p) {
+    if (!p) return '';
+    return p.years + ' ' + pluralize(p.years, 'год', 'года', 'лет') + ' ' +
+      p.months + ' ' + pluralize(p.months, 'месяц', 'месяца', 'месяцев') + ' ' +
+      p.days + ' ' + pluralize(p.days, 'день', 'дня', 'дней');
+  }
+
+  function calculate() {
+    const rows = periodsContainer.querySelectorAll('.period-row');
+    let totalDays = 0, totalMonths = 0, totalYears = 0;
+    let anyValid = false;
+
+    rows.forEach(function (row) {
+      const startInput = row.querySelector('.period-start');
+      const endInput = row.querySelector('.period-end');
+      const hintEl = row.querySelector('.period-hint');
+      const start = parseDate(startInput.value);
+      const end = parseDate(endInput.value);
+      const p = periodLength(start, end);
+      if (p) {
+        totalDays += p.days;
+        totalMonths += p.months;
+        totalYears += p.years;
+        hintEl.textContent = formatPeriod(p);
+        anyValid = true;
+      } else {
+        hintEl.textContent = start && end ? 'Дата окончания раньше даты начала' : '';
+      }
+    });
+
+    if (!anyValid) {
+      totalStazhEl.textContent = '—';
+      return;
+    }
+
+    totalMonths += Math.floor(totalDays / 30);
+    totalDays = totalDays % 30;
+    totalYears += Math.floor(totalMonths / 12);
+    totalMonths = totalMonths % 12;
+
+    totalStazhEl.textContent = formatPeriod({ years: totalYears, months: totalMonths, days: totalDays });
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'work_record_calculation');
+    }, 1200);
+  }
+
+  function addPeriodRow() {
+    const row = document.createElement('div');
+    row.className = 'period-row';
+    row.dataset.index = periodIndex++;
+    row.innerHTML =
+      '<div class="field"><label>Начало периода</label><input type="date" class="period-start"></div>' +
+      '<div class="field"><label>Окончание периода</label><input type="date" class="period-end"></div>' +
+      '<button type="button" class="remove-period-btn" title="Удалить период">✕</button>' +
+      '<p class="period-hint"></p>';
+    periodsContainer.appendChild(row);
+  }
+
+  addPeriodBtn.addEventListener('click', function () {
+    addPeriodRow();
+  });
+
+  periodsContainer.addEventListener('input', function (e) {
+    if (e.target.classList.contains('period-start') || e.target.classList.contains('period-end')) {
+      calculate();
+    }
+  });
+
+  periodsContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('remove-period-btn')) {
+      const rows = periodsContainer.querySelectorAll('.period-row');
+      if (rows.length > 1) {
+        e.target.closest('.period-row').remove();
+        calculate();
+      }
+    }
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор трудового стажа',
+      text: 'Онлайн-калькулятор трудового и страхового стажа по периодам работы',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
