@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор НДФЛ онлайн — расчёт зарплаты на руки</title>
+<meta name="description" content="Бесплатный калькулятор НДФЛ: посчитайте зарплату на руки и сумму налога по прогрессивной шкале 13/15/18/20/22%, узнайте эффективную ставку и разбивку по диапазонам дохода.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/ndfl.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор НДФЛ онлайн">
+<meta property="og:description" content="Расчёт зарплаты на руки и суммы налога по прогрессивной шкале НДФЛ 13/15/18/20/22%.">
+<meta property="og:url" content="https://onecalc.ru/ndfl.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор НДФЛ онлайн">
+<meta name="twitter:description" content="Расчёт зарплаты на руки и суммы налога по прогрессивной шкале НДФЛ.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор НДФЛ",
+  "url": "https://onecalc.ru/ndfl.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор НДФЛ: расчёт зарплаты на руки и суммы налога по прогрессивной шкале 13/15/18/20/22%, действующей с 2025 года.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "RUB"
+  },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как считается НДФЛ по прогрессивной шкале?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "С 1 января 2025 года действует пятиступенчатая шкала: 13% с дохода до 2,4 млн ₽ в год, 15% с части от 2,4 до 5 млн ₽, 18% с части от 5 до 20 млн ₽, 20% с части от 20 до 50 млн ₽ и 22% с части свыше 50 млн ₽. Повышенная ставка применяется не ко всему доходу, а только к части, превышающей очередной порог."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как посчитать зарплату на руки по окладу?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нужно применить прогрессивную шкалу к годовому доходу (оклад за месяц × 12), получить сумму НДФЛ за год и вычесть её из годового дохода. Калькулятор делает это автоматически и показывает результат как в месяц, так и за год."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как узнать, какой оклад нужен для определённой суммы на руки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Введите нужную сумму в поле «Доход на руки» — калькулятор пересчитает оклад до вычета налога в обратную сторону с учётом того, в какой диапазон прогрессивной шкалы попадает доход."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Учитывает ли калькулятор налоговые вычеты?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет, калькулятор считает НДФЛ с полной суммы дохода без учёта стандартных, социальных и имущественных вычетов. Вычеты уменьшают налогооблагаемую базу, поэтому реальная сумма налога может быть меньше расчётной."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кто платит НДФЛ по ставкам выше 13%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Повышенные ставки касаются только части годового дохода, превышающей 2,4 млн ₽ — то есть в среднем дохода выше примерно 200 тысяч ₽ в месяц. Для большинства работников с зарплатой в пределах этого порога вся сумма облагается по ставке 13%."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f2f4f7;
+    color: #1a1a1a;
+    padding: 40px 16px 64px;
+  }
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 32px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 48px;
+  }
+  h1 {
+    font-size: 20px;
+    margin: 0 0 4px;
+  }
+  .subtitle {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0 0 28px;
+  }
+  .breadcrumb {
+    font-size: 13px;
+    margin: 0 0 14px;
+  }
+  .breadcrumb a {
+    color: #6b7280;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    color: #2563eb;
+  }
+  .field {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+  }
+  .input-wrap {
+    position: relative;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 44px 12px 14px;
+    font-size: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  input[type="text"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  input[type="text"][readonly] {
+    cursor: default;
+  }
+  .currency {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 14px;
+    pointer-events: none;
+  }
+  .currency.copy-btn {
+    pointer-events: auto;
+    background: none;
+    border: none;
+    font: inherit;
+    padding: 4px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .currency.copy-btn:hover {
+    color: #2563eb;
+  }
+  .currency.copy-btn:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  .field.result input {
+    color: #2563eb;
+    font-weight: 600;
+  }
+  select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: #1a1a1a;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  .rate-hint {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 6px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 24px 0;
+  }
+  .results {
+    background: #f8f9fb;
+    border-radius: 12px;
+    padding: 16px 16px 4px;
+    margin-bottom: 20px;
+  }
+  .field.result:last-child {
+    margin-bottom: 12px;
+  }
+  .eff-rate {
+    font-size: 13px;
+    color: #6b7280;
+    text-align: center;
+    margin: 0 0 20px;
+  }
+  .eff-rate b {
+    color: #1a1a1a;
+  }
+  .schedule-toggle {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    background: #f2f4f7;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    margin-bottom: 12px;
+  }
+  .schedule-toggle:hover {
+    background: #e5e7eb;
+  }
+  .schedule-wrap {
+    display: none;
+    margin-bottom: 12px;
+  }
+  .schedule-wrap.open {
+    display: block;
+  }
+  .schedule-note {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 0 0 8px;
+  }
+  .share-btn {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+    background: #eef2ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  .share-btn:hover {
+    background: #e0e7ff;
+  }
+
+  .article h2 {
+    font-size: 19px;
+    margin: 36px 0 12px;
+  }
+  .article h2:first-child {
+    margin-top: 0;
+  }
+  .article h3 {
+    font-size: 15px;
+    margin: 20px 0 8px;
+  }
+  .article p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0 0 12px;
+  }
+  .article ul {
+    padding-left: 20px;
+    margin: 0 0 12px;
+  }
+  .article li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 4px;
+  }
+  .formula-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 0 0 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    overflow-x: auto;
+  }
+  .rates-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .rates-table th, .rates-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eef0f3;
+  }
+  .rates-table th {
+    background: #f8f9fb;
+    color: #374151;
+    font-weight: 600;
+  }
+  .rates-table td {
+    color: #4b5563;
+  }
+  .rates-table tr:last-child td {
+    border-bottom: none;
+  }
+  .faq details {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+  }
+  .faq summary {
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .faq p {
+    margin: 10px 0 0;
+  }
+  .disclaimer {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 32px;
+    line-height: 1.5;
+  }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  .site-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    line-height: 1.6;
+  }
+  .site-footer a {
+    color: #6b7280;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #0f1115;
+      color: #e5e7eb;
+      color-scheme: dark;
+    }
+    .card, .formula-box, .rates-table, .faq details {
+      background: #1a1d24;
+      border-color: #2a2e37;
+    }
+    .card {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .results {
+      background: #12151b;
+    }
+    .eff-rate b {
+      color: #e5e7eb;
+    }
+    .schedule-toggle {
+      background: #12151b;
+      color: #cbd5e1;
+    }
+    .schedule-toggle:hover {
+      background: #1e222b;
+    }
+    label {
+      color: #cbd5e1;
+    }
+    input[type="text"], select {
+      background-color: #12151b;
+      border-color: #2a2e37;
+      color: #e5e7eb;
+    }
+    select {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    }
+    .subtitle, .rate-hint, .schedule-note, .eff-rate, .disclaimer, .site-footer {
+      color: #9ca3af;
+    }
+    .breadcrumb a {
+      color: #9ca3af;
+    }
+    .breadcrumb a:hover {
+      color: #93c5fd;
+    }
+    .divider {
+      border-top-color: #2a2e37;
+    }
+    .article p, .article li, .rates-table td {
+      color: #cbd5e1;
+    }
+    .rates-table th {
+      background: #12151b;
+      color: #cbd5e1;
+    }
+    .rates-table th, .rates-table td {
+      border-bottom-color: #2a2e37;
+    }
+    .share-btn {
+      background: #1e2a4a;
+      color: #93c5fd;
+    }
+    .share-btn:hover {
+      background: #26355e;
+    }
+    .site-footer {
+      border-top-color: #2a2e37;
+    }
+    .site-footer a {
+      color: #9ca3af;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор НДФЛ</h1>
+    <p class="subtitle">Введите оклад или сумму на руки — остальное пересчитается по прогрессивной шкале 13–22%</p>
+
+    <div class="field">
+      <label for="period">Период дохода</label>
+      <select id="period">
+        <option value="month">В месяц</option>
+        <option value="year">За год</option>
+      </select>
+      <p class="rate-hint" id="periodHint">Все суммы ниже — за месяц</p>
+    </div>
+
+    <div class="field">
+      <label for="gross">Доход до НДФЛ</label>
+      <div class="input-wrap">
+        <input type="text" id="gross" inputmode="decimal" value="100 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field result">
+      <label for="ndfl">Сумма НДФЛ</label>
+      <div class="input-wrap">
+        <input type="text" id="ndfl" readonly>
+        <button type="button" class="currency copy-btn" data-copy="ndfl" title="Скопировать значение">₽</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="net">Доход на руки</label>
+      <div class="input-wrap">
+        <input type="text" id="net" inputmode="decimal">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <p class="eff-rate" id="effRateHint">Эффективная ставка: —</p>
+
+    <button type="button" class="schedule-toggle" id="breakdownToggleBtn">Показать разбивку по ставкам</button>
+    <div class="schedule-wrap table-wrap" id="breakdownWrap">
+      <p class="schedule-note">В годовом исчислении, независимо от выбранного периода</p>
+      <table class="rates-table">
+        <thead>
+          <tr><th>Ставка</th><th>Доход в диапазоне</th><th>Налог</th></tr>
+        </thead>
+        <tbody id="breakdownBody"></tbody>
+      </table>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор НДФЛ</h2>
+    <p>Калькулятор считает налог на доходы физических лиц по прогрессивной шкале, которая действует в России с 1 января 2025 года. Введите оклад до вычета налога — и калькулятор покажет сумму НДФЛ и зарплату на руки. Либо, наоборот, введите желаемую сумму на руки — калькулятор посчитает, какой оклад для этого нужен. Всё считается локально в браузере, без отправки данных на сервер.</p>
+
+    <h2>Ставки НДФЛ с 2025 года</h2>
+    <p>Повышенная ставка применяется не ко всему доходу целиком, а только к части, которая превышает очередной порог — так же, как в большинстве развитых стран.</p>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead>
+          <tr><th>Доход за год</th><th>Ставка</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>До 2 400 000 ₽</td><td>13%</td></tr>
+          <tr><td>От 2 400 000 до 5 000 000 ₽</td><td>15%</td></tr>
+          <tr><td>От 5 000 000 до 20 000 000 ₽</td><td>18%</td></tr>
+          <tr><td>От 20 000 000 до 50 000 000 ₽</td><td>20%</td></tr>
+          <tr><td>Свыше 50 000 000 ₽</td><td>22%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Формула расчёта</h2>
+    <div class="formula-box">НДФЛ = сумма (доход в диапазоне × ставка диапазона) по всем диапазонам</div>
+    <p>Например, при годовом доходе 3 000 000 ₽ первые 2 400 000 ₽ облагаются по ставке 13% (312 000 ₽), а оставшиеся 600 000 ₽ — по ставке 15% (90 000 ₽). Итого НДФЛ за год — 402 000 ₽, на руки — 2 598 000 ₽. Эффективная ставка при этом составит около 13,4%, а не 15%, потому что повышенная ставка применяется только к части дохода сверх порога.</p>
+
+    <h2>Что не учитывает калькулятор</h2>
+    <ul>
+      <li><b>Налоговые вычеты</b> — стандартные (на детей), социальные (лечение, обучение) и имущественные (покупка жилья) уменьшают налогооблагаемую базу и, соответственно, сумму налога.</li>
+      <li><b>Особые категории плательщиков</b> — для участников СВО и работников районов Крайнего Севера по некоторым видам выплат действует упрощённая двухступенчатая шкала 13%/15% с порогом 5 млн ₽ вместо пятиступенчатой.</li>
+      <li><b>НДФЛ с отдельных видов доходов</b> — дивиденды, проценты по вкладам и некоторые другие доходы облагаются по своим правилам и не суммируются с трудовыми доходами для целей прогрессии.</li>
+    </ul>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как считается НДФЛ по прогрессивной шкале?</summary>
+        <p>С 1 января 2025 года действует пятиступенчатая шкала: 13% с дохода до 2,4 млн ₽ в год, 15% с части от 2,4 до 5 млн ₽, 18% с части от 5 до 20 млн ₽, 20% с части от 20 до 50 млн ₽ и 22% с части свыше 50 млн ₽.</p>
+      </details>
+      <details>
+        <summary>Как посчитать зарплату на руки по окладу?</summary>
+        <p>Нужно применить прогрессивную шкалу к годовому доходу (оклад за месяц × 12), получить сумму НДФЛ за год и вычесть её из годового дохода. Калькулятор делает это автоматически.</p>
+      </details>
+      <details>
+        <summary>Как узнать, какой оклад нужен для нужной суммы на руки?</summary>
+        <p>Введите нужную сумму в поле «Доход на руки» — калькулятор пересчитает оклад до вычета налога в обратную сторону.</p>
+      </details>
+      <details>
+        <summary>Учитывает ли калькулятор налоговые вычеты?</summary>
+        <p>Нет, расчёт идёт с полной суммы дохода без учёта вычетов на детей, за лечение или обучение — они уменьшили бы реальную сумму налога.</p>
+      </details>
+      <details>
+        <summary>Кто платит НДФЛ по ставкам выше 13%?</summary>
+        <p>Повышенные ставки касаются только части годового дохода сверх 2,4 млн ₽ — то есть дохода выше примерно 200 тысяч ₽ в месяц. Для большинства работников вся зарплата облагается по ставке 13%.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="ipoteka.html">Калькулятор ипотеки →</a></p>
+    <p><a href="nds.html">Калькулятор НДС →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и не учитывает налоговые вычеты, а также специальные ставки для отдельных категорий плательщиков. Для точного расчёта зарплаты обратитесь к бухгалтеру или в отдел кадров.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор НДФЛ · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const periodEl = document.getElementById('period');
+  const periodHintEl = document.getElementById('periodHint');
+  const grossEl = document.getElementById('gross');
+  const netEl = document.getElementById('net');
+  const ndflEl = document.getElementById('ndfl');
+  const effRateHintEl = document.getElementById('effRateHint');
+  const breakdownToggleBtn = document.getElementById('breakdownToggleBtn');
+  const breakdownWrap = document.getElementById('breakdownWrap');
+  const breakdownBody = document.getElementById('breakdownBody');
+
+  const BRACKETS = [
+    { limit: 2400000, rate: 0.13 },
+    { limit: 5000000, rate: 0.15 },
+    { limit: 20000000, rate: 0.18 },
+    { limit: 50000000, rate: 0.20 },
+    { limit: Infinity, rate: 0.22 }
+  ];
+
+  function taxFromGrossAnnual(gross) {
+    let tax = 0;
+    let prevLimit = 0;
+    for (const b of BRACKETS) {
+      if (gross <= prevLimit) break;
+      const amount = Math.min(gross, b.limit) - prevLimit;
+      tax += amount * b.rate;
+      prevLimit = b.limit;
+    }
+    return tax;
+  }
+
+  // Precompute net income at each bracket boundary, so net -> gross can be
+  // inverted analytically per-segment instead of solved iteratively.
+  const NET_SEGMENTS = (function () {
+    const segments = [];
+    let prevLimit = 0;
+    let prevNet = 0;
+    for (const b of BRACKETS) {
+      if (b.limit === Infinity) {
+        segments.push({ grossFrom: prevLimit, netFrom: prevNet, rate: b.rate, netTo: Infinity });
+        break;
+      }
+      const netAtLimit = b.limit - taxFromGrossAnnual(b.limit);
+      segments.push({ grossFrom: prevLimit, netFrom: prevNet, rate: b.rate, netTo: netAtLimit });
+      prevLimit = b.limit;
+      prevNet = netAtLimit;
+    }
+    return segments;
+  })();
+
+  function grossFromNetAnnual(net) {
+    if (net <= 0) return 0;
+    for (const seg of NET_SEGMENTS) {
+      if (net <= seg.netTo) {
+        return seg.grossFrom + (net - seg.netFrom) / (1 - seg.rate);
+      }
+    }
+    return 0;
+  }
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    const rounded = Math.round(n);
+    return String(rounded).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function format1(n) {
+    const rounded = Math.round(n * 10) / 10;
+    return rounded.toFixed(1).replace('.', ',');
+  }
+
+  function toAnnual(v) {
+    return periodEl.value === 'month' ? v * 12 : v;
+  }
+
+  function fromAnnual(v) {
+    return periodEl.value === 'month' ? v / 12 : v;
+  }
+
+  let lastGrossAnnual = toAnnual(parse(grossEl.value));
+
+  function renderBreakdown(grossAnnual) {
+    let rows = '';
+    let prevLimit = 0;
+    for (const b of BRACKETS) {
+      if (grossAnnual <= prevLimit) break;
+      const amount = Math.min(grossAnnual, b.limit) - prevLimit;
+      if (amount > 0) {
+        const tax = amount * b.rate;
+        rows += '<tr><td>' + format1(b.rate * 100) + '%</td><td>' + format(amount) + ' ₽</td><td>' + format(tax) + ' ₽</td></tr>';
+      }
+      prevLimit = b.limit;
+    }
+    breakdownBody.innerHTML = rows;
+  }
+
+  function recalcFrom(source) {
+    let grossAnnual, netAnnual, taxAnnual;
+
+    if (source === 'net') {
+      netAnnual = toAnnual(parse(netEl.value));
+      grossAnnual = grossFromNetAnnual(netAnnual);
+      taxAnnual = grossAnnual - netAnnual;
+    } else {
+      grossAnnual = toAnnual(parse(grossEl.value));
+      taxAnnual = taxFromGrossAnnual(grossAnnual);
+      netAnnual = grossAnnual - taxAnnual;
+    }
+
+    lastGrossAnnual = grossAnnual;
+
+    if (source !== 'gross') grossEl.value = grossAnnual ? format(fromAnnual(grossAnnual)) : '';
+    if (source !== 'net') netEl.value = grossAnnual ? format(fromAnnual(netAnnual)) : '';
+    ndflEl.value = grossAnnual ? format(fromAnnual(taxAnnual)) : '';
+    effRateHintEl.textContent = grossAnnual > 0
+      ? 'Эффективная ставка: ' + format1(taxAnnual / grossAnnual * 100) + '%'
+      : 'Эффективная ставка: —';
+
+    renderBreakdown(grossAnnual);
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'ndfl_calculation');
+    }, 1200);
+  }
+
+  grossEl.addEventListener('input', function () { recalcFrom('gross'); });
+  netEl.addEventListener('input', function () { recalcFrom('net'); });
+
+  periodEl.addEventListener('change', function () {
+    periodHintEl.textContent = periodEl.value === 'month' ? 'Все суммы ниже — за месяц' : 'Все суммы ниже — за год';
+    grossEl.value = lastGrossAnnual ? format(fromAnnual(lastGrossAnnual)) : '';
+    recalcFrom('gross');
+  });
+
+  breakdownToggleBtn.addEventListener('click', function () {
+    const isOpen = breakdownWrap.classList.toggle('open');
+    breakdownToggleBtn.textContent = isOpen ? 'Скрыть разбивку по ставкам' : 'Показать разбивку по ставкам';
+  });
+
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', async function () {
+      const targetEl = document.getElementById(btn.dataset.copy);
+      if (!targetEl.value) return;
+      const originalText = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(targetEl.value);
+        btn.textContent = '✓';
+      } catch (err) {
+        prompt('Скопируйте значение:', targetEl.value);
+      }
+      setTimeout(function () { btn.textContent = originalText; }, 1200);
+    });
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор НДФЛ',
+      text: 'Онлайн-калькулятор НДФЛ: зарплата на руки по прогрессивной шкале',
+      url: location.href
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // пользователь закрыл диалог — ничего не делаем
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) {
+        prompt('Скопируйте ссылку:', location.href);
+      }
+    }
+  });
+
+  recalcFrom('gross');
+</script>
+</body>
+</html>
