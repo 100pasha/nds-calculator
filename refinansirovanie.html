@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор рефинансирования кредита — сравнение и экономия</title>
+<meta name="description" content="Бесплатный калькулятор рефинансирования кредита или ипотеки: сравните текущий и новый платёж, узнайте реальную экономию за весь срок с учётом комиссий.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/refinansirovanie.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор рефинансирования кредита">
+<meta property="og:description" content="Сравнение текущего и нового кредита, расчёт реальной экономии.">
+<meta property="og:url" content="https://onecalc.ru/refinansirovanie.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор рефинансирования кредита">
+<meta name="twitter:description" content="Сравнение текущего и нового кредита после рефинансирования.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор рефинансирования кредита",
+  "url": "https://onecalc.ru/refinansirovanie.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор рефинансирования кредита или ипотеки: сравнение текущего и нового платежа, расчёт экономии за весь срок с учётом комиссий.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Когда рефинансирование кредита выгодно?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Обычно рефинансирование выгодно, если новая ставка ниже текущей минимум на 1,5–2 процентных пункта и остаток срока достаточно велик, чтобы экономия на процентах превысила расходы на оформление нового кредита (комиссии, страховку, оценку недвижимости для ипotéки)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Учитывает ли калькулятор комиссии за рефинансирование?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, введённая сумма комиссий и разовых расходов прибавляется к общей стоимости нового кредита и вычитается из итоговой экономии — так расчёт показывает реальную выгоду, а не только разницу в ставках."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли рефинансировать ипотеку в другом банке?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, это самый частый случай — новый банк выдаёт кредит на погашение остатка долга в старом банке под более низкую ставку. При этом придётся заново оформить залог, иногда — новую оценку недвижимости и страховку."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что выгоднее — уменьшить платёж или сократить срок?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Уменьшение ежемесячного платежа при том же сроке высвобождает деньги здесь и сейчас, но увеличивает общую переплату за счёт удлинения выплат процентов. Сохранение или сокращение срока при более низкой ставке даёт максимальную экономию на процентах за весь период."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .section-label { font-size: 13px; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.03em; margin: 24px 0 12px; }
+  .section-label:first-child { margin-top: 0; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .savings-positive { color: #16a34a !important; }
+  .savings-negative { color: #dc2626 !important; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"] { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор рефинансирования</h1>
+    <p class="subtitle">Сравните текущий кредит с новым — экономия пересчитается автоматически</p>
+
+    <p class="section-label">Текущий кредит</p>
+
+    <div class="field">
+      <label for="balance">Остаток долга</label>
+      <div class="input-wrap">
+        <input type="text" id="balance" inputmode="decimal" value="3 000 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="currentRate">Текущая ставка</label>
+      <div class="input-wrap">
+        <input type="text" id="currentRate" inputmode="decimal" value="22">
+        <span class="currency">% годовых</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="currentMonths">Оставшийся срок</label>
+      <div class="input-wrap">
+        <input type="text" id="currentMonths" inputmode="decimal" value="180">
+        <span class="currency">мес.</span>
+      </div>
+    </div>
+
+    <p class="section-label">Новый кредит</p>
+
+    <div class="field">
+      <label for="newRate">Новая ставка</label>
+      <div class="input-wrap">
+        <input type="text" id="newRate" inputmode="decimal" value="16">
+        <span class="currency">% годовых</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="newMonths">Новый срок</label>
+      <div class="input-wrap">
+        <input type="text" id="newMonths" inputmode="decimal" value="180">
+        <span class="currency">мес.</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="fees">Комиссии и разовые расходы</label>
+      <div class="input-wrap">
+        <input type="text" id="fees" inputmode="decimal" value="10 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Оценка, страховка, комиссия за оформление</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="currentPayment">Текущий платёж</label>
+        <div class="input-wrap">
+          <input type="text" id="currentPayment" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="newPayment">Новый платёж</label>
+        <div class="input-wrap">
+          <input type="text" id="newPayment" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="paymentDiff">Разница в платеже</label>
+        <div class="input-wrap">
+          <input type="text" id="paymentDiff" readonly>
+          <span class="currency">₽/мес</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="totalSavings">Экономия за весь срок</label>
+        <div class="input-wrap">
+          <input type="text" id="totalSavings" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор сравнивает два аннуитетных кредита — текущий (с уже действующей ставкой и оставшимся сроком) и новый, который получен путём рефинансирования. Из экономии на процентах вычитаются комиссии и разовые расходы на оформление, чтобы показать реальную выгоду, а не только разницу в ставках.</p>
+
+    <h2>Формула расчёта</h2>
+    <div class="formula-box">Платёж = Остаток долга × (i × (1+i)^n) / ((1+i)^n − 1)</div>
+    <p>Формула применяется дважды: с текущей ставкой и оставшимся сроком, и с новой ставкой и новым сроком. Далее сравниваются суммы всех платежей за весь период по каждому варианту, и из экономии вычитаются комиссии за рефинансирование.</p>
+    <div class="formula-box">Экономия = (Текущий платёж × Текущий срок) − (Новый платёж × Новый срок + Комиссии)</div>
+
+    <h2>Когда рефинансирование действительно выгодно</h2>
+    <ul>
+      <li>Разница ставок не менее 1,5–2 процентных пунктов</li>
+      <li>Остаток срока достаточно большой, чтобы экономия на процентах успела превысить расходы на оформление</li>
+      <li>Новый банк не требует существенно более дорогой страховки, которая может съесть часть выгоды</li>
+    </ul>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Когда рефинансирование выгодно?</summary>
+        <p>Обычно при разнице ставок от 1,5–2 процентных пунктов и достаточном остатке срока, чтобы экономия превысила расходы на оформление.</p>
+      </details>
+      <details>
+        <summary>Учитывает ли калькулятор комиссии?</summary>
+        <p>Да, введённая сумма комиссий вычитается из итоговой экономии.</p>
+      </details>
+      <details>
+        <summary>Можно ли рефинансировать ипотеку в другом банке?</summary>
+        <p>Да, это самый частый случай — новый банк гасит остаток долга в старом банке под более низкую ставку.</p>
+      </details>
+      <details>
+        <summary>Что выгоднее — снизить платёж или сократить срок?</summary>
+        <p>Снижение платежа освобождает бюджет сейчас, но увеличивает переплату. Сохранение срока при меньшей ставке даёт максимальную экономию на процентах.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="ipoteka.html">Калькулятор ипотеки →</a></p>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и не учитывает индивидуальные условия банков, стоимость страховки и требования к заёмщику. Точные условия рефинансирования уточняйте в конкретном банке.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор рефинансирования · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const balanceEl = document.getElementById('balance');
+  const currentRateEl = document.getElementById('currentRate');
+  const currentMonthsEl = document.getElementById('currentMonths');
+  const newRateEl = document.getElementById('newRate');
+  const newMonthsEl = document.getElementById('newMonths');
+  const feesEl = document.getElementById('fees');
+  const currentPaymentEl = document.getElementById('currentPayment');
+  const newPaymentEl = document.getElementById('newPayment');
+  const paymentDiffEl = document.getElementById('paymentDiff');
+  const totalSavingsEl = document.getElementById('totalSavings');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    const rounded = Math.round(n);
+    return String(rounded).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function annuityPayment(principal, ratePercent, months) {
+    const i = ratePercent / 100 / 12;
+    if (months <= 0) return 0;
+    if (i === 0) return principal / months;
+    const k = Math.pow(1 + i, months);
+    return principal * i * k / (k - 1);
+  }
+
+  function calculate() {
+    const balance = parse(balanceEl.value);
+    const currentRate = parse(currentRateEl.value);
+    const currentMonths = Math.round(parse(currentMonthsEl.value));
+    const newRate = parse(newRateEl.value);
+    const newMonths = Math.round(parse(newMonthsEl.value));
+    const fees = Math.max(0, parse(feesEl.value));
+
+    if (balance <= 0 || currentMonths <= 0 || newMonths <= 0) {
+      [currentPaymentEl, newPaymentEl, paymentDiffEl, totalSavingsEl].forEach(function (el) { el.value = ''; });
+      return;
+    }
+
+    const currentPayment = annuityPayment(balance, currentRate, currentMonths);
+    const newPayment = annuityPayment(balance, newRate, newMonths);
+
+    const currentTotal = currentPayment * currentMonths;
+    const newTotal = newPayment * newMonths + fees;
+    const savings = currentTotal - newTotal;
+
+    currentPaymentEl.value = format(currentPayment);
+    newPaymentEl.value = format(newPayment);
+    paymentDiffEl.value = format(currentPayment - newPayment);
+    totalSavingsEl.value = format(savings);
+    totalSavingsEl.classList.remove('savings-positive', 'savings-negative');
+    totalSavingsEl.classList.add(savings >= 0 ? 'savings-positive' : 'savings-negative');
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'refinance_calculation');
+    }, 1200);
+  }
+
+  [balanceEl, currentRateEl, currentMonthsEl, newRateEl, newMonthsEl, feesEl].forEach(function (el) {
+    el.addEventListener('input', calculate);
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор рефинансирования кредита',
+      text: 'Сравнение текущего и нового кредита после рефинансирования',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
