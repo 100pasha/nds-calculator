@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор ОСАГО — полная стоимость полиса по коэффициентам</title>
+<meta name="description" content="Бесплатный калькулятор полной стоимости полиса ОСАГО по методике ЦБ РФ: базовая ставка, КБМ, коэффициенты территории, возраста и стажа, мощности и периода использования.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/osago.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор ОСАГО">
+<meta property="og:description" content="Полная стоимость полиса ОСАГО по всем коэффициентам: КБМ, территория, возраст и стаж, мощность.">
+<meta property="og:url" content="https://onecalc.ru/osago.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор ОСАГО">
+<meta name="twitter:description" content="Стоимость полиса ОСАГО по коэффициентам КБМ, территории, возраста и стажа.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор ОСАГО",
+  "url": "https://onecalc.ru/osago.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор полной стоимости полиса ОСАГО по методике ЦБ РФ: базовая ставка, КБМ, коэффициенты территории, возраста и стажа водителя, мощности двигателя и периода использования.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Из каких коэффициентов складывается стоимость ОСАГО?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Итоговая премия = базовая ставка страховщика × КБМ (бонус-малус) × КТ (территория) × КВС (возраст и стаж водителя) × КМ (мощность двигателя) × КО (период использования). Каждый коэффициент утверждён методикой Банка России."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое КБМ и как его узнать?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "КБМ — коэффициент бонус-малус, который зависит от истории вашей аварийности: чем меньше выплат по вашей вине, тем ниже коэффициент и дешевле полис. Точное значение уточняйте у страховщика или в базе НСИС."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "От чего зависит коэффициент территории (КТ)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "КТ зависит от региона и города регистрации собственника автомобиля — в крупных городах с высокой аварийностью коэффициент обычно выше. Точные значения по регионам публикует Банк России."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как возраст и стаж водителя влияют на цену полиса?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Коэффициент КВС выше для водителей моложе 22 лет и/или со стажем вождения менее 3 лет — статистически они чаще попадают в ДТП. Для полисов без ограничения по числу водителей КВС не применяется."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"][readonly] { cursor: default; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+  .hidden { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"] { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор ОСАГО</h1>
+    <p class="subtitle">Полная стоимость полиса по всем коэффициентам методики ЦБ РФ</p>
+
+    <div class="field">
+      <label for="basePrice">Базовая ставка страховщика, ₽</label>
+      <div class="input-wrap">
+        <input type="text" id="basePrice" inputmode="decimal" value="5000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">В пределах тарифного коридора ЦБ РФ, зависит от страховщика</p>
+    </div>
+
+    <div class="field">
+      <label for="kbm">КБМ — коэффициент бонус-малус</label>
+      <div class="input-wrap">
+        <input type="text" id="kbm" inputmode="decimal" value="1">
+      </div>
+      <p class="rate-hint">Уточните точное значение у страховщика или в базе НСИС</p>
+    </div>
+
+    <div class="field">
+      <label for="kt">КТ — коэффициент территории</label>
+      <div class="input-wrap">
+        <input type="text" id="kt" inputmode="decimal" value="1.5">
+      </div>
+      <p class="rate-hint">Зависит от региона регистрации автомобиля, уточните в таблице ЦБ</p>
+    </div>
+
+    <div class="field">
+      <label for="kvs">КВС — коэффициент возраста и стажа водителя</label>
+      <div class="input-wrap">
+        <input type="text" id="kvs" inputmode="decimal" value="1">
+      </div>
+      <p class="rate-hint">Выше для водителей моложе 22 лет и/или со стажем менее 3 лет</p>
+    </div>
+
+    <div class="field">
+      <label for="km">КМ — коэффициент мощности двигателя</label>
+      <div class="input-wrap">
+        <input type="text" id="km" inputmode="decimal" value="1">
+      </div>
+      <p class="rate-hint">Растёт вместе с мощностью двигателя автомобиля</p>
+    </div>
+
+    <div class="field">
+      <label for="ko">КО — коэффициент периода использования</label>
+      <div class="input-wrap">
+        <input type="text" id="ko" inputmode="decimal" value="1">
+      </div>
+      <p class="rate-hint">1 — если автомобиль используется круглогодично</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="premium">Стоимость полиса</label>
+        <div class="input-wrap">
+          <input type="text" id="premium" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint" id="premiumHint">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает полную стоимость полиса ОСАГО по официальной формуле Банка России: базовая ставка страховщика умножается на шесть коэффициентов. Так как коридор базовых ставок и значения коэффициентов различаются у разных страховщиков и периодически пересматриваются ЦБ, все поля доступны для редактирования — подставьте свои значения из предложения страховщика или официальных таблиц, чтобы получить точную сумму.</p>
+
+    <h2>Формула расчёта премии</h2>
+    <p>Премия = базовая ставка × КБМ × КТ × КВС × КМ × КО. Каждый коэффициент отражает статистический риск: аварийность водителя (КБМ), региона (КТ), возраста и стажа (КВС), мощности автомобиля (КМ) и сезонности использования (КО).</p>
+
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Коэффициент</th><th>За что отвечает</th></tr></thead>
+        <tbody>
+          <tr><td>КБМ</td><td>История аварийности водителя</td></tr>
+          <tr><td>КТ</td><td>Регион регистрации автомобиля</td></tr>
+          <tr><td>КВС</td><td>Возраст и стаж вождения</td></tr>
+          <tr><td>КМ</td><td>Мощность двигателя</td></tr>
+          <tr><td>КО</td><td>Период использования автомобиля в году</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Пример расчёта</h2>
+    <p>При базовой ставке 5000 ₽ и всех коэффициентах, равных 1, кроме территориального КТ = 1,5, итоговая премия составит 5000 × 1 × 1,5 × 1 × 1 × 1 = 7500 ₽. Если у водителя есть скидка по КБМ (0,8), а автомобиль зарегистрирован в регионе с КТ = 1,8 и мощным двигателем (КМ = 1,1), при базовой ставке 6000 ₽ и КВС = 1,3 премия составит 6000 × 0,8 × 1,8 × 1,3 × 1,1 = 12 355 ₽.</p>
+
+    <h2>Почему нельзя показать фиксированные тарифы</h2>
+    <p>С 2018 года ОСАГО работает в рамках тарифного коридора: Банк России устанавливает минимальную и максимальную базовую ставку, а конкретное значение внутри коридора и часть коэффициентов каждый страховщик определяет самостоятельно. Поэтому единой «официальной» цены не существует — реальную стоимость полиса всегда стоит сверять в калькуляторе на сайте страховщика или у агента.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Из каких коэффициентов складывается стоимость ОСАГО?</summary>
+        <p>Премия = базовая ставка × КБМ × КТ × КВС × КМ × КО. Все коэффициенты утверждены методикой Банка России.</p>
+      </details>
+      <details>
+        <summary>Что такое КБМ и как его узнать?</summary>
+        <p>Коэффициент бонус-малус зависит от истории аварийности водителя. Точное значение уточняйте у страховщика или в базе НСИС.</p>
+      </details>
+      <details>
+        <summary>От чего зависит коэффициент территории (КТ)?</summary>
+        <p>От региона и города регистрации собственника автомобиля — в крупных городах коэффициент обычно выше.</p>
+      </details>
+      <details>
+        <summary>Как возраст и стаж водителя влияют на цену полиса?</summary>
+        <p>Коэффициент КВС выше для водителей моложе 22 лет и/или со стажем менее 3 лет. Для полиса без ограничений по числу водителей КВС не применяется.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="kbm-osago.html">Калькулятор КБМ ОСАГО →</a></p>
+    <p><a href="kasko.html">Калькулятор КАСКО →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер. Базовая ставка и значения коэффициентов зависят от конкретного страховщика и периодически пересматриваются Банком России — точную стоимость полиса уточняйте у страховой компании перед покупкой.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор ОСАГО · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const basePriceEl = document.getElementById('basePrice');
+  const kbmEl = document.getElementById('kbm');
+  const ktEl = document.getElementById('kt');
+  const kvsEl = document.getElementById('kvs');
+  const kmEl = document.getElementById('km');
+  const koEl = document.getElementById('ko');
+  const premiumEl = document.getElementById('premium');
+  const premiumHintEl = document.getElementById('premiumHint');
+
+  function parseNum(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function calculate() {
+    const base = Math.max(0, parseNum(basePriceEl.value));
+    const kbm = Math.max(0, parseNum(kbmEl.value));
+    const kt = Math.max(0, parseNum(ktEl.value));
+    const kvs = Math.max(0, parseNum(kvsEl.value));
+    const km = Math.max(0, parseNum(kmEl.value));
+    const ko = Math.max(0, parseNum(koEl.value));
+
+    const premium = base * kbm * kt * kvs * km * ko;
+
+    premiumEl.value = format(premium);
+    premiumHintEl.textContent = 'КБМ ' + kbm + ' × КТ ' + kt + ' × КВС ' + kvs + ' × КМ ' + km + ' × КО ' + ko;
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'osago_calculation');
+    }, 1200);
+  }
+
+  [basePriceEl, kbmEl, ktEl, kvsEl, kmEl, koEl].forEach(function (el) {
+    el.addEventListener('input', calculate);
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор ОСАГО',
+      text: 'Полная стоимость полиса ОСАГО по коэффициентам КБМ, территории, возраста и стажа',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
