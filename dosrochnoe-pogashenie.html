@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор досрочного погашения кредита — экономия на процентах</title>
+<meta name="description" content="Бесплатный калькулятор досрочного погашения кредита: сравните уменьшение срока и уменьшение платежа, узнайте точную экономию на процентах.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/dosrochnoe-pogashenie.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор досрочного погашения кредита">
+<meta property="og:description" content="Экономия на процентах при уменьшении срока или платежа.">
+<meta property="og:url" content="https://onecalc.ru/dosrochnoe-pogashenie.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор досрочного погашения кредита">
+<meta name="twitter:description" content="Экономия на процентах при уменьшении срока или платежа.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор досрочного погашения кредита",
+  "url": "https://onecalc.ru/dosrochnoe-pogashenie.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор досрочного погашения кредита: расчёт экономии на процентах при уменьшении срока или уменьшении платежа.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что выгоднее — уменьшение срока или уменьшение платежа?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Уменьшение срока при том же платеже почти всегда даёт большую экономию на процентах, потому что кредит закрывается быстрее и проценты начисляются на меньший остаток меньшее количество месяцев. Уменьшение платежа снижает ежемесячную нагрузку на бюджет, но экономия на процентах будет меньше."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Берёт ли банк комиссию за досрочное погашение?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет, по закону (ст. 809, 810 ГК РФ и ФЗ «О потребительском кредите») банк не вправе брать комиссию за досрочное погашение кредита — заёмщик платит только проценты, начисленные фактически за время пользования деньгами."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужно ли подавать заявление на досрочное погашение?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, большинство банков требуют подать заявление (в приложении, личном кабинете или отделении) заранее — обычно не позднее чем за один день до платежа, точный срок указан в кредитном договоре."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как часто можно вносить досрочные платежи?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Закон не ограничивает количество досрочных платежей — вносить их можно хоть каждый месяц. Ограничения по минимальной сумме или периодичности может устанавливать только конкретный банк в договоре."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+  .hidden { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Досрочное погашение кредита</h1>
+    <p class="subtitle">Узнайте, сколько сэкономите на процентах при частичном досрочном погашении</p>
+
+    <div class="field">
+      <label for="balance">Остаток долга</label>
+      <div class="input-wrap">
+        <input type="text" id="balance" inputmode="decimal" value="1 500 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="rate">Процентная ставка</label>
+      <div class="input-wrap">
+        <input type="text" id="rate" inputmode="decimal" value="16">
+        <span class="currency">% годовых</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="term">Оставшийся срок</label>
+      <div class="input-wrap">
+        <input type="text" id="term" inputmode="decimal" value="60">
+        <span class="currency">мес.</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="extra">Сумма досрочного платежа</label>
+      <div class="input-wrap">
+        <input type="text" id="extra" inputmode="decimal" value="300 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="method">Способ досрочного погашения</label>
+      <select id="method">
+        <option value="term">Уменьшение срока (платёж не меняется)</option>
+        <option value="payment">Уменьшение платежа (срок не меняется)</option>
+      </select>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="economy">Экономия на процентах</label>
+        <div class="input-wrap">
+          <input type="text" id="economy" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+
+      <div class="field result" id="newTermRow">
+        <label for="newTerm">Новый срок кредита</label>
+        <div class="input-wrap">
+          <input type="text" id="newTerm" readonly>
+          <span class="currency">мес.</span>
+        </div>
+        <p class="rate-hint" id="termHint">—</p>
+      </div>
+
+      <div class="field result hidden" id="newPaymentRow">
+        <label for="newPayment">Новый ежемесячный платёж</label>
+        <div class="input-wrap">
+          <input type="text" id="newPayment" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint" id="paymentHint">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор сравнивает две стратегии частичного досрочного погашения кредита с базовым сценарием — платежами по исходному графику без досрочного взноса. Расчёт выполняется помесячной симуляцией: на каждый месяц начисляются проценты на остаток долга, а разница между платежом и процентами уменьшает основной долг — это именно та схема, по которой считают банки.</p>
+
+    <h2>Уменьшение срока или уменьшение платежа</h2>
+    <p>При <b>уменьшении срока</b> ежемесячный платёж остаётся прежним, а кредит закрывается раньше — потому что после досрочного взноса на тот же платёж уходит меньше месяцев для погашения уменьшившегося остатка. При <b>уменьшении платежа</b> срок кредита не меняется, а банк пересчитывает платёж по аннуитетной формуле исходя из нового, уменьшенного остатка долга.</p>
+    <p>Уменьшение срока почти всегда даёт бо́льшую экономию на процентах, так как проценты начисляются на остаток меньшее количество месяцев. Уменьшение платежа выгодно, если важнее снизить ежемесячную нагрузку на бюджет здесь и сейчас.</p>
+
+    <h2>Пример расчёта</h2>
+    <p>Остаток долга — 1 500 000 ₽, ставка — 16% годовых, оставшийся срок — 60 месяцев, досрочный платёж — 300 000 ₽. При выборе «уменьшение срока» кредит закрывается примерно на 16 месяцев раньше, экономия на процентах — около 298 000 ₽. При выборе «уменьшение платежа» срок остаётся 60 месяцев, но платёж снижается, а экономия на процентах составит около 138 000 ₽.</p>
+
+    <h2>Комиссия за досрочное погашение — незаконна</h2>
+    <p>По статьям 809 и 810 ГК РФ, а также по закону «О потребительском кредите (займе)», банк не вправе взимать комиссию за досрочное погашение — заёмщик платит только фактически начисленные проценты за время пользования кредитом. Уведомить банк о досрочном платеже обычно нужно заранее — срок и способ подачи заявления указаны в кредитном договоре.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Что выгоднее — уменьшение срока или уменьшение платежа?</summary>
+        <p>Уменьшение срока почти всегда даёт большую экономию на процентах. Уменьшение платежа снижает ежемесячную нагрузку, но экономия будет меньше.</p>
+      </details>
+      <details>
+        <summary>Берёт ли банк комиссию за досрочное погашение?</summary>
+        <p>Нет, по закону комиссия за досрочное погашение не взимается — оплачиваются только фактически начисленные проценты.</p>
+      </details>
+      <details>
+        <summary>Нужно ли подавать заявление на досрочное погашение?</summary>
+        <p>Да, большинство банков требуют подать заявление заранее — точный срок указан в кредитном договоре.</p>
+      </details>
+      <details>
+        <summary>Как часто можно вносить досрочные платежи?</summary>
+        <p>Закон не ограничивает количество досрочных платежей. Ограничения по минимальной сумме может устанавливать только банк в договоре.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="ipoteka.html">Калькулятор ипотеки →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и использует упрощённую помесячную симуляцию аннуитетного графика. Реальная экономия зависит от даты внесения платежа в расчётном периоде и правил конкретного банка.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Досрочное погашение кредита · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const balanceEl = document.getElementById('balance');
+  const rateEl = document.getElementById('rate');
+  const termEl = document.getElementById('term');
+  const extraEl = document.getElementById('extra');
+  const methodEl = document.getElementById('method');
+
+  const economyEl = document.getElementById('economy');
+  const newTermRow = document.getElementById('newTermRow');
+  const newTermEl = document.getElementById('newTerm');
+  const termHintEl = document.getElementById('termHint');
+  const newPaymentRow = document.getElementById('newPaymentRow');
+  const newPaymentEl = document.getElementById('newPayment');
+  const paymentHintEl = document.getElementById('paymentHint');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function annuity(principal, monthlyRate, months) {
+    if (monthlyRate === 0) return principal / months;
+    const k = Math.pow(1 + monthlyRate, months);
+    return principal * monthlyRate * k / (k - 1);
+  }
+
+  // Помесячная симуляция аннуитетного графика: возвращает число месяцев до
+  // погашения, суммарные проценты и остаток долга (для случая, когда лимит
+  // месяцев исчерпан раньше полного погашения).
+  function simulate(balance, monthlyRate, payment, maxMonths) {
+    let bal = balance;
+    let totalInterest = 0;
+    let months = 0;
+    while (bal > 0.5 && months < maxMonths) {
+      const interest = bal * monthlyRate;
+      let principal = payment - interest;
+      if (principal > bal) principal = bal;
+      if (principal <= 0) break; // платёж не покрывает даже проценты
+      bal -= principal;
+      totalInterest += interest;
+      months++;
+    }
+    return { months: months, totalInterest: totalInterest, balance: bal };
+  }
+
+  function clearResults(msg) {
+    economyEl.value = '';
+    newTermEl.value = '';
+    newPaymentEl.value = '';
+    termHintEl.textContent = msg || '—';
+    paymentHintEl.textContent = msg || '—';
+  }
+
+  function updateVisibility() {
+    const isTerm = methodEl.value === 'term';
+    newTermRow.classList.toggle('hidden', !isTerm);
+    newPaymentRow.classList.toggle('hidden', isTerm);
+  }
+
+  function calculate() {
+    const balance = parse(balanceEl.value);
+    const ratePercent = parse(rateEl.value);
+    const term = Math.round(parse(termEl.value));
+    const extra = parse(extraEl.value);
+    const method = methodEl.value;
+
+    if (balance <= 0 || term <= 0 || ratePercent < 0 || extra < 0) {
+      clearResults();
+      return;
+    }
+
+    const monthlyRate = ratePercent / 100 / 12;
+    const baseMonthly = annuity(balance, monthlyRate, term);
+    const base = simulate(balance, monthlyRate, baseMonthly, term);
+
+    const newBalance = balance - extra;
+
+    if (newBalance <= 0) {
+      economyEl.value = format(base.totalInterest);
+      newTermEl.value = '0';
+      newPaymentEl.value = '0';
+      termHintEl.textContent = 'Досрочный платёж полностью погашает остаток долга';
+      paymentHintEl.textContent = 'Досрочный платёж полностью погашает остаток долга';
+      trackCalculation();
+      return;
+    }
+
+    if (method === 'term') {
+      const after = simulate(newBalance, monthlyRate, baseMonthly, 1200);
+      const economy = base.totalInterest - after.totalInterest;
+      economyEl.value = format(economy);
+      newTermEl.value = format(after.months);
+      termHintEl.textContent = 'Было ' + term + ' мес., платёж остаётся ' + format(baseMonthly) + ' ₽';
+    } else {
+      const newPayment = annuity(newBalance, monthlyRate, term);
+      const after = simulate(newBalance, monthlyRate, newPayment, term);
+      const economy = base.totalInterest - after.totalInterest;
+      economyEl.value = format(economy);
+      newPaymentEl.value = format(newPayment);
+      paymentHintEl.textContent = 'Было ' + format(baseMonthly) + ' ₽, срок остаётся ' + term + ' мес.';
+    }
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'dosrochnoe_pogashenie_calculation');
+    }, 1200);
+  }
+
+  methodEl.addEventListener('change', function () { updateVisibility(); calculate(); });
+  [balanceEl, rateEl, termEl, extraEl].forEach(function (el) {
+    el.addEventListener('input', calculate);
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор досрочного погашения кредита',
+      text: 'Экономия на процентах при уменьшении срока или платежа',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  updateVisibility();
+  calculate();
+</script>
+</body>
+</html>

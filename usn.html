@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор УСН — доходы 6% или доходы минус расходы 15%</title>
+<meta name="description" content="Бесплатный калькулятор УСН: расчёт налога по объекту «Доходы» с уменьшением на страховые взносы и по объекту «Доходы минус расходы» с учётом минимального налога 1%.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/usn.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор УСН">
+<meta property="og:description" content="Расчёт налога на УСН «Доходы» и «Доходы минус расходы» с учётом страховых взносов и минимального налога.">
+<meta property="og:url" content="https://onecalc.ru/usn.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор УСН">
+<meta name="twitter:description" content="Расчёт налога на УСН «Доходы» и «Доходы минус расходы».">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор УСН",
+  "url": "https://onecalc.ru/usn.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор УСН: расчёт налога по объекту «Доходы» с уменьшением на страховые взносы и по объекту «Доходы минус расходы» с учётом минимального налога 1%.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как считается налог на УСН «Доходы»?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Доходы × ставка (обычно 6%, регион может снизить). Полученный налог можно уменьшить на уплаченные страховые взносы: ИП без работников — вплоть до 100%, ИП с работниками и ООО — не более чем на 50%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как считается налог на УСН «Доходы минус расходы»?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "(Доходы − Расходы) × ставка (обычно 15%, регион может снизить). Если рассчитанный налог меньше 1% от доходов, уплатить нужно минимальный налог — 1% от доходов за год."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое минимальный налог на УСН?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1% от суммы доходов за год — минимальная сумма налога на объекте «Доходы минус расходы», которую нужно заплатить, даже если реальный налог по ставке ниже или деятельность принесла убыток."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли уменьшить налог на УСН «Доходы» до нуля?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, если ИП работает без наёмных сотрудников и сумма уплаченных за себя страховых взносов покрывает весь рассчитанный налог. ИП с работниками и организации могут уменьшить налог не более чем на 50%."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+  .hidden { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор УСН</h1>
+    <p class="subtitle">Выберите объект налогообложения и введите данные — налог пересчитается автоматически</p>
+
+    <div class="field">
+      <label for="mode">Объект налогообложения</label>
+      <select id="mode">
+        <option value="income">Доходы</option>
+        <option value="income-expense">Доходы минус расходы</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="income">Доходы за период</label>
+      <div class="input-wrap">
+        <input type="text" id="income" inputmode="decimal" value="3 000 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field hidden" id="expensesField">
+      <label for="expenses">Расходы за период</label>
+      <div class="input-wrap">
+        <input type="text" id="expenses" inputmode="decimal" value="2 200 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field" id="rateField">
+      <label for="rate">Ставка налога</label>
+      <div class="input-wrap">
+        <input type="text" id="rate" inputmode="decimal" value="6">
+        <span class="currency">%</span>
+      </div>
+      <p class="rate-hint" id="rateHint">Стандартная ставка 6% для «Доходы», регион может её снизить</p>
+    </div>
+
+    <div class="field" id="employeesField">
+      <label for="hasEmployees">Наёмные работники</label>
+      <select id="hasEmployees">
+        <option value="no">Нет — можно уменьшить до 100%</option>
+        <option value="yes">Есть — можно уменьшить не более чем на 50%</option>
+      </select>
+    </div>
+
+    <div class="field" id="contributionsField">
+      <label for="contributions">Уплаченные страховые взносы</label>
+      <div class="input-wrap">
+        <input type="text" id="contributions" inputmode="decimal" value="49 500">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="taxBefore">Налог до уменьшения</label>
+        <div class="input-wrap">
+          <input type="text" id="taxBefore" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="final">Налог к уплате</label>
+        <div class="input-wrap">
+          <input type="text" id="final" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint" id="finalHint">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает налог на упрощённой системе налогообложения (УСН, глава 26.2 НК РФ) по двум объектам — «Доходы» и «Доходы минус расходы». Для «Доходов» учитывается уменьшение налога на уплаченные страховые взносы, для «Доходов минус расходы» — правило минимального налога.</p>
+
+    <h2>Формула для объекта «Доходы»</h2>
+    <div class="formula-box">Налог до уменьшения = Доходы × Ставка</div>
+    <div class="formula-box">Уменьшение = min(Взносы, Налог × 100% без работников или 50% с работниками)</div>
+    <div class="formula-box">К уплате = Налог до уменьшения − Уменьшение</div>
+    <p>Например, при доходе 3 000 000 ₽, ставке 6% и взносах 49 500 ₽ без работников: налог до уменьшения = 180 000 ₽, уменьшение = min(49 500, 180 000) = 49 500 ₽ → к уплате 130 500 ₽.</p>
+
+    <h2>Формула для объекта «Доходы минус расходы»</h2>
+    <div class="formula-box">База = max(0, Доходы − Расходы)</div>
+    <div class="formula-box">Налог = База × Ставка</div>
+    <div class="formula-box">К уплате = max(Налог, Доходы × 1%)</div>
+    <p>Например, при доходе 3 000 000 ₽, расходах 2 200 000 ₽ и ставке 15%: база = 800 000 ₽, налог = 120 000 ₽, минимальный налог = 30 000 ₽ → к уплате 120 000 ₽, так как он больше минимального.</p>
+
+    <h2>Уменьшение налога «Доходы» на взносы</h2>
+    <ul>
+      <li><b>ИП без работников</b> — уменьшает налог на уплаченные за себя взносы вплоть до 100%, вплоть до нуля.</li>
+      <li><b>ИП с работниками и ООО</b> — уменьшают не более чем на 50% от рассчитанного налога, учитывая взносы за себя и за сотрудников.</li>
+    </ul>
+
+    <h2>Минимальный налог на объекте «Доходы минус расходы»</h2>
+    <p>Если по итогам года реальный налог (база × ставка) оказался меньше 1% от доходов — в том числе при убытке — нужно заплатить именно 1% от доходов. Это правило действует, даже если расходы превысили доходы.</p>
+
+    <h2>Ставки региона</h2>
+    <p>Базовые ставки — 6% для «Доходы» и 15% для «Доходы минус расходы», но региональным законом они могут быть снижены — вплоть до 1% и 5% соответственно, а для новых ИП в отдельных сферах деятельности возможны налоговые каникулы по ставке 0%.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как считается налог на УСН «Доходы»?</summary>
+        <p>Доходы × ставка, уменьшенные на уплаченные страховые взносы (до 100% без работников, до 50% с работниками).</p>
+      </details>
+      <details>
+        <summary>Как считается налог на «Доходы минус расходы»?</summary>
+        <p>(Доходы − Расходы) × ставка, но не менее 1% от доходов (минимальный налог).</p>
+      </details>
+      <details>
+        <summary>Что такое минимальный налог?</summary>
+        <p>1% от доходов за год — минимальная сумма к уплате на объекте «Доходы минус расходы», даже при убытке.</p>
+      </details>
+      <details>
+        <summary>Можно ли уменьшить налог «Доходы» до нуля?</summary>
+        <p>Да, если ИП без работников и взносы покрывают весь налог. С работниками — уменьшение не более 50%.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="vznosy-ip.html">Калькулятор страховых взносов ИП →</a></p>
+    <p><a href="patent.html">Калькулятор патента для ИП →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер. Ставка налога зависит от региона и вида деятельности и может быть снижена местным законом или обнулена налоговыми каникулами — точную ставку уточняйте на сайте ФНС.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор УСН · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const modeEl = document.getElementById('mode');
+  const incomeEl = document.getElementById('income');
+  const expensesField = document.getElementById('expensesField');
+  const expensesEl = document.getElementById('expenses');
+  const rateEl = document.getElementById('rate');
+  const rateHintEl = document.getElementById('rateHint');
+  const employeesField = document.getElementById('employeesField');
+  const hasEmployeesEl = document.getElementById('hasEmployees');
+  const contributionsField = document.getElementById('contributionsField');
+  const contributionsEl = document.getElementById('contributions');
+  const taxBeforeEl = document.getElementById('taxBefore');
+  const finalEl = document.getElementById('final');
+  const finalHintEl = document.getElementById('finalHint');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function updateVisibility() {
+    const isIncomeExpense = modeEl.value === 'income-expense';
+    expensesField.classList.toggle('hidden', !isIncomeExpense);
+    employeesField.classList.toggle('hidden', isIncomeExpense);
+    contributionsField.classList.toggle('hidden', isIncomeExpense);
+    rateHintEl.textContent = isIncomeExpense
+      ? 'Стандартная ставка 15% для «Доходы минус расходы», регион может её снизить'
+      : 'Стандартная ставка 6% для «Доходы», регион может её снизить';
+    if (isIncomeExpense && rateEl.value === '6') rateEl.value = '15';
+    if (!isIncomeExpense && rateEl.value === '15') rateEl.value = '6';
+  }
+
+  function calculate() {
+    const mode = modeEl.value;
+    const income = Math.max(0, parse(incomeEl.value));
+    const rate = Math.max(0, parse(rateEl.value));
+
+    if (mode === 'income') {
+      const contributions = Math.max(0, parse(contributionsEl.value));
+      const taxBefore = income * rate / 100;
+      const maxReduction = hasEmployeesEl.value === 'yes' ? taxBefore * 0.5 : taxBefore;
+      const reduction = Math.min(contributions, maxReduction);
+      const final = taxBefore - reduction;
+
+      taxBeforeEl.value = format(taxBefore);
+      finalEl.value = format(final);
+      finalHintEl.textContent = 'Уменьшено на страховые взносы: ' + format(reduction) + ' ₽';
+    } else {
+      const expenses = Math.max(0, parse(expensesEl.value));
+      const base = Math.max(0, income - expenses);
+      const tax = base * rate / 100;
+      const minTax = income * 0.01;
+      const final = Math.max(tax, minTax);
+
+      taxBeforeEl.value = format(tax);
+      finalEl.value = format(final);
+      finalHintEl.textContent = final === minTax && minTax > tax
+        ? 'Применён минимальный налог 1% от доходов'
+        : 'Минимальный налог (1% от доходов): ' + format(minTax) + ' ₽';
+    }
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'usn_calculation');
+    }, 1200);
+  }
+
+  modeEl.addEventListener('change', function () { updateVisibility(); calculate(); });
+  [incomeEl, expensesEl, rateEl, contributionsEl].forEach(function (el) { el.addEventListener('input', calculate); });
+  hasEmployeesEl.addEventListener('change', calculate);
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор УСН',
+      text: 'Онлайн-калькулятор налога на УСН «Доходы» и «Доходы минус расходы»',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  updateVisibility();
+  calculate();
+</script>
+</body>
+</html>

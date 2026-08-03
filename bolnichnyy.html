@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор больничного листа — расчёт оплаты онлайн</title>
+<meta name="description" content="Бесплатный калькулятор больничного листа: расчёт оплаты по среднему заработку за 2 года с учётом процента от страхового стажа.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/bolnichnyy.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор больничного листа">
+<meta property="og:description" content="Оплата больничного по среднему заработку и стажу.">
+<meta property="og:url" content="https://onecalc.ru/bolnichnyy.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор больничного листа">
+<meta name="twitter:description" content="Оплата больничного по среднему заработку и стажу.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор больничного листа",
+  "url": "https://onecalc.ru/bolnichnyy.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор больничного листа: расчёт суммы пособия по временной нетрудоспособности исходя из среднего заработка за 2 года и страхового стажа.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как рассчитывается оплата больничного?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Средний дневной заработок = доход за 2 предыдущих календарных года ÷ 730. Пособие = средний дневной заработок × процент от стажа × число дней больничного. Процент зависит от страхового стажа: до 5 лет — 60%, от 5 до 8 лет — 80%, от 8 лет — 100%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "От чего зависит процент оплаты больничного?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "От страхового стажа: при стаже менее 5 лет оплачивается 60% среднего заработка, при стаже от 5 до 8 лет — 80%, при стаже от 8 лет — 100%. Есть исключения, например травмы на производстве оплачиваются по 100% независимо от стажа."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Есть ли минимальный и максимальный размер больничного?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, пособие не может быть ниже суммы, рассчитанной исходя из МРОТ, и не может быть выше суммы, ограниченной предельной базой для начисления страховых взносов за каждый из двух расчётных лет. Оба лимита ежегодно меняются, поэтому калькулятор их не учитывает — точные значения уточняйте у работодателя или в СФР."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кто оплачивает больничный лист?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Первые три дня болезни работника оплачивает работодатель, начиная с четвёртого дня и до конца больничного — Социальный фонд России. При больничном по уходу за ребёнком и в некоторых других случаях вся сумма выплачивается СФР."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+  .hidden { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор больничного листа</h1>
+    <p class="subtitle">Рассчитайте пособие по временной нетрудоспособности исходя из дохода и стажа</p>
+
+    <div class="field">
+      <label for="income2y">Доход за 2 предыдущих календарных года</label>
+      <div class="input-wrap">
+        <input type="text" id="income2y" inputmode="decimal" value="1 800 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Суммарный доход, с которого уплачивались страховые взносы, за оба года</p>
+    </div>
+
+    <div class="field">
+      <label for="stazh">Страховой стаж</label>
+      <div class="input-wrap">
+        <input type="text" id="stazh" inputmode="decimal" value="10">
+        <span class="currency">лет</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="days">Количество дней больничного</label>
+      <div class="input-wrap">
+        <input type="text" id="days" inputmode="decimal" value="10">
+        <span class="currency">дн.</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="avgDaily">Средний дневной заработок</label>
+        <div class="input-wrap">
+          <input type="text" id="avgDaily" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+
+      <div class="field result">
+        <label for="percent">Процент оплаты от стажа</label>
+        <div class="input-wrap">
+          <input type="text" id="percent" readonly>
+          <span class="currency">%</span>
+        </div>
+      </div>
+
+      <div class="field result">
+        <label for="payment">Сумма пособия</label>
+        <div class="input-wrap">
+          <input type="text" id="payment" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint">Без учёта минимального (МРОТ) и максимального (предельная база взносов) лимитов</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает пособие по временной нетрудоспособности по стандартной формуле ФЗ-255: средний дневной заработок за 2 предыдущих календарных года делится на 730 дней, умножается на процент, зависящий от страхового стажа, и на число дней больничного.</p>
+
+    <h2>Формула расчёта</h2>
+    <p>Средний дневной заработок = доход за 2 года ÷ 730.</p>
+    <p>Пособие = средний дневной заработок × процент от стажа × число дней больничного.</p>
+
+    <h2>Процент оплаты в зависимости от стажа</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Страховой стаж</th><th>Процент оплаты</th></tr></thead>
+        <tbody>
+          <tr><td>Менее 5 лет</td><td>60%</td></tr>
+          <tr><td>От 5 до 8 лет</td><td>80%</td></tr>
+          <tr><td>8 лет и более</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Из этого правила есть исключения: производственная травма и профзаболевание оплачиваются по 100% независимо от стажа, а при стаже менее 6 месяцев пособие считается исходя из МРОТ, а не фактического заработка.</p>
+
+    <h2>Пример расчёта</h2>
+    <p>Доход за 2 года — 1 800 000 ₽, страховой стаж — 10 лет (100%), больничный — 10 дней. Средний дневной заработок = 1 800 000 ÷ 730 = 2 465,75 ₽. Пособие = 2 465,75 × 100% × 10 = 24 658 ₽.</p>
+
+    <h2>Лимиты, которые калькулятор не учитывает</h2>
+    <ul>
+      <li><b>Минимальный размер</b> — пособие не может быть ниже суммы, рассчитанной исходя из действующего МРОТ.</li>
+      <li><b>Максимальный размер</b> — пособие ограничено сверху предельной базой для начисления страховых взносов за каждый из двух расчётных лет.</li>
+    </ul>
+    <p>Оба показателя ежегодно меняются, поэтому калькулятор не подставляет их автоматически — точные текущие значения уточняйте у работодателя или в Социальном фонде России.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как рассчитывается оплата больничного?</summary>
+        <p>Средний дневной заработок = доход за 2 года ÷ 730. Пособие = средний дневной заработок × процент от стажа × число дней больничного.</p>
+      </details>
+      <details>
+        <summary>От чего зависит процент оплаты больничного?</summary>
+        <p>От страхового стажа: до 5 лет — 60%, от 5 до 8 лет — 80%, от 8 лет — 100%. Есть исключения, например производственные травмы оплачиваются по 100%.</p>
+      </details>
+      <details>
+        <summary>Есть ли минимальный и максимальный размер больничного?</summary>
+        <p>Да, снизу ограничен МРОТ, сверху — предельной базой страховых взносов за каждый год. Оба лимита ежегодно меняются.</p>
+      </details>
+      <details>
+        <summary>Кто оплачивает больничный лист?</summary>
+        <p>Первые три дня — работодатель, с четвёртого дня — Социальный фонд России. При уходе за ребёнком СФР оплачивает всю сумму.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="dekretnye.html">Калькулятор декретных пособий →</a></p>
+    <p><a href="trudovoy-stazh.html">Калькулятор трудового стажа →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и не учитывает минимальные (МРОТ) и максимальные (предельная база страховых взносов) лимиты пособия, актуальные на текущий год. Точную сумму рассчитывает работодатель или Социальный фонд России.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор больничного листа · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const income2yEl = document.getElementById('income2y');
+  const stazhEl = document.getElementById('stazh');
+  const daysEl = document.getElementById('days');
+  const avgDailyEl = document.getElementById('avgDaily');
+  const percentEl = document.getElementById('percent');
+  const paymentEl = document.getElementById('payment');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function format2(n) {
+    return (Math.round(n * 100) / 100).toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function calculate() {
+    const income2y = parse(income2yEl.value);
+    const stazh = parse(stazhEl.value);
+    const days = Math.round(parse(daysEl.value));
+
+    if (income2y <= 0 || stazh < 0 || days <= 0) {
+      avgDailyEl.value = '';
+      percentEl.value = '';
+      paymentEl.value = '';
+      return;
+    }
+
+    const avgDaily = income2y / 730;
+    const percent = stazh < 5 ? 60 : (stazh < 8 ? 80 : 100);
+    const payment = Math.round(avgDaily * (percent / 100) * days);
+
+    avgDailyEl.value = format2(avgDaily);
+    percentEl.value = percent;
+    paymentEl.value = format(payment);
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'bolnichnyy_calculation');
+    }, 1200);
+  }
+
+  [income2yEl, stazhEl, daysEl].forEach(function (el) {
+    el.addEventListener('input', calculate);
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор больничного листа',
+      text: 'Расчёт оплаты больничного по среднему заработку и стажу',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
