@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор материнского капитала — остаток и индексация</title>
+<meta name="description" content="Бесплатный калькулятор материнского капитала: остаток сертификата после уже потраченной суммы и его прогнозная величина через несколько лет с учётом индексации.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/matkapital.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор материнского капитала">
+<meta property="og:description" content="Остаток материнского капитала и его размер через несколько лет с учётом индексации.">
+<meta property="og:url" content="https://onecalc.ru/matkapital.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор материнского капитала">
+<meta name="twitter:description" content="Остаток материнского капитала с учётом индексации.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор материнского капитала",
+  "url": "https://onecalc.ru/matkapital.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор остатка материнского капитала после уже потраченной суммы и его прогнозной величины через несколько лет с учётом ежегодной индексации.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Индексируется ли остаток материнского капитала?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, неиспользованный остаток материнского капитала ежегодно индексируется государством на уровень инфляции — с 1 февраля каждого года, без каких-либо заявлений со стороны владельца сертификата."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как узнать точный остаток материнского капитала?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Точный остаток можно посмотреть в личном кабинете на портале Госуслуг или в клиентской службе Социального фонда России (СФР) — калькулятор на этой странице даёт лишь ориентировочный прогноз."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сгорает ли материнский капитал, если его не использовать?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет, право на материнский капитал бессрочно и не имеет срока действия — сертификат не сгорает, даже если семья долгое время не расходует средства."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли получить остаток материнского капитала наличными?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет, наличными материнский капитал не выдаётся, кроме единовременной выплаты, если её размер не превышает установленный законом порог. Средства перечисляются безналично на цели, разрешённые законом — незаконное обналичивание уголовно наказуемо."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .hint { font-size: 12px; color: #9ca3af; margin-top: -14px; margin-bottom: 20px; line-height: 1.5; }
+  .hint a { color: #6b7280; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+  .hidden { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer, .hint { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+    .hint a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Материнский капитал</h1>
+    <p class="subtitle">Остаток сертификата и его размер через несколько лет с учётом индексации</p>
+
+    <div class="field">
+      <label for="totalAmount">Сумма материнского капитала по сертификату, ₽</label>
+      <div class="input-wrap">
+        <input type="text" id="totalAmount" inputmode="decimal" value="630000">
+      </div>
+      <p class="hint">Сумма зависит от того, на первого или второго ребёнка выдан сертификат, и года его выдачи — актуальный размер смотрите на <a href="https://sfr.gov.ru" target="_blank" rel="noopener">sfr.gov.ru</a> или в личном кабинете на Госуслугах.</p>
+    </div>
+
+    <div class="field">
+      <label for="spent">Уже потрачено, ₽</label>
+      <div class="input-wrap">
+        <input type="text" id="spent" inputmode="decimal" value="200000">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="years">Через сколько лет посчитать остаток, лет</label>
+      <div class="input-wrap">
+        <input type="text" id="years" inputmode="decimal" value="3">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="indexationRate">Ожидаемая индексация в год, %</label>
+      <div class="input-wrap">
+        <input type="text" id="indexationRate" inputmode="decimal" value="6">
+      </div>
+      <p class="hint">Значение по умолчанию иллюстративное и ориентируется на уровень инфляции — фактическая индексация устанавливается ежегодно законом о бюджете и не гарантирована.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="remainingNow">Остаток сейчас</label>
+        <div class="input-wrap">
+          <input type="text" id="remainingNow" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="remainingFuture">Остаток через указанный срок</label>
+        <div class="input-wrap">
+          <input type="text" id="remainingFuture" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint" id="futureHint">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает текущий остаток материнского капитала как разницу между суммой сертификата и уже потраченными средствами, а затем прогнозирует, каким будет этот остаток через указанное количество лет, если он будет ежегодно индексироваться на заданный процент.</p>
+
+    <h2>Формула расчёта</h2>
+    <p>Остаток сейчас = сумма сертификата − уже потрачено. Остаток через N лет = остаток сейчас × (1 + индексация / 100)ⁿ, где N — количество лет до расчётной даты.</p>
+
+    <h2>Индексация материнского капитала</h2>
+    <p>Неиспользованный остаток материнского капитала ежегодно индексируется государством на уровень инфляции — обычно с 1 февраля. Индексация происходит автоматически, без заявлений со стороны владельца сертификата, и применяется именно к неизрасходованному остатку.</p>
+
+    <h2>На что можно направить остаток</h2>
+    <ul>
+      <li>Улучшение жилищных условий — покупка, строительство или погашение ипотеки</li>
+      <li>Образование любого из детей в семье</li>
+      <li>Формирование накопительной пенсии матери</li>
+      <li>Товары и услуги для социальной адаптации детей-инвалидов</li>
+      <li>Ежемесячная выплата для нуждающихся семей с невысоким доходом</li>
+    </ul>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Индексируется ли остаток материнского капитала?</summary>
+        <p>Да, ежегодно на уровень инфляции с 1 февраля, автоматически, без заявления владельца сертификата.</p>
+      </details>
+      <details>
+        <summary>Как узнать точный остаток?</summary>
+        <p>В личном кабинете на Госуслугах или в клиентской службе СФР — калькулятор даёт лишь ориентировочный прогноз.</p>
+      </details>
+      <details>
+        <summary>Сгорает ли материнский капитал, если его не использовать?</summary>
+        <p>Нет, право на капитал бессрочно, сертификат не имеет срока действия и не сгорает.</p>
+      </details>
+      <details>
+        <summary>Можно ли получить остаток наличными?</summary>
+        <p>Нет, кроме предусмотренной законом единовременной выплаты в пределах установленного порога — остальное перечисляется безналично на разрешённые цели.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="dekretnye.html">Калькулятор декретных пособий →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный, ориентировочный характер. Сумма сертификата и ставка индексации не гарантированы и меняются законом о бюджете — точный остаток уточняйте на Госуслугах или в СФР.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор материнского капитала · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const totalAmountEl = document.getElementById('totalAmount');
+  const spentEl = document.getElementById('spent');
+  const yearsEl = document.getElementById('years');
+  const indexationRateEl = document.getElementById('indexationRate');
+  const remainingNowEl = document.getElementById('remainingNow');
+  const remainingFutureEl = document.getElementById('remainingFuture');
+  const futureHintEl = document.getElementById('futureHint');
+
+  function parseNum(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function calculate() {
+    const totalAmount = Math.max(0, parseNum(totalAmountEl.value));
+    const spent = Math.max(0, parseNum(spentEl.value));
+    const years = Math.max(0, parseNum(yearsEl.value));
+    const indexationRate = Math.max(0, parseNum(indexationRateEl.value));
+
+    const remainingNow = Math.max(0, totalAmount - spent);
+    const remainingFuture = remainingNow * Math.pow(1 + indexationRate / 100, years);
+
+    remainingNowEl.value = format(remainingNow);
+    remainingFutureEl.value = format(remainingFuture);
+    futureHintEl.textContent = 'При индексации ' + indexationRate + '% в год в течение ' + years + ' лет';
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'matkapital_calculation');
+    }, 1200);
+  }
+
+  [totalAmountEl, spentEl, yearsEl, indexationRateEl].forEach(function (el) { el.addEventListener('input', calculate); });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор материнского капитала',
+      text: 'Остаток материнского капитала и его размер с учётом индексации',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
