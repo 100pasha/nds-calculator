@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор автокредита — платёж, переплата и трейд-ин</title>
+<meta name="description" content="Бесплатный калькулятор автокредита: ежемесячный платёж, переплата по процентам с учётом первоначального взноса и стоимости трейд-ин.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/avtokredit.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор автокредита">
+<meta property="og:description" content="Платёж и переплата по автокредиту с учётом взноса и трейд-ин.">
+<meta property="og:url" content="https://onecalc.ru/avtokredit.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор автокредита">
+<meta name="twitter:description" content="Платёж и переплата по автокредиту с учётом взноса и трейд-ин.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор автокредита",
+  "url": "https://onecalc.ru/avtokredit.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор автокредита: ежемесячный платёж и переплата по процентам с учётом первоначального взноса и стоимости трейд-ин.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как считается ежемесячный платёж по автокредиту?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "По аннуитетной формуле: платёж = сумма кредита × (i × (1+i)^n) / ((1+i)^n − 1), где сумма кредита — это стоимость автомобиля за вычетом первоначального взноса и стоимости трейд-ин, i — ставка за месяц (годовая ÷ 12 ÷ 100), n — срок в месяцах."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как трейд-ин влияет на сумму кредита?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Стоимость старого автомобиля, принятого банком или дилером в трейд-ин, вычитается из цены нового авто наравне с первоначальным взносом — это уменьшает сумму кредита и переплату по процентам."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Обязательно ли КАСКО при автокредите?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Формально ОСАГО обязательно по закону, а КАСКО — нет, но большинство банков требуют оформить КАСКО как условие льготной ставки, поскольку автомобиль в кредит обычно находится в залоге у банка."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли погасить автокредит досрочно без штрафов?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, по закону заёмщик вправе досрочно погасить кредит полностью или частично без комиссий, уведомив банк заранее в срок, указанный в договоре (обычно не позднее 30 дней)."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+  .hidden { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор автокредита</h1>
+    <p class="subtitle">Укажите стоимость авто, взнос и ставку — платёж и переплата пересчитаются автоматически</p>
+
+    <div class="field">
+      <label for="price">Стоимость автомобиля</label>
+      <div class="input-wrap">
+        <input type="text" id="price" inputmode="decimal" value="2 000 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="downPayment">Первоначальный взнос</label>
+      <div class="input-wrap">
+        <input type="text" id="downPayment" inputmode="decimal" value="400 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint" id="downPaymentHint">—</p>
+    </div>
+
+    <div class="field">
+      <label for="tradeIn">Стоимость трейд-ин</label>
+      <div class="input-wrap">
+        <input type="text" id="tradeIn" inputmode="decimal" value="0">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Если сдаёте старый автомобиль в зачёт — укажите его оценку</p>
+    </div>
+
+    <div class="field">
+      <label for="rate">Процентная ставка</label>
+      <div class="input-wrap">
+        <input type="text" id="rate" inputmode="decimal" value="18">
+        <span class="currency">% годовых</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="months">Срок кредита</label>
+      <div class="input-wrap">
+        <input type="text" id="months" inputmode="decimal" value="36">
+        <span class="currency">мес.</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="loanAmount">Сумма кредита</label>
+        <div class="input-wrap">
+          <input type="text" id="loanAmount" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+
+      <div class="field result">
+        <label for="monthlyPayment">Ежемесячный платёж</label>
+        <div class="input-wrap">
+          <input type="text" id="monthlyPayment" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+
+      <div class="field result">
+        <label for="overpayment">Переплата по процентам</label>
+        <div class="input-wrap">
+          <input type="text" id="overpayment" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+
+      <div class="field result">
+        <label for="totalPaid">Общая сумма выплат</label>
+        <div class="input-wrap">
+          <input type="text" id="totalPaid" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint" id="totalHint">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает ежемесячный платёж и переплату по автокредиту с учётом первоначального взноса и стоимости автомобиля, сдаваемого в трейд-ин. Сумма кредита равна цене автомобиля за вычетом взноса и оценки трейд-ин; платёж рассчитывается по стандартной аннуитетной формуле, как в банке.</p>
+
+    <h2>Пример расчёта</h2>
+    <p>Автомобиль стоит 2 000 000 ₽, первоначальный взнос — 400 000 ₽, трейд-ин не используется, ставка — 18% годовых, срок — 36 месяцев. Сумма кредита составит 1 600 000 ₽, ежемесячный платёж — 57 844 ₽, переплата по процентам — 482 378 ₽, общая сумма выплат — 2 082 378 ₽.</p>
+
+    <h2>Что влияет на переплату по автокредиту</h2>
+    <ul>
+      <li><b>Первоначальный взнос</b> — чем он больше, тем меньше сумма кредита и переплата.</li>
+      <li><b>Трейд-ин</b> — оценка старого автомобиля уменьшает сумму кредита так же, как и взнос наличными, но дилеры часто оценивают его ниже рыночной цены.</li>
+      <li><b>Процентная ставка</b> — зависит от банка, программы (льготная, субсидированная), первоначального взноса и оформления КАСКО.</li>
+      <li><b>Срок кредита</b> — при увеличении срока платёж снижается, но переплата растёт.</li>
+      <li><b>Страховки</b> — калькулятор не учитывает стоимость КАСКО и страхования жизни, которые банк часто требует включить в сделку.</li>
+    </ul>
+
+    <h2>Трейд-ин и первоначальный взнос — можно совмещать</h2>
+    <p>Банки обычно позволяют одновременно внести часть суммы наличными и сдать старый автомобиль в зачёт: обе суммы вычитаются из стоимости нового авто при расчёте суммы кредита. Это законный и распространённый способ снизить размер займа.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как считается ежемесячный платёж по автокредиту?</summary>
+        <p>По аннуитетной формуле: платёж = сумма кредита × (i × (1+i)^n) / ((1+i)^n − 1), где сумма кредита — цена авто минус взнос и трейд-ин, i — ставка за месяц, n — срок в месяцах.</p>
+      </details>
+      <details>
+        <summary>Как трейд-ин влияет на сумму кредита?</summary>
+        <p>Оценка старого автомобиля вычитается из цены нового наравне с первоначальным взносом — это уменьшает сумму кредита и переплату.</p>
+      </details>
+      <details>
+        <summary>Обязательно ли КАСКО при автокредите?</summary>
+        <p>По закону — нет, но большинство банков требуют его как условие сниженной ставки, поскольку автомобиль в залоге у банка.</p>
+      </details>
+      <details>
+        <summary>Можно ли погасить автокредит досрочно без штрафов?</summary>
+        <p>Да, закон разрешает досрочное погашение полностью или частично без комиссий при уведомлении банка заранее.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="dosrochnoe-pogashenie.html">Досрочное погашение кредита →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и не учитывает страхование (КАСКО, страхование жизни), комиссии банка и реальную оценку трейд-ин дилером — эти суммы уточняйте в конкретном банке или автосалоне.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор автокредита · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const priceEl = document.getElementById('price');
+  const downPaymentEl = document.getElementById('downPayment');
+  const downPaymentHintEl = document.getElementById('downPaymentHint');
+  const tradeInEl = document.getElementById('tradeIn');
+  const rateEl = document.getElementById('rate');
+  const monthsEl = document.getElementById('months');
+
+  const loanAmountEl = document.getElementById('loanAmount');
+  const monthlyPaymentEl = document.getElementById('monthlyPayment');
+  const overpaymentEl = document.getElementById('overpayment');
+  const totalPaidEl = document.getElementById('totalPaid');
+  const totalHintEl = document.getElementById('totalHint');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function clearResults(msg) {
+    [loanAmountEl, monthlyPaymentEl, overpaymentEl, totalPaidEl].forEach(function (el) { el.value = ''; });
+    totalHintEl.textContent = msg || '—';
+  }
+
+  function calculate() {
+    const price = parse(priceEl.value);
+    const downPayment = parse(downPaymentEl.value);
+    const tradeIn = parse(tradeInEl.value);
+    const ratePercent = parse(rateEl.value);
+    const months = Math.round(parse(monthsEl.value));
+
+    downPaymentHintEl.textContent = price > 0 ? 'Взнос + трейд-ин: ' + format(downPayment + tradeIn) + ' ₽ (' + (Math.round((downPayment + tradeIn) / price * 1000) / 10) + '% от стоимости)' : '—';
+
+    const principal = price - downPayment - tradeIn;
+
+    if (principal <= 0 || months <= 0 || ratePercent < 0) {
+      clearResults(principal <= 0 && price > 0 ? 'Взнос и трейд-ин покрывают стоимость авто — кредит не нужен' : '—');
+      return;
+    }
+
+    const monthlyRate = ratePercent / 100 / 12;
+    let monthly = 0;
+    if (monthlyRate === 0) {
+      monthly = principal / months;
+    } else {
+      const k = Math.pow(1 + monthlyRate, months);
+      monthly = principal * monthlyRate * k / (k - 1);
+    }
+
+    const totalPaid = monthly * months;
+    const overpayment = totalPaid - principal;
+
+    loanAmountEl.value = format(principal);
+    monthlyPaymentEl.value = format(monthly);
+    overpaymentEl.value = format(overpayment);
+    totalPaidEl.value = format(totalPaid);
+    totalHintEl.textContent = 'За ' + months + ' мес. при ставке ' + ratePercent + '% годовых';
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'avtokredit_calculation');
+    }, 1200);
+  }
+
+  [priceEl, downPaymentEl, tradeInEl, rateEl, monthsEl].forEach(function (el) {
+    el.addEventListener('input', calculate);
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор автокредита',
+      text: 'Онлайн-калькулятор автокредита: платёж, переплата и трейд-ин',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор НДФЛ при продаже квартиры, авто и имущества</title>
+<meta name="description" content="Бесплатный калькулятор НДФЛ при продаже недвижимости и другого имущества: минимальный срок владения, вычеты 1 000 000 и 250 000 ₽, правило 70% кадастровой стоимости.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/nalog-prodazha-imushchestva.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор НДФЛ при продаже квартиры и авто">
+<meta property="og:description" content="Налог с продажи имущества: срок владения, вычеты, правило 70% кадастровой стоимости.">
+<meta property="og:url" content="https://onecalc.ru/nalog-prodazha-imushchestva.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор НДФЛ при продаже имущества">
+<meta name="twitter:description" content="Налог при продаже квартиры или машины: сроки владения и вычеты.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор НДФЛ при продаже имущества",
+  "url": "https://onecalc.ru/nalog-prodazha-imushchestva.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор НДФЛ при продаже квартиры, автомобиля и другого имущества с учётом минимального срока владения, фиксированных налоговых вычетов и правила минимальной базы 70% от кадастровой стоимости.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какой минимальный срок владения освобождает от налога при продаже?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для недвижимости — 5 лет по общему правилу или 3 года для единственного жилья, имущества, полученного по наследству или в дар от близкого родственника, приватизации и ренты. Для автомобилей и другого движимого имущества — 3 года в любом случае."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие вычеты можно применить, если срок владения меньше минимального?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Либо фиксированный вычет (1 000 000 ₽ для недвижимости, 250 000 ₽ для прочего имущества), либо документально подтверждённые расходы на покупку — в зависимости от того, что больше."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое правило 70% кадастровой стоимости?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Если доход от продажи недвижимости в договоре ниже 70% её кадастровой стоимости на 1 января года продажи, налог всё равно считается от суммы не менее 70% кадастровой стоимости — это ограничивает занижение цены в договорах."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужно ли подавать декларацию, если налог равен нулю?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Если срок владения превысил минимальный, доход не декларируется вовсе. Если срок меньше минимального, но налог после вычета равен нулю, декларацию 3-НДФЛ всё равно нужно подать."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"][readonly] { cursor: default; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .checkbox-field { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .checkbox-field input[type="checkbox"] { width: 18px; height: 18px; accent-color: #2563eb; cursor: pointer; flex-shrink: 0; }
+  .checkbox-field label { margin-bottom: 0; cursor: pointer; }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+  .hidden { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>НДФЛ при продаже имущества</h1>
+    <p class="subtitle">Налог при продаже квартиры, дома, машины или другого имущества</p>
+
+    <div class="field">
+      <label for="propertyType">Тип имущества</label>
+      <select id="propertyType">
+        <option value="real_estate">Недвижимость</option>
+        <option value="other">Автомобиль или прочее имущество</option>
+      </select>
+    </div>
+
+    <div class="field" id="singleHomeField">
+      <label for="singleHome">Это единственное жильё?</label>
+      <select id="singleHome">
+        <option value="no">Нет</option>
+        <option value="yes">Да</option>
+      </select>
+      <p class="rate-hint">Единственное жильё освобождается от налога уже через 3 года владения</p>
+    </div>
+
+    <div class="field">
+      <label for="years">Срок владения, лет</label>
+      <div class="input-wrap">
+        <input type="text" id="years" inputmode="decimal" value="2">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="income">Доход от продажи, ₽</label>
+      <div class="input-wrap">
+        <input type="text" id="income" inputmode="decimal" value="6000000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field" id="cadastralField">
+      <label for="cadastral">Кадастровая стоимость объекта, ₽</label>
+      <div class="input-wrap">
+        <input type="text" id="cadastral" inputmode="decimal" value="7000000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Нужна для проверки правила минимальной базы — не менее 70% кадастровой стоимости</p>
+    </div>
+
+    <div class="field">
+      <label for="purchaseExpenses">Расходы на покупку, документально подтверждённые, ₽</label>
+      <div class="input-wrap">
+        <input type="text" id="purchaseExpenses" inputmode="decimal" value="5000000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Необязательно — если нет документов, укажите 0, будет применён фиксированный вычет</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="tax">Сумма налога (НДФЛ)</label>
+        <div class="input-wrap">
+          <input type="text" id="tax" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint" id="taxHint">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор определяет, нужно ли платить НДФЛ при продаже недвижимости, автомобиля или другого имущества. Если срок владения превысил минимальный (3 или 5 лет — зависит от типа имущества и обстоятельств), налог не платится и доход не декларируется. Если срок меньше, доход уменьшается на вычет — фиксированный или в размере расходов на покупку, смотря что больше, — и облагается по ставке 13%.</p>
+
+    <h2>Минимальный срок владения</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Ситуация</th><th>Минимальный срок</th></tr></thead>
+        <tbody>
+          <tr><td>Недвижимость — общее правило</td><td>5 лет</td></tr>
+          <tr><td>Единственное жильё, наследство/дарение от близкого родственника, приватизация, рента</td><td>3 года</td></tr>
+          <tr><td>Автомобиль и другое движимое имущество</td><td>3 года</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Вычеты, если срок владения меньше минимального</h2>
+    <p>Можно выбрать большую из двух сумм: фиксированный вычет (1 000 000 ₽ для недвижимости, 250 000 ₽ для прочего имущества, включая автомобили) или документально подтверждённые расходы на покупку этого же объекта. Налог 13% считается с разницы между доходом и выбранным вычетом.</p>
+
+    <h2>Правило 70% кадастровой стоимости</h2>
+    <p>Для недвижимости с 2025 года действует правило минимальной налоговой базы: если доход от продажи в договоре меньше 70% кадастровой стоимости объекта на 1 января года продажи, налог всё равно считается от суммы не менее 70% кадастровой стоимости. Это не позволяет занижать цену в договоре для снижения налога.</p>
+
+    <h2>Пример расчёта</h2>
+    <p>Квартира не является единственным жильём, срок владения — 2 года (меньше минимальных 5 лет). Доход от продажи — 6 000 000 ₽, кадастровая стоимость — 7 000 000 ₽ (70% = 4 900 000 ₽, что меньше дохода, поэтому база — сам доход, 6 000 000 ₽). Расходы на покупку документально подтверждены на 5 000 000 ₽ — это больше фиксированного вычета 1 000 000 ₽, значит используем расходы. Налогооблагаемая база = 6 000 000 − 5 000 000 = 1 000 000 ₽. Налог = 1 000 000 × 13% = 130 000 ₽.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Какой минимальный срок владения освобождает от налога?</summary>
+        <p>Для недвижимости — 5 лет (или 3 года для единственного жилья, наследства/дарения от близкого родственника, приватизации, ренты). Для авто и прочего имущества — 3 года.</p>
+      </details>
+      <details>
+        <summary>Какие вычеты можно применить при продаже раньше минимального срока?</summary>
+        <p>Фиксированный вычет (1 000 000 ₽ недвижимость, 250 000 ₽ прочее) или документально подтверждённые расходы на покупку — что больше.</p>
+      </details>
+      <details>
+        <summary>Что такое правило 70% кадастровой стоимости?</summary>
+        <p>Если цена продажи ниже 70% кадастровой стоимости, налог считается от 70% кадастровой стоимости, а не от цены в договоре.</p>
+      </details>
+      <details>
+        <summary>Нужно ли подавать декларацию, если налог равен нулю?</summary>
+        <p>Если срок владения превысил минимальный — нет. Если меньше, но налог после вычета равен нулю — декларацию 3-НДФЛ подать всё равно нужно.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="nalog-darenie.html">Налог при дарении недвижимости →</a></p>
+    <p><a href="nalog-na-imushchestvo.html">Налог на имущество →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и не учитывает индивидуальные особенности сделки, региональные льготы и совместную собственность супругов. Точную сумму налога уточняйте на сайте ФНС или у налогового консультанта.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор НДФЛ при продаже имущества · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const propertyTypeEl = document.getElementById('propertyType');
+  const singleHomeField = document.getElementById('singleHomeField');
+  const singleHomeEl = document.getElementById('singleHome');
+  const yearsEl = document.getElementById('years');
+  const incomeEl = document.getElementById('income');
+  const cadastralField = document.getElementById('cadastralField');
+  const cadastralEl = document.getElementById('cadastral');
+  const purchaseExpensesEl = document.getElementById('purchaseExpenses');
+  const taxEl = document.getElementById('tax');
+  const taxHintEl = document.getElementById('taxHint');
+
+  function parseNum(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function updateVisibility() {
+    const isRealEstate = propertyTypeEl.value === 'real_estate';
+    singleHomeField.classList.toggle('hidden', !isRealEstate);
+    cadastralField.classList.toggle('hidden', !isRealEstate);
+  }
+
+  function calculate() {
+    const isRealEstate = propertyTypeEl.value === 'real_estate';
+    const singleHome = singleHomeEl.value === 'yes';
+    const years = Math.max(0, parseNum(yearsEl.value));
+    const income = Math.max(0, parseNum(incomeEl.value));
+    const cadastral = Math.max(0, parseNum(cadastralEl.value));
+    const purchaseExpenses = Math.max(0, parseNum(purchaseExpensesEl.value));
+
+    const minYears = isRealEstate ? (singleHome ? 3 : 5) : 3;
+
+    let tax = 0;
+    let hint = '';
+
+    if (years >= minYears) {
+      tax = 0;
+      hint = 'Срок владения ' + years + ' лет ≥ минимального (' + minYears + ' года) — налог не платится';
+    } else {
+      const baseIncome = isRealEstate ? Math.max(income, cadastral * 0.7) : income;
+      const fixedDeduction = isRealEstate ? 1000000 : 250000;
+      const deduction = Math.max(fixedDeduction, purchaseExpenses);
+      const taxable = Math.max(0, baseIncome - deduction);
+      tax = taxable * 0.13;
+      hint = 'База ' + format(baseIncome) + ' ₽ минус вычет ' + format(deduction) + ' ₽, ставка 13%';
+    }
+
+    taxEl.value = format(tax);
+    taxHintEl.textContent = hint;
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'prodazha_imushchestva_calculation');
+    }, 1200);
+  }
+
+  propertyTypeEl.addEventListener('change', function () { updateVisibility(); calculate(); });
+  [singleHomeEl].forEach(function (el) { el.addEventListener('change', calculate); });
+  [yearsEl, incomeEl, cadastralEl, purchaseExpensesEl].forEach(function (el) { el.addEventListener('input', calculate); });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор НДФЛ при продаже имущества',
+      text: 'Налог при продаже квартиры, машины и другого имущества',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  updateVisibility();
+  calculate();
+</script>
+</body>
+</html>

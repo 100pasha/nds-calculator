@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор транспортного налога — расчёт по мощности и ставке региона</title>
+<meta name="description" content="Бесплатный калькулятор транспортного налога: расчёт по мощности двигателя, ставке региона, сроку владения и повышающему коэффициенту для дорогих автомобилей.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/transportnyy-nalog.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор транспортного налога">
+<meta property="og:description" content="Сумма транспортного налога по мощности двигателя, ставке региона и сроку владения.">
+<meta property="og:url" content="https://onecalc.ru/transportnyy-nalog.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор транспортного налога">
+<meta name="twitter:description" content="Расчёт транспортного налога по мощности, ставке и сроку владения.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор транспортного налога",
+  "url": "https://onecalc.ru/transportnyy-nalog.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор транспортного налога: расчёт по мощности двигателя, ставке региона, сроку владения и повышающему коэффициенту для дорогих автомобилей.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как рассчитывается транспортный налог?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Налог = мощность двигателя в л.с. × ставка региона (₽ за 1 л.с.) × количество месяцев владения в году ÷ 12 × повышающий коэффициент (для дорогих автомобилей). Ставку устанавливает субъект РФ в пределах, заданных Налоговым кодексом."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Где узнать ставку транспортного налога для своего региона?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Актуальные ставки по каждому субъекту РФ опубликованы в справочном разделе на сайте ФНС nalog.gov.ru — там же можно посмотреть льготы, действующие в конкретном регионе."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое повышающий коэффициент на автомобиль?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Дополнительный множитель от 1,1 до 3, который применяется к легковым автомобилям стоимостью от 10 млн рублей из перечня Минпромторга. Конкретный коэффициент зависит от цены и возраста автомобиля."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как считается налог, если автомобиль продан в течение года?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Налог считается пропорционально числу полных месяцев владения в году. Если регистрация или снятие с учёта произошли до 15-го числа месяца включительно — этот месяц засчитывается прежнему или новому собственнику по правилам статьи 362 НК РФ."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор транспортного налога</h1>
+    <p class="subtitle">Введите параметры автомобиля — сумма налога пересчитается автоматически</p>
+
+    <div class="field">
+      <label for="power">Мощность двигателя</label>
+      <div class="input-wrap">
+        <input type="text" id="power" inputmode="decimal" value="150">
+        <span class="currency">л.с.</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="rate">Ставка налога</label>
+      <div class="input-wrap">
+        <input type="text" id="rate" inputmode="decimal" value="35">
+        <span class="currency">₽/л.с.</span>
+      </div>
+      <p class="rate-hint">Ставка зависит от региона. Актуальную ставку для своего субъекта РФ проверьте на nalog.gov.ru</p>
+    </div>
+
+    <div class="field">
+      <label for="months">Месяцев владения в году</label>
+      <div class="input-wrap">
+        <input type="text" id="months" inputmode="decimal" value="12">
+        <span class="currency">мес.</span>
+      </div>
+      <p class="rate-hint">Если автомобиль куплен или продан в течение года — укажите число полных месяцев владения</p>
+    </div>
+
+    <div class="field">
+      <label for="coef">Повышающий коэффициент</label>
+      <div class="input-wrap">
+        <input type="text" id="coef" inputmode="decimal" value="1">
+      </div>
+      <p class="rate-hint">Для легковых авто от 10 млн ₽ из перечня Минпромторга — от 1,1 до 3. Уточните коэффициент для своей модели на сайте Минпромторга</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="tax">Сумма налога за год</label>
+        <div class="input-wrap">
+          <input type="text" id="tax" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint" id="taxHint">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает сумму транспортного налога (глава 28 НК РФ) по мощности двигателя, ставке региона, сроку владения автомобилем в течение года и повышающему коэффициенту для дорогих автомобилей. Введите свои данные — сумма пересчитается сразу.</p>
+
+    <h2>Формула расчёта</h2>
+    <div class="formula-box">Налог = Мощность (л.с.) × Ставка (₽/л.с.) × Месяцев владения / 12 × Повышающий коэффициент</div>
+    <p>Например, при мощности 150 л.с., ставке 35 ₽/л.с., владении полный год и без повышающего коэффициента налог составит 150 × 35 × 1 × 1 = 5 250 ₽.</p>
+
+    <h2>Ставка налога устанавливается регионом</h2>
+    <p>Налоговый кодекс задаёт лишь базовые (максимальные) ставки, а конкретную ставку для своей территории устанавливает закон субъекта РФ — она может отличаться от базовой в разы, в том числе быть сниженной вплоть до нуля для отдельных категорий транспорта. Поэтому в калькуляторе ставку нужно указать самостоятельно, сверившись с региональным законом.</p>
+
+    <h2>Повышающий коэффициент для дорогих автомобилей</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Стоимость автомобиля</th><th>Возраст</th><th>Коэффициент</th></tr></thead>
+        <tbody>
+          <tr><td>от 10 до 15 млн ₽</td><td>не более 20 лет</td><td>1,1</td></tr>
+          <tr><td>от 15 млн ₽</td><td>не более 20 лет</td><td>3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Перечень конкретных моделей и коэффициенты по годам публикует Минпромторг России — список ежегодно обновляется, поэтому итоговый коэффициент для своей модели стоит проверять отдельно.</p>
+
+    <h2>Срок владения автомобилем в течение года</h2>
+    <p>Если машина находилась в собственности не весь год, налог считается пропорционально числу полных месяцев владения. Месяц регистрации или снятия с учёта засчитывается тому из собственников, у кого право возникло или прекратилось до 15-го числа месяца включительно.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как рассчитывается транспортный налог?</summary>
+        <p>Мощность двигателя в л.с. × ставка региона × месяцев владения ÷ 12 × повышающий коэффициент (для дорогих авто).</p>
+      </details>
+      <details>
+        <summary>Где узнать ставку для своего региона?</summary>
+        <p>В справочном разделе по имущественным налогам на сайте ФНС nalog.gov.ru — там же указаны региональные льготы.</p>
+      </details>
+      <details>
+        <summary>Что такое повышающий коэффициент?</summary>
+        <p>Множитель от 1,1 до 3 для легковых авто от 10 млн ₽ из перечня Минпромторга — зависит от цены и возраста автомобиля.</p>
+      </details>
+      <details>
+        <summary>Как считается налог при продаже машины в течение года?</summary>
+        <p>Пропорционально числу полных месяцев владения, с учётом правила 15-го числа для месяца перехода права собственности.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="nalog-na-imushchestvo.html">Калькулятор налога на имущество →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер. Ставка и повышающий коэффициент зависят от региона, модели автомобиля и ежегодно уточняются — точные значения проверяйте на сайте ФНС и в перечне Минпромторга перед уплатой.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор транспортного налога · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const powerEl = document.getElementById('power');
+  const rateEl = document.getElementById('rate');
+  const monthsEl = document.getElementById('months');
+  const coefEl = document.getElementById('coef');
+  const taxEl = document.getElementById('tax');
+  const taxHintEl = document.getElementById('taxHint');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function calculate() {
+    const power = Math.max(0, parse(powerEl.value));
+    const rate = Math.max(0, parse(rateEl.value));
+    const months = Math.min(12, Math.max(0, parse(monthsEl.value)));
+    const coef = Math.max(0, parse(coefEl.value)) || 1;
+
+    const tax = power * rate * (months / 12) * coef;
+
+    taxEl.value = format(tax);
+    taxHintEl.textContent = coef !== 1 ? 'С учётом повышающего коэффициента ' + coef : 'Без повышающего коэффициента';
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'transportnyy_nalog_calculation');
+    }, 1200);
+  }
+
+  [powerEl, rateEl, monthsEl, coefEl].forEach(function (el) { el.addEventListener('input', calculate); });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор транспортного налога',
+      text: 'Онлайн-калькулятор транспортного налога по мощности, ставке и сроку владения',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
