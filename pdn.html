@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор ПДН — показатель долговой нагрузки онлайн</title>
+<meta name="description" content="Бесплатный калькулятор показателя долговой нагрузки (ПДН): рассчитайте соотношение платежей по кредитам к доходу и узнайте, как это влияет на одобрение кредита.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/pdn.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор ПДН">
+<meta property="og:description" content="Показатель долговой нагрузки: платежи по кредитам к доходу.">
+<meta property="og:url" content="https://onecalc.ru/pdn.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор ПДН">
+<meta name="twitter:description" content="Показатель долговой нагрузки: платежи по кредитам к доходу.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор ПДН",
+  "url": "https://onecalc.ru/pdn.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор показателя долговой нагрузки (ПДН): доля ежемесячных платежей по кредитам в среднемесячном доходе заёмщика.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что такое ПДН?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ПДН (показатель долговой нагрузки) — это отношение суммы всех ежемесячных платежей по кредитам заёмщика к его среднемесячному доходу, выраженное в процентах. Банки обязаны рассчитывать его перед выдачей кредита по методике Банка России."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как считается ПДН?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ПДН = (сумма текущих ежемесячных платежей по всем кредитам + платёж по новому кредиту) ÷ среднемесячный доход × 100%. Например, при доходе 100 000 ₽, текущих платежах 20 000 ₽ и новом платеже 25 000 ₽ ПДН составит 45%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой ПДН считается высоким?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ориентировочно ПДН до 50% считается комфортным, 50–80% — повышенным риском, выше 80% — высоким риском отказа. Это общие бенчмарки макропруденциальной политики ЦБ, а не жёсткая граница одобрения — конкретное решение зависит от скоринга банка."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Влияет ли высокий ПДН на решение банка?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, при высоком ПДН Банк России обязывает банки формировать повышенные резервы капитала, из-за чего банкам может быть невыгодно выдавать такой кредит — это повышает вероятность отказа или ухудшения условий, но не гарантирует его."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+  .hidden { display: none; }
+  .risk-note { font-size: 13px; padding: 10px 12px; border-radius: 8px; margin-top: 4px; }
+  .risk-low { background: #ecfdf5; color: #047857; }
+  .risk-mid { background: #fffbeb; color: #b45309; }
+  .risk-high { background: #fef2f2; color: #b91c1c; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+    .risk-low { background: #052e21; color: #6ee7b7; }
+    .risk-mid { background: #2e2107; color: #fcd34d; }
+    .risk-high { background: #2e0a0a; color: #fca5a5; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор ПДН</h1>
+    <p class="subtitle">Показатель долговой нагрузки — доля дохода, которая уходит на платежи по кредитам</p>
+
+    <div class="field">
+      <label for="income">Среднемесячный доход</label>
+      <div class="input-wrap">
+        <input type="text" id="income" inputmode="decimal" value="100 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Доход до вычета НДФЛ, как его учитывает банк</p>
+    </div>
+
+    <div class="field">
+      <label for="existingPayments">Текущие платежи по другим кредитам</label>
+      <div class="input-wrap">
+        <input type="text" id="existingPayments" inputmode="decimal" value="20 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Сумма всех ежемесячных платежей по действующим кредитам и картам</p>
+    </div>
+
+    <div class="field">
+      <label for="newPayment">Планируемый платёж по новому кредиту</label>
+      <div class="input-wrap">
+        <input type="text" id="newPayment" inputmode="decimal" value="25 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="pdn">Показатель долговой нагрузки</label>
+        <div class="input-wrap">
+          <input type="text" id="pdn" readonly>
+          <span class="currency">%</span>
+        </div>
+        <p class="risk-note" id="riskNote">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает ПДН по упрощённой методике Банка России: делит сумму текущих ежемесячных платежей по кредитам и планируемого платежа по новому кредиту на среднемесячный доход. Результат — доля дохода, которая ежемесячно будет уходить на обслуживание долгов.</p>
+
+    <h2>Формула расчёта</h2>
+    <p>ПДН = (текущие платежи + платёж по новому кредиту) ÷ среднемесячный доход × 100%.</p>
+    <p>Например, при доходе 100 000 ₽, текущих платежах 20 000 ₽ и планируемом платеже 25 000 ₽: ПДН = (20 000 + 25 000) ÷ 100 000 × 100% = 45%.</p>
+
+    <h2>Уровни долговой нагрузки</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>ПДН</th><th>Ориентировочный уровень риска</th></tr></thead>
+        <tbody>
+          <tr><td>До 50%</td><td>Комфортная нагрузка</td></tr>
+          <tr><td>50–80%</td><td>Повышенный риск — банк может запросить доп. документы или отказать</td></tr>
+          <tr><td>Свыше 80%</td><td>Высокий риск — высокая вероятность отказа</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Это общие ориентиры, основанные на макропруденциальной политике ЦБ, а не строгая граница одобрения: пороги надбавок к капиталу банков периодически пересматриваются регулятором, а решение по конкретной заявке всегда зависит от внутреннего скоринга банка.</p>
+
+    <h2>Зачем банки считают ПДН</h2>
+    <p>С 2019 года банки обязаны рассчитывать ПДН перед выдачей потребительских кредитов и учитывать его при формировании резервов капитала. Чем выше ПДН у заёмщика, тем больше капитала банк обязан зарезервировать под такой кредит — из-за этого банкам может быть невыгодно выдавать кредиты заёмщикам с высокой долговой нагрузкой, даже если формального запрета на выдачу нет.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Что такое ПДН?</summary>
+        <p>Отношение суммы всех ежемесячных платежей по кредитам к среднемесячному доходу заёмщика, в процентах. Банки обязаны его рассчитывать перед выдачей кредита.</p>
+      </details>
+      <details>
+        <summary>Как считается ПДН?</summary>
+        <p>ПДН = (текущие платежи + платёж по новому кредиту) ÷ среднемесячный доход × 100%.</p>
+      </details>
+      <details>
+        <summary>Какой ПДН считается высоким?</summary>
+        <p>Ориентировочно до 50% — комфортно, 50–80% — повышенный риск, выше 80% — высокий риск отказа. Это общие бенчмарки, а не жёсткая граница.</p>
+      </details>
+      <details>
+        <summary>Влияет ли высокий ПДН на решение банка?</summary>
+        <p>Да, при высоком ПДН банк обязан формировать повышенные резервы капитала, что повышает вероятность отказа или ухудшения условий, но не гарантирует его.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="mikrozaym.html">Калькулятор микрозайма →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и использует упрощённую методику. Реальный ПДН и пороговые значения надбавок к капиталу банков периодически пересматриваются Банком России; решение банка по заявке зависит от его собственного скоринга и не определяется только показателем ПДН.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор ПДН · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const incomeEl = document.getElementById('income');
+  const existingPaymentsEl = document.getElementById('existingPayments');
+  const newPaymentEl = document.getElementById('newPayment');
+  const pdnEl = document.getElementById('pdn');
+  const riskNoteEl = document.getElementById('riskNote');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format1(n) {
+    return (Math.round(n * 10) / 10).toString().replace('.', ',');
+  }
+
+  function calculate() {
+    const income = parse(incomeEl.value);
+    const existingPayments = parse(existingPaymentsEl.value);
+    const newPayment = parse(newPaymentEl.value);
+
+    if (income <= 0) {
+      pdnEl.value = '';
+      riskNoteEl.textContent = 'Укажите среднемесячный доход больше нуля';
+      riskNoteEl.className = 'risk-note';
+      return;
+    }
+
+    const pdn = (existingPayments + newPayment) / income * 100;
+    pdnEl.value = format1(pdn);
+
+    let note, cls;
+    if (pdn < 50) {
+      note = 'Комфортная долговая нагрузка';
+      cls = 'risk-low';
+    } else if (pdn < 80) {
+      note = 'Повышенный риск — банк может запросить доп. документы или отказать';
+      cls = 'risk-mid';
+    } else {
+      note = 'Высокий риск — высокая вероятность отказа в кредите';
+      cls = 'risk-high';
+    }
+    riskNoteEl.textContent = note;
+    riskNoteEl.className = 'risk-note ' + cls;
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'pdn_calculation');
+    }, 1200);
+  }
+
+  [incomeEl, existingPaymentsEl, newPaymentEl].forEach(function (el) {
+    el.addEventListener('input', calculate);
+  });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор ПДН',
+      text: 'Онлайн-калькулятор показателя долговой нагрузки',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
