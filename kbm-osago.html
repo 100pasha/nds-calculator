@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор КБМ ОСАГО: как коэффициент бонус-малус влияет на цену полиса</title>
+<meta name="description" content="Бесплатный калькулятор влияния КБМ (коэффициента бонус-малус) на стоимость полиса ОСАГО. Узнайте итоговую цену и размер скидки или наценки.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/kbm-osago.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор КБМ ОСАГО">
+<meta property="og:description" content="Как коэффициент бонус-малус влияет на стоимость полиса ОСАГО.">
+<meta property="og:url" content="https://onecalc.ru/kbm-osago.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор КБМ ОСАГО">
+<meta name="twitter:description" content="Влияние бонус-малуса на цену страховки.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор КБМ ОСАГО",
+  "url": "https://onecalc.ru/kbm-osago.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор влияния коэффициента бонус-малус (КБМ) на итоговую стоимость полиса ОСАГО.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как КБМ влияет на стоимость ОСАГО?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Итоговая стоимость полиса умножается на ваш персональный КБМ: значения ниже 1 дают скидку, значения выше 1 — наценку. КБМ — лишь один из нескольких коэффициентов, влияющих на итоговую цену страховки."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Где узнать точное значение своего КБМ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Точное персональное значение КБМ рассчитывает Национальная система информации по страховым выплатам (НСИС/бывший РСА) на основании единой базы данных о водителе — узнать его можно у своего страховщика или через официальный сервис проверки КБМ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Почему КБМ у страховщика отличается от того, что я считал сам?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Значения коэффициента и правила перехода между классами периодически меняются Банком России, а фактический класс зависит от полной истории страхования по всем полисам и всем водителям, вписанным в них, — поэтому расчёт вручную может отличаться от официальной базы."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "КБМ привязан к машине или к водителю?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "С 2022 года КБМ привязан персонально к водителю, а не к автомобилю или договору страхования — при покупке новой машины или смене страховщика КБМ каждого водителя сохраняется."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[readonly] { cursor: default; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .hint { font-size: 12px; color: #9ca3af; margin-top: -14px; margin-bottom: 20px; line-height: 1.5; }
+  .hint a { color: #6b7280; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .table-wrap { overflow-x: auto; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .disclaimer, .site-footer, .hint { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+    .hint a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>КБМ и стоимость ОСАГО</h1>
+    <p class="subtitle">Как коэффициент бонус-малус меняет итоговую цену полиса</p>
+
+    <div class="field">
+      <label for="basePrice">Стоимость ОСАГО при КБМ = 1, ₽</label>
+      <div class="input-wrap">
+        <input type="text" id="basePrice" inputmode="decimal" value="8000">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="kbmClassSelect">Ваш класс КБМ (ориентировочно)</label>
+      <select id="kbmClassSelect">
+        <option value="М">М — 3,92</option>
+        <option value="0">0 — 2,94</option>
+        <option value="1">1 — 2,25</option>
+        <option value="2">2 — 1,76</option>
+        <option value="3" selected>3 (начальный) — 1,17</option>
+        <option value="4">4 — 1,00</option>
+        <option value="5">5 — 0,91</option>
+        <option value="6">6 — 0,83</option>
+        <option value="7">7 — 0,78</option>
+        <option value="8">8 — 0,74</option>
+        <option value="9">9 — 0,68</option>
+        <option value="10">10 — 0,63</option>
+        <option value="11">11 — 0,57</option>
+        <option value="12">12 — 0,52</option>
+        <option value="13">13 (максимум) — 0,46</option>
+        <option value="custom">Указать вручную →</option>
+      </select>
+    </div>
+
+    <div class="field" id="customKbmField" style="display: none;">
+      <label for="kbmValue">Ваш точный КБМ</label>
+      <div class="input-wrap">
+        <input type="text" id="kbmValue" inputmode="decimal" value="1">
+      </div>
+    </div>
+    <p class="hint">Значения по классам — ориентировочные и могут отличаться от актуальных, так как тарифный коридор периодически меняется Банком России. Точный персональный КБМ уточняйте у страховщика или в официальной базе НСИС.</p>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="finalPrice">Итоговая стоимость ОСАГО</label>
+        <div class="input-wrap">
+          <input type="text" id="finalPrice" readonly>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="difference">Скидка / наценка</label>
+        <div class="input-wrap">
+          <input type="text" id="difference" readonly>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Формула расчёта</h2>
+    <p>Итоговая стоимость ОСАГО = базовая стоимость при КБМ = 1 × ваш персональный КБМ. Значения ниже 1 дают скидку, выше 1 — наценку за аварийность. КБМ — лишь один из нескольких коэффициентов в формуле расчёта премии наряду с территориальным коэффициентом, коэффициентом возраста и стажа водителя, мощности двигателя и другими.</p>
+
+    <h2>Ориентировочная таблица классов КБМ</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Класс</th><th>КБМ</th><th>Скидка/наценка</th></tr></thead>
+        <tbody>
+          <tr><td>М (штрафной)</td><td>3,92</td><td>+292%</td></tr>
+          <tr><td>0</td><td>2,94</td><td>+194%</td></tr>
+          <tr><td>3 (начальный)</td><td>1,17</td><td>+17%</td></tr>
+          <tr><td>13 (максимум)</td><td>0,46</td><td>−54%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Полную и точную таблицу всех 15 классов, действующую на текущий момент, смотрите в официальной базе НСИС или уточняйте у своего страховщика — коридор тарифов и значения КБМ периодически пересматриваются Банком России.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как КБМ влияет на стоимость ОСАГО?</summary>
+        <p>Итоговая цена умножается на персональный КБМ — скидка при значении ниже 1, наценка при значении выше 1.</p>
+      </details>
+      <details>
+        <summary>Где узнать точное значение своего КБМ?</summary>
+        <p>У своего страховщика или в официальной базе НСИС (бывший РСА) — там хранится персональная история КБМ каждого водителя.</p>
+      </details>
+      <details>
+        <summary>Почему КБМ у страховщика отличается от расчётного?</summary>
+        <p>Значения периодически меняются Банком России, а фактический класс зависит от полной истории страхования по всем полисам, где вы были вписаны водителем.</p>
+      </details>
+      <details>
+        <summary>КБМ привязан к машине или к водителю?</summary>
+        <p>С 2022 года — персонально к водителю, не к автомобилю или конкретному договору страхования.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер. Указанные значения КБМ по классам ориентировочные — точную стоимость полиса и ваш персональный коэффициент рассчитывает страховщик на основании официальной базы данных.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор КБМ ОСАГО · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const basePriceEl = document.getElementById('basePrice');
+  const kbmClassSelectEl = document.getElementById('kbmClassSelect');
+  const customKbmField = document.getElementById('customKbmField');
+  const kbmValueEl = document.getElementById('kbmValue');
+  const finalPriceEl = document.getElementById('finalPrice');
+  const differenceEl = document.getElementById('difference');
+
+  const KBM_TABLE = {
+    'М': 3.92, '0': 2.94, '1': 2.25, '2': 1.76, '3': 1.17, '4': 1.00,
+    '5': 0.91, '6': 0.83, '7': 0.78, '8': 0.74, '9': 0.68, '10': 0.63,
+    '11': 0.57, '12': 0.52, '13': 0.46
+  };
+
+  function parseNum(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function formatMoney(n) {
+    return n.toLocaleString('ru-RU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ₽';
+  }
+
+  function getKbm() {
+    if (kbmClassSelectEl.value === 'custom') {
+      return Math.max(0, parseNum(kbmValueEl.value));
+    }
+    return KBM_TABLE[kbmClassSelectEl.value];
+  }
+
+  function calculate() {
+    const base = Math.max(0, parseNum(basePriceEl.value));
+    const kbm = getKbm();
+    const final = base * kbm;
+    const diff = final - base;
+
+    finalPriceEl.value = formatMoney(final);
+    differenceEl.value = (diff <= 0 ? '−' : '+') + formatMoney(Math.abs(diff));
+
+    trackCalculation();
+  }
+
+  kbmClassSelectEl.addEventListener('change', function () {
+    customKbmField.style.display = kbmClassSelectEl.value === 'custom' ? 'block' : 'none';
+    calculate();
+  });
+  basePriceEl.addEventListener('input', calculate);
+  kbmValueEl.addEventListener('input', calculate);
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'kbm_calculation');
+    }, 1200);
+  }
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор КБМ ОСАГО',
+      text: 'Влияние коэффициента бонус-малус на стоимость ОСАГО',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>

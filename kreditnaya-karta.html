@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор кредитной карты — минимальный платёж и срок погашения</title>
+<meta name="description" content="Бесплатный калькулятор кредитной карты: рассчитайте минимальный платёж, реальный срок полного погашения долга и переплату по процентам.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/kreditnaya-karta.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор кредитной карты">
+<meta property="og:description" content="Минимальный платёж, срок погашения и переплата по кредитной карте.">
+<meta property="og:url" content="https://onecalc.ru/kreditnaya-karta.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор кредитной карты">
+<meta name="twitter:description" content="Минимальный платёж и срок погашения долга по карте.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор кредитной карты",
+  "url": "https://onecalc.ru/kreditnaya-karta.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор кредитной карты: расчёт минимального платежа, реального срока полного погашения долга и переплаты по процентам.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что такое минимальный платёж по кредитной карте?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Это наименьшая сумма, которую нужно внести за отчётный период, чтобы не считаться просрочившим платёж, — обычно 3–10% от остатка долга, но не менее фиксированной суммы, установленной банком."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Почему платить только минимальный платёж невыгодно?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Минимальный платёж в основном покрывает начисленные проценты, а основной долг гасится очень медленно. В результате полное погашение может растянуться на многие годы, а переплата по процентам — превысить саму сумму долга."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое льготный (грейс) период?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Это срок, в течение которого проценты на новые покупки не начисляются, если полностью погасить долг до его окончания. Грейс-период не действует на снятие наличных и обычно прерывается, если предыдущий долг не был погашен полностью."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как быстрее закрыть долг по кредитной карте?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Вносить сверх минимального платежа любую свободную сумму — это резко сокращает срок погашения и переплату, поскольку каждый лишний рубль сразу уменьшает основной долг, на который начисляются проценты."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .warning { background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; border-radius: 10px; padding: 12px 16px; font-size: 13px; margin-bottom: 20px; display: none; }
+  .warning.visible { display: block; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    .warning { background: #2a1414; border-color: #5c1f1f; color: #fca5a5; }
+    label { color: #cbd5e1; }
+    input[type="text"] { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li { color: #cbd5e1; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор кредитной карты</h1>
+    <p class="subtitle">Введите параметры долга — реальный срок погашения пересчитается автоматически</p>
+
+    <div class="field">
+      <label for="debt">Сумма долга</label>
+      <div class="input-wrap">
+        <input type="text" id="debt" inputmode="decimal" value="100 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="rate">Ставка по карте</label>
+      <div class="input-wrap">
+        <input type="text" id="rate" inputmode="decimal" value="25">
+        <span class="currency">% годовых</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="minPercent">Минимальный платёж</label>
+      <div class="input-wrap">
+        <input type="text" id="minPercent" inputmode="decimal" value="5">
+        <span class="currency">% от долга</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="minFloor">Минимальная сумма платежа</label>
+      <div class="input-wrap">
+        <input type="text" id="minFloor" inputmode="decimal" value="500">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="extra">Довношу сверх минимума</label>
+      <div class="input-wrap">
+        <input type="text" id="extra" inputmode="decimal" value="0">
+        <span class="currency">₽/мес</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="warning" id="warning">Минимальный платёж не покрывает начисляемые проценты — при таких условиях долг никогда не будет погашен. Увеличьте платёж.</div>
+
+    <div class="results">
+      <div class="field result">
+        <label for="firstPayment">Платёж в первый месяц</label>
+        <div class="input-wrap">
+          <input type="text" id="firstPayment" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="payoffMonths">Срок полного погашения</label>
+        <div class="input-wrap">
+          <input type="text" id="payoffMonths" readonly>
+          <span class="currency">мес.</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="totalInterest">Переплата по процентам</label>
+        <div class="input-wrap">
+          <input type="text" id="totalInterest" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="totalPaid">Общая сумма выплат</label>
+        <div class="input-wrap">
+          <input type="text" id="totalPaid" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор моделирует погашение долга по кредитной карте месяц за месяцем: считает проценты на остаток, минимальный платёж как процент от долга (но не меньше фиксированной суммы) и показывает, сколько реально месяцев уйдёт на полное погашение, если платить только минимум.</p>
+
+    <h2>Почему это дольше, чем кажется</h2>
+    <div class="formula-box">Минимальный платёж = max(Остаток × Процент минимума, Минимальная сумма)</div>
+    <p>Например, долг 100 000 ₽ под 25% годовых с минимальным платежом 5% (не менее 500 ₽) без дополнительных взносов погашается почти 9 лет, а переплата по процентам превышает 67 000 ₽ — больше половины исходного долга. Это происходит потому, что минимальный платёж уменьшается вместе с остатком долга, и основная часть каждого платежа уходит на проценты, а не на само тело долга.</p>
+
+    <h2>Что реально ускоряет погашение</h2>
+    <ul>
+      <li>Любая сумма сверх минимального платежа сразу уменьшает основной долг</li>
+      <li>Полное погашение до конца льготного периода избавляет от процентов вовсе</li>
+      <li>Отказ от новых покупок по карте, пока не закрыт текущий долг</li>
+    </ul>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Что такое минимальный платёж по кредитной карте?</summary>
+        <p>Наименьшая сумма за период, обычно 3–10% от остатка, но не менее фиксированной суммы банка.</p>
+      </details>
+      <details>
+        <summary>Почему платить только минимум невыгодно?</summary>
+        <p>Основная часть платежа уходит на проценты, долг гасится очень медленно, а итоговая переплата может превысить сам долг.</p>
+      </details>
+      <details>
+        <summary>Что такое льготный период?</summary>
+        <p>Срок, когда проценты на новые покупки не начисляются при полном погашении долга до его окончания. Не действует на снятие наличных.</p>
+      </details>
+      <details>
+        <summary>Как быстрее закрыть долг?</summary>
+        <p>Вносить сверх минимума любую свободную сумму — это резко сокращает срок и переплату.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="refinansirovanie.html">Рефинансирование кредита →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и не учитывает льготный период, комиссии за снятие наличных и индивидуальные условия конкретного банка.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор кредитной карты · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const debtEl = document.getElementById('debt');
+  const rateEl = document.getElementById('rate');
+  const minPercentEl = document.getElementById('minPercent');
+  const minFloorEl = document.getElementById('minFloor');
+  const extraEl = document.getElementById('extra');
+  const warningEl = document.getElementById('warning');
+  const firstPaymentEl = document.getElementById('firstPayment');
+  const payoffMonthsEl = document.getElementById('payoffMonths');
+  const totalInterestEl = document.getElementById('totalInterest');
+  const totalPaidEl = document.getElementById('totalPaid');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  const MAX_MONTHS = 600;
+
+  function simulate(debt, ratePercent, minPercent, minFloor, extra) {
+    const monthlyRate = ratePercent / 100 / 12;
+    let balance = debt;
+    let totalInterest = 0;
+    let totalPaid = 0;
+    let month = 0;
+    let firstPayment = null;
+
+    while (balance > 0.5 && month < MAX_MONTHS) {
+      const interest = balance * monthlyRate;
+      const minPayment = Math.max(balance * (minPercent / 100), minFloor);
+      let payment = minPayment + extra;
+      if (payment > balance + interest) payment = balance + interest;
+      if (payment <= interest + 0.01) return null;
+
+      const principalPaid = payment - interest;
+      balance -= principalPaid;
+      totalInterest += interest;
+      totalPaid += payment;
+      month++;
+      if (firstPayment === null) firstPayment = payment;
+    }
+
+    if (balance > 0.5) return null;
+    return { months: month, totalInterest: totalInterest, totalPaid: totalPaid, firstPayment: firstPayment };
+  }
+
+  function calculate() {
+    const debt = parse(debtEl.value);
+    const rate = parse(rateEl.value);
+    const minPercent = parse(minPercentEl.value);
+    const minFloor = Math.max(0, parse(minFloorEl.value));
+    const extra = Math.max(0, parse(extraEl.value));
+
+    if (debt <= 0) {
+      [firstPaymentEl, payoffMonthsEl, totalInterestEl, totalPaidEl].forEach(function (el) { el.value = ''; });
+      warningEl.classList.remove('visible');
+      return;
+    }
+
+    const result = simulate(debt, rate, minPercent, minFloor, extra);
+
+    if (!result) {
+      warningEl.classList.add('visible');
+      [firstPaymentEl, payoffMonthsEl, totalInterestEl, totalPaidEl].forEach(function (el) { el.value = ''; });
+      return;
+    }
+
+    warningEl.classList.remove('visible');
+    firstPaymentEl.value = format(result.firstPayment);
+    payoffMonthsEl.value = format(result.months);
+    totalInterestEl.value = format(result.totalInterest);
+    totalPaidEl.value = format(result.totalPaid);
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'credit_card_calculation');
+    }, 1200);
+  }
+
+  [debtEl, rateEl, minPercentEl, minFloorEl, extraEl].forEach(function (el) { el.addEventListener('input', calculate); });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор кредитной карты',
+      text: 'Онлайн-калькулятор минимального платежа и срока погашения долга по карте',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>

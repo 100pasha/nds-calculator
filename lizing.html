@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор лизинга — расчёт платежа и удорожания</title>
+<meta name="description" content="Бесплатный калькулятор лизинга: рассчитайте ежемесячный платёж, выкупную стоимость и общее удорожание по лизингу автомобиля или оборудования.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/lizing.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор лизинга">
+<meta property="og:description" content="Расчёт ежемесячного платежа и удорожания по лизингу авто или оборудования.">
+<meta property="og:url" content="https://onecalc.ru/lizing.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор лизинга">
+<meta name="twitter:description" content="Расчёт платежа и удорожания по лизингу.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор лизинга",
+  "url": "https://onecalc.ru/lizing.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор лизинга: расчёт ежемесячного платежа, выкупной стоимости и общего удорожания по лизингу автомобиля или оборудования.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Чем лизинг отличается от кредита?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "При лизинге предмет (автомобиль, оборудование) юридически остаётся в собственности лизинговой компании до выплаты выкупной стоимости, а лизингополучатель пользуется им по договору. При кредите имущество сразу переходит в собственность покупателя, а банк оформляет залог."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое выкупная стоимость?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Это остаточная сумма, которую нужно заплатить в конце срока лизинга, чтобы предмет перешёл в собственность лизингополучателя. Часто она символическая (1000 ₽), но может быть и существенной, особенно если ежемесячные платежи изначально ниже за счёт этого."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кому выгоден лизинг с налоговой точки зрения?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Юрлицам и ИП на общей системе или УСН «доходы минус расходы» — лизинговые платежи в полном объёме относятся на расходы, а ускоренная амортизация предмета лизинга позволяет быстрее списать его стоимость по сравнению с покупкой в кредит."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужен ли аванс по лизингу?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Обычно да, аванс составляет от 10% до 30% стоимости предмета лизинга. Чем больше аванс, тем ниже ежемесячный платёж и итоговое удорожание."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"] { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор лизинга</h1>
+    <p class="subtitle">Введите параметры лизинга — платёж и удорожание пересчитаются автоматически</p>
+
+    <div class="field">
+      <label for="price">Стоимость предмета лизинга</label>
+      <div class="input-wrap">
+        <input type="text" id="price" inputmode="decimal" value="3 000 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="advance">Аванс</label>
+      <div class="input-wrap">
+        <input type="text" id="advance" inputmode="decimal" value="20">
+        <span class="currency">%</span>
+      </div>
+      <p class="rate-hint" id="advanceHint">600 000 ₽</p>
+    </div>
+
+    <div class="field">
+      <label for="rate">Ставка удорожания</label>
+      <div class="input-wrap">
+        <input type="text" id="rate" inputmode="decimal" value="12">
+        <span class="currency">% годовых</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="months">Срок лизинга</label>
+      <div class="input-wrap">
+        <input type="text" id="months" inputmode="decimal" value="36">
+        <span class="currency">мес.</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="buyout">Выкупная стоимость</label>
+      <div class="input-wrap">
+        <input type="text" id="buyout" inputmode="decimal" value="1 000">
+        <span class="currency">₽</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="monthlyPayment">Ежемесячный платёж</label>
+        <div class="input-wrap">
+          <input type="text" id="monthlyPayment" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="totalPayments">Итого выплат (с авансом и выкупом)</label>
+        <div class="input-wrap">
+          <input type="text" id="totalPayments" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="overpayment">Удорожание</label>
+        <div class="input-wrap">
+          <input type="text" id="overpayment" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает ежемесячный платёж по лизингу с учётом аванса, ставки удорожания и выкупной стоимости в конце срока. Ежемесячный платёж покрывает разницу между стоимостью предмета за вычетом аванса и выкупной стоимостью, которая оплачивается отдельно в конце.</p>
+
+    <h2>Формула расчёта</h2>
+    <div class="formula-box">Сумма к финансированию = Стоимость − Аванс − Выкупная стоимость</div>
+    <div class="formula-box">Платёж = Сумма к финансированию × (i × (1+i)^n) / ((1+i)^n − 1)</div>
+    <p>Здесь <b>i</b> — ставка удорожания за месяц (годовая ставка ÷ 12 ÷ 100), <b>n</b> — срок лизинга в месяцах. Итоговое удорожание — это разница между всеми выплатами (аванс + ежемесячные платежи + выкуп) и первоначальной стоимостью предмета.</p>
+
+    <h2>Чем лизинг отличается от кредита</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Параметр</th><th>Лизинг</th><th>Кредит</th></tr></thead>
+        <tbody>
+          <tr><td>Собственник до конца срока</td><td>Лизинговая компания</td><td>Покупатель (с залогом)</td></tr>
+          <tr><td>Налоговые расходы</td><td>Платежи полностью на расходах</td><td>Только проценты и амортизация</td></tr>
+          <tr><td>Амортизация</td><td>Ускоренная (для юрлиц)</td><td>Обычная</td></tr>
+          <tr><td>Итог по окончании</td><td>Нужен выкуп для перехода права</td><td>Уже в собственности</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Чем лизинг отличается от кредита?</summary>
+        <p>Предмет лизинга остаётся в собственности лизинговой компании до выплаты выкупной стоимости, при кредите имущество сразу в собственности покупателя под залогом.</p>
+      </details>
+      <details>
+        <summary>Что такое выкупная стоимость?</summary>
+        <p>Остаточная сумма в конце срока, после которой предмет переходит в собственность лизингополучателя. Часто символическая, но может быть существенной.</p>
+      </details>
+      <details>
+        <summary>Кому лизинг выгоден с налоговой точки зрения?</summary>
+        <p>Юрлицам и ИП — платежи полностью относятся на расходы, а ускоренная амортизация быстрее списывает стоимость предмета.</p>
+      </details>
+      <details>
+        <summary>Нужен ли аванс по лизингу?</summary>
+        <p>Обычно 10–30% стоимости. Чем больше аванс, тем ниже платёж и итоговое удорожание.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="kredit.html">Кредитный калькулятор →</a></p>
+    <p><a href="refinansirovanie.html">Рефинансирование кредита →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и не учитывает страхование, комиссии лизинговой компании и налоговые эффекты конкретного бизнеса. Точные условия уточняйте у лизинговой компании.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор лизинга · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const priceEl = document.getElementById('price');
+  const advanceEl = document.getElementById('advance');
+  const advanceHintEl = document.getElementById('advanceHint');
+  const rateEl = document.getElementById('rate');
+  const monthsEl = document.getElementById('months');
+  const buyoutEl = document.getElementById('buyout');
+  const monthlyPaymentEl = document.getElementById('monthlyPayment');
+  const totalPaymentsEl = document.getElementById('totalPayments');
+  const overpaymentEl = document.getElementById('overpayment');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function annuityPayment(principal, ratePercent, months) {
+    const i = ratePercent / 100 / 12;
+    if (months <= 0) return 0;
+    if (i === 0) return principal / months;
+    const k = Math.pow(1 + i, months);
+    return principal * i * k / (k - 1);
+  }
+
+  function calculate() {
+    const price = parse(priceEl.value);
+    const advancePercent = parse(advanceEl.value);
+    const rate = parse(rateEl.value);
+    const months = Math.round(parse(monthsEl.value));
+    const buyout = Math.max(0, parse(buyoutEl.value));
+
+    const advanceAmount = price * (advancePercent / 100);
+    advanceHintEl.textContent = price > 0 ? format(advanceAmount) + ' ₽' : '—';
+
+    const financed = price - advanceAmount - buyout;
+
+    if (price <= 0 || months <= 0 || financed < 0) {
+      [monthlyPaymentEl, totalPaymentsEl, overpaymentEl].forEach(function (el) { el.value = ''; });
+      return;
+    }
+
+    const monthlyPayment = annuityPayment(financed, rate, months);
+    const totalPayments = advanceAmount + monthlyPayment * months + buyout;
+    const overpayment = totalPayments - price;
+
+    monthlyPaymentEl.value = format(monthlyPayment);
+    totalPaymentsEl.value = format(totalPayments);
+    overpaymentEl.value = format(overpayment);
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'leasing_calculation');
+    }, 1200);
+  }
+
+  [priceEl, advanceEl, rateEl, monthsEl, buyoutEl].forEach(function (el) { el.addEventListener('input', calculate); });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор лизинга',
+      text: 'Онлайн-калькулятор лизинга: платёж и удорожание',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>

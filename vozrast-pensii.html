@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор возраста выхода на пенсию по году рождения</title>
+<meta name="description" content="Бесплатный калькулятор пенсионного возраста: узнайте, во сколько лет и в каком году выходить на пенсию по переходной таблице пенсионной реформы.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/vozrast-pensii.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор возраста выхода на пенсию">
+<meta property="og:description" content="Узнайте свой пенсионный возраст и год выхода на пенсию по году рождения.">
+<meta property="og:url" content="https://onecalc.ru/vozrast-pensii.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор возраста выхода на пенсию">
+<meta name="twitter:description" content="Пенсионный возраст и год выхода на пенсию по году рождения.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор возраста выхода на пенсию",
+  "url": "https://onecalc.ru/vozrast-pensii.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор пенсионного возраста: расчёт возраста и года выхода на пенсию по году рождения и полу с учётом переходного периода реформы.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "С какого возраста выходят на пенсию в России сейчас?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Общеустановленный пенсионный возраст после завершения переходного периода реформы — 60 лет для женщин и 65 лет для мужчин. Переходный период с постепенным повышением возраста длился с 2019 по 2028 год."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кого не затронуло повышение пенсионного возраста?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Женщины 1963 года рождения и ранее, мужчины 1958 года рождения и ранее сохранили право на пенсию по прежним правилам — в 55 и 60 лет соответственно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Учитывает ли калькулятор льготные категории?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет, калькулятор показывает только общеустановленный возраст выхода на пенсию по старости. Для льготных категорий (длительный стаж, вредные условия труда, работа на Крайнем Севере, многодетные матери и другие) действуют отдельные, более ранние сроки."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли выйти на пенсию раньше расчётного года?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, при наличии оснований для досрочной пенсии (список профессий, стаж, льготная категория) или при использовании пенсионных баллов за длительный трудовой стаж (37 лет для женщин, 42 года для мужчин), дающих право выйти на 2 года раньше общего срока."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Возраст выхода на пенсию</h1>
+    <p class="subtitle">Укажите год рождения и пол — возраст и год выхода на пенсию пересчитаются автоматически</p>
+
+    <div class="field">
+      <label for="birthYear">Год рождения</label>
+      <div class="input-wrap">
+        <input type="text" id="birthYear" inputmode="numeric" value="1970">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="gender">Пол</label>
+      <select id="gender">
+        <option value="female">Женский</option>
+        <option value="male">Мужской</option>
+      </select>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="retirementAge">Возраст выхода на пенсию</label>
+        <div class="input-wrap">
+          <input type="text" id="retirementAge" readonly>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="retirementYear">Год выхода на пенсию</label>
+        <div class="input-wrap">
+          <input type="text" id="retirementYear" readonly>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор определяет общеустановленный возраст и год выхода на пенсию по старости на основе переходной таблицы пенсионной реформы 2018 года (Федеральный закон № 350-ФЗ), которая действовала с 2019 по 2028 год и с тех пор не менялась.</p>
+
+    <h2>Таблица для женщин</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Год рождения</th><th>Возраст выхода</th><th>Год выхода</th></tr></thead>
+        <tbody>
+          <tr><td>1963 и ранее</td><td>55 лет</td><td>по факту рождения + 55</td></tr>
+          <tr><td>1964</td><td>55 лет 6 мес.</td><td>2019–2020</td></tr>
+          <tr><td>1965</td><td>56 лет 6 мес.</td><td>2021</td></tr>
+          <tr><td>1966</td><td>58 лет</td><td>2024</td></tr>
+          <tr><td>1967</td><td>59 лет</td><td>2026</td></tr>
+          <tr><td>1968 и позже</td><td>60 лет</td><td>2028 и позже</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Таблица для мужчин</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Год рождения</th><th>Возраст выхода</th><th>Год выхода</th></tr></thead>
+        <tbody>
+          <tr><td>1958 и ранее</td><td>60 лет</td><td>по факту рождения + 60</td></tr>
+          <tr><td>1959</td><td>60 лет 6 мес.</td><td>2019–2020</td></tr>
+          <tr><td>1960</td><td>61 год 6 мес.</td><td>2022</td></tr>
+          <tr><td>1961</td><td>63 года</td><td>2024</td></tr>
+          <tr><td>1962</td><td>64 года</td><td>2026</td></tr>
+          <tr><td>1963 и позже</td><td>65 лет</td><td>2028 и позже</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>С какого возраста выходят на пенсию сейчас?</summary>
+        <p>После завершения переходного периода — 60 лет для женщин 1968 г.р. и позже, 65 лет для мужчин 1963 г.р. и позже.</p>
+      </details>
+      <details>
+        <summary>Кого не затронуло повышение возраста?</summary>
+        <p>Женщин 1963 года рождения и ранее, мужчин 1958 года рождения и ранее — они выходят на пенсию по прежним правилам, в 55 и 60 лет.</p>
+      </details>
+      <details>
+        <summary>Учитывает ли калькулятор льготные категории?</summary>
+        <p>Нет, только общий возраст. Для льготных категорий действуют отдельные, более ранние сроки — см. статью о досрочной пенсии.</p>
+      </details>
+      <details>
+        <summary>Можно ли выйти раньше расчётного года?</summary>
+        <p>Да, при основаниях для досрочной пенсии или при длительном стаже (37 лет для женщин, 42 года для мужчин) — на 2 года раньше общего срока.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="pensiya.html">Пенсионный калькулятор →</a></p>
+    <p><a href="trudovoy-stazh.html">Трудовой стаж →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и показывает общеустановленный возраст без учёта льготных категорий. Точный возраст и право на пенсию определяет Социальный фонд России.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор возраста выхода на пенсию · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const birthYearEl = document.getElementById('birthYear');
+  const genderEl = document.getElementById('gender');
+  const retirementAgeEl = document.getElementById('retirementAge');
+  const retirementYearEl = document.getElementById('retirementYear');
+
+  const WOMEN = [
+    { year: 1964, ageYears: 55, ageMonths: 6, retireYear: 2019 },
+    { year: 1965, ageYears: 56, ageMonths: 6, retireYear: 2021 },
+    { year: 1966, ageYears: 58, ageMonths: 0, retireYear: 2024 },
+    { year: 1967, ageYears: 59, ageMonths: 0, retireYear: 2026 },
+    { year: 1968, ageYears: 60, ageMonths: 0, retireYear: 2028 }
+  ];
+  const MEN = [
+    { year: 1959, ageYears: 60, ageMonths: 6, retireYear: 2019 },
+    { year: 1960, ageYears: 61, ageMonths: 6, retireYear: 2022 },
+    { year: 1961, ageYears: 63, ageMonths: 0, retireYear: 2024 },
+    { year: 1962, ageYears: 64, ageMonths: 0, retireYear: 2026 },
+    { year: 1963, ageYears: 65, ageMonths: 0, retireYear: 2028 }
+  ];
+
+  function parseYear(value) {
+    const n = parseInt(String(value).replace(/\D/g, ''), 10);
+    return isNaN(n) ? 0 : n;
+  }
+
+  function formatAge(years, months) {
+    let text = years + ' ' + pluralize(years, 'год', 'года', 'лет');
+    if (months > 0) text += ' ' + months + ' ' + pluralize(months, 'месяц', 'месяца', 'месяцев');
+    return text;
+  }
+
+  function pluralize(n, one, few, many) {
+    const mod10 = n % 10;
+    const mod100 = n % 100;
+    if (mod10 === 1 && mod100 !== 11) return one;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return few;
+    return many;
+  }
+
+  function calculate() {
+    const birthYear = parseYear(birthYearEl.value);
+    const isFemale = genderEl.value === 'female';
+    const table = isFemale ? WOMEN : MEN;
+    const oldAge = isFemale ? 55 : 60;
+    const firstTransitionYear = table[0].year;
+    const lastTransitionYear = table[table.length - 1].year;
+
+    if (birthYear <= 0) {
+      retirementAgeEl.value = '';
+      retirementYearEl.value = '';
+      return;
+    }
+
+    let ageYears, ageMonths, retireYear;
+
+    if (birthYear < firstTransitionYear) {
+      ageYears = oldAge;
+      ageMonths = 0;
+      retireYear = birthYear + oldAge;
+    } else if (birthYear >= lastTransitionYear) {
+      const last = table[table.length - 1];
+      ageYears = last.ageYears;
+      ageMonths = last.ageMonths;
+      retireYear = birthYear + last.ageYears;
+    } else {
+      const row = table.find(function (r) { return r.year === birthYear; });
+      ageYears = row.ageYears;
+      ageMonths = row.ageMonths;
+      retireYear = row.retireYear;
+    }
+
+    retirementAgeEl.value = formatAge(ageYears, ageMonths);
+    retirementYearEl.value = retireYear;
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'retirement_age_calculation');
+    }, 1200);
+  }
+
+  birthYearEl.addEventListener('input', calculate);
+  genderEl.addEventListener('change', calculate);
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор возраста выхода на пенсию',
+      text: 'Узнайте свой пенсионный возраст по году рождения',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
