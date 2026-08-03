@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор неустойки по ДДУ за просрочку передачи квартиры (214-ФЗ)</title>
+<meta name="description" content="Бесплатный калькулятор неустойки с застройщика за просрочку передачи квартиры по договору долевого участия согласно ст. 6 214-ФЗ.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/neustoyka-ddu.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор неустойки по ДДУ">
+<meta property="og:description" content="Расчёт неустойки с застройщика за просрочку передачи квартиры.">
+<meta property="og:url" content="https://onecalc.ru/neustoyka-ddu.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор неустойки по ДДУ">
+<meta name="twitter:description" content="Неустойка с застройщика за просрочку по 214-ФЗ.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор неустойки по ДДУ",
+  "url": "https://onecalc.ru/neustoyka-ddu.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор неустойки с застройщика за просрочку передачи объекта долевого строительства по статье 6 Федерального закона № 214-ФЗ.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "По какой формуле считается неустойка по ДДУ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Неустойка = цена договора × 1/300 ключевой ставки ЦБ (для граждан — 1/150, то есть в двойном размере) за каждый день просрочки передачи объекта."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "На какую дату брать ключевую ставку?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Согласно закону и разъяснениям судебной практики, применяется ставка, действовавшая на день исполнения обязательства: если квартира уже передана — на дату фактической передачи, если ещё не передана — на дату обращения в суд или дату расчёта."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Действует ли мораторий на неустойку по ДДУ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "В отдельные периоды (2022 и 2024–2025 годы) правительство вводило мораторий на начисление неустойки застройщикам — на эти периоды неустойка не начисляется, их нужно исключать из расчёта."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Может ли суд снизить неустойку?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, суд вправе снизить неустойку по статье 333 ГК РФ, если застройщик заявит о её несоразмерности последствиям нарушения обязательства — на практике суды нередко уменьшают заявленную сумму."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"], input[type="date"] { width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; font-family: inherit; }
+  input[type="text"]:focus, input[type="date"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[readonly] { cursor: default; }
+  select {
+    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid #d1d5db; border-radius: 10px; outline: none;
+    background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 40px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .hint { font-size: 12px; color: #9ca3af; margin-top: -14px; margin-bottom: 20px; line-height: 1.5; }
+  .hint a { color: #6b7280; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #f8f9fb; border-radius: 10px; padding: 14px 16px; font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 13px; color: #374151; margin-bottom: 16px; overflow-x: auto; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"], input[type="date"], select { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; color-scheme: dark; }
+    select { background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+    .subtitle, .disclaimer, .site-footer, .hint { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li { color: #cbd5e1; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+    .hint a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Неустойка по ДДУ</h1>
+    <p class="subtitle">За просрочку передачи объекта долевого строительства (ст. 6 214-ФЗ)</p>
+
+    <div class="field">
+      <label for="contractPrice">Цена договора, ₽</label>
+      <div class="input-wrap">
+        <input type="text" id="contractPrice" inputmode="decimal" value="6000000">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="dueDate">Срок передачи по договору</label>
+      <input type="date" id="dueDate" value="2026-01-15">
+    </div>
+
+    <div class="field">
+      <label for="actualDate">Дата фактической передачи (или сегодня, если ещё не передано)</label>
+      <input type="date" id="actualDate" value="2026-05-15">
+    </div>
+
+    <div class="field">
+      <label for="participantType">Участник долевого строительства</label>
+      <select id="participantType">
+        <option value="individual">Гражданин (физлицо)</option>
+        <option value="entity">Юридическое лицо</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="keyRate">Ключевая ставка ЦБ на дату исполнения, %</label>
+      <div class="input-wrap">
+        <input type="text" id="keyRate" inputmode="decimal" value="16">
+      </div>
+    </div>
+    <p class="hint">Берётся ставка, действовавшая на дату фактической передачи объекта (если ещё не передан — на дату обращения в суд). Актуальные и исторические значения — на <a href="https://www.cbr.ru/hd_base/KeyRate/" target="_blank" rel="noopener">cbr.ru</a>.</p>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="totalDays">Дней просрочки</label>
+        <div class="input-wrap">
+          <input type="text" id="totalDays" readonly>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="dailyPenalty">Неустойка за 1 день</label>
+        <div class="input-wrap">
+          <input type="text" id="dailyPenalty" readonly>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="totalPenalty">Итоговая неустойка</label>
+        <div class="input-wrap">
+          <input type="text" id="totalPenalty" readonly>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Формула расчёта</h2>
+    <div class="formula-box">
+      Неустойка = Цена договора × Ставка / 100 / 300 × (2 для гражданина) × Дни просрочки
+    </div>
+    <p>Для граждан (физических лиц — участников долевого строительства для личных нужд, не связанных с предпринимательством) неустойка уплачивается в двойном размере — 1/150 ставки в день вместо 1/300 для юридических лиц.</p>
+
+    <h2>Как считать дни просрочки</h2>
+    <p>Просрочка начинается со дня, следующего за предусмотренным договором сроком передачи объекта, и заканчивается днём фактической передачи (подписания передаточного акта). Если объект ещё не передан, для расчёта на текущий момент используйте сегодняшнюю дату — итоговую сумму нужно будет пересчитать на день фактической передачи или решения суда.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>По какой формуле считается неустойка?</summary>
+        <p>Цена договора × ключевая ставка / 100 / 300 × (2 для гражданина) × количество дней просрочки.</p>
+      </details>
+      <details>
+        <summary>На какую дату брать ключевую ставку?</summary>
+        <p>На дату фактической передачи объекта, а если он ещё не передан — на дату обращения в суд или дату расчёта.</p>
+      </details>
+      <details>
+        <summary>Действует ли мораторий на неустойку по ДДУ?</summary>
+        <p>В отдельные периоды правительство вводило мораторий на начисление неустойки застройщикам — эти дни нужно исключать из расчёта.</p>
+      </details>
+      <details>
+        <summary>Может ли суд снизить неустойку?</summary>
+        <p>Да, по заявлению застройщика суд вправе снизить неустойку по ст. 333 ГК РФ при её несоразмерности последствиям нарушения.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="procenty-395-gk.html">Проценты по ст. 395 ГК РФ →</a></p>
+    <p><a href="ipoteka.html">Ипотечный калькулятор →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и не учитывает периоды моратория на неустойку и возможное снижение суммы судом по ст. 333 ГК РФ. Ключевую ставку указывайте самостоятельно на основании данных Банка России.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор неустойки по ДДУ · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const contractPriceEl = document.getElementById('contractPrice');
+  const dueDateEl = document.getElementById('dueDate');
+  const actualDateEl = document.getElementById('actualDate');
+  const participantTypeEl = document.getElementById('participantType');
+  const keyRateEl = document.getElementById('keyRate');
+  const totalDaysEl = document.getElementById('totalDays');
+  const dailyPenaltyEl = document.getElementById('dailyPenalty');
+  const totalPenaltyEl = document.getElementById('totalPenalty');
+
+  function parseNum(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function formatMoney(n) {
+    return n.toLocaleString('ru-RU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ₽';
+  }
+
+  function calculate() {
+    const price = Math.max(0, parseNum(contractPriceEl.value));
+    const rate = Math.max(0, parseNum(keyRateEl.value));
+    const isIndividual = participantTypeEl.value === 'individual';
+    const multiplier = isIndividual ? 2 : 1;
+
+    const dueVal = dueDateEl.value;
+    const actualVal = actualDateEl.value;
+    if (!dueVal || !actualVal) {
+      totalDaysEl.value = '';
+      dailyPenaltyEl.value = '';
+      totalPenaltyEl.value = '';
+      return;
+    }
+
+    const due = new Date(dueVal + 'T00:00:00');
+    const actual = new Date(actualVal + 'T00:00:00');
+    const days = Math.round((actual - due) / 86400000);
+
+    if (days <= 0) {
+      totalDaysEl.value = '0 дн.';
+      dailyPenaltyEl.value = formatMoney(0);
+      totalPenaltyEl.value = formatMoney(0);
+      trackCalculation();
+      return;
+    }
+
+    const dailyPenalty = price * (rate / 100) / 300 * multiplier;
+    const totalPenalty = dailyPenalty * days;
+
+    totalDaysEl.value = days + ' дн.';
+    dailyPenaltyEl.value = formatMoney(dailyPenalty);
+    totalPenaltyEl.value = formatMoney(totalPenalty);
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'ddu_penalty_calculation');
+    }, 1200);
+  }
+
+  [contractPriceEl, dueDateEl, actualDateEl, keyRateEl].forEach(function (el) {
+    el.addEventListener('input', calculate);
+  });
+  participantTypeEl.addEventListener('change', calculate);
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор неустойки по ДДУ',
+      text: 'Расчёт неустойки с застройщика за просрочку передачи квартиры',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
