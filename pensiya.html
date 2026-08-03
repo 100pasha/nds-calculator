@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пенсионный калькулятор — расчёт страховой пенсии по баллам ИПК</title>
+<meta name="description" content="Бесплатный пенсионный калькулятор: рассчитайте размер страховой пенсии по накопленным баллам ИПК, стоимости балла и фиксированной выплате.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/pensiya.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Пенсионный калькулятор">
+<meta property="og:description" content="Расчёт страховой пенсии по баллам ИПК, стоимости балла и фиксированной выплате.">
+<meta property="og:url" content="https://onecalc.ru/pensiya.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Пенсионный калькулятор">
+<meta name="twitter:description" content="Расчёт страховой пенсии по баллам ИПК.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Пенсионный калькулятор",
+  "url": "https://onecalc.ru/pensiya.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор страховой пенсии по накопленным баллам ИПК, стоимости пенсионного балла и фиксированной выплате.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как формируется индивидуальный пенсионный коэффициент (ИПК)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Баллы начисляются ежегодно исходя из уплаченных за работника страховых взносов: чем выше официальная зарплата (в пределах установленной предельной базы), тем больше баллов за год. Также баллы начисляются за нестраховые периоды — армию, отпуск по уходу за ребёнком и другие."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое фиксированная выплата к пенсии?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Это гарантированная государством часть страховой пенсии, не зависящая от накопленных баллов, — одинаковая для всех получателей базовая сумма (с повышением для отдельных категорий: инвалидов, лиц старше 80 лет, работавших на Крайнем Севере и других). Размер ежегодно индексируется."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как узнать свои накопленные баллы ИПК?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "В личном кабинете на Госуслугах или в приложении СФР в разделе «Индивидуальный лицевой счёт» — там же видно, сколько баллов начислено за каждый год работы."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что даёт более поздний выход на пенсию?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Если обратиться за назначением пенсии позже, чем наступило право на неё, применяются премиальные коэффициенты, увеличивающие и фиксированную выплату, и стоимость каждого балла — чем дольше отсрочка (до 10 лет), тем выше итоговая прибавка."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"] { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li { color: #cbd5e1; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Пенсионный калькулятор</h1>
+    <p class="subtitle">Введите свои данные — размер страховой пенсии пересчитается автоматически</p>
+
+    <div class="field">
+      <label for="points">Накопленные баллы ИПК</label>
+      <div class="input-wrap">
+        <input type="text" id="points" inputmode="decimal" value="100">
+      </div>
+      <p class="rate-hint">Смотрите в личном кабинете на Госуслугах или в приложении СФР</p>
+    </div>
+
+    <div class="field">
+      <label for="pointValue">Стоимость одного балла</label>
+      <div class="input-wrap">
+        <input type="text" id="pointValue" inputmode="decimal" value="145">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Актуальное значение уточните на сайте СФР</p>
+    </div>
+
+    <div class="field">
+      <label for="fixedPayment">Фиксированная выплата</label>
+      <div class="input-wrap">
+        <input type="text" id="fixedPayment" inputmode="decimal" value="8 907">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Актуальное значение уточните на сайте СФР</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="pointsValue">Сумма по баллам</label>
+        <div class="input-wrap">
+          <input type="text" id="pointsValue" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="totalPension">Размер страховой пенсии</label>
+        <div class="input-wrap">
+          <input type="text" id="totalPension" readonly>
+          <span class="currency">₽/мес</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает размер страховой пенсии по формуле, установленной законом: количество накопленных баллов ИПК умножается на стоимость одного балла, и к результату прибавляется фиксированная выплата. Стоимость балла и размер фиксированной выплаты ежегодно индексируются государством, поэтому калькулятор просит ввести их вручную — актуальные значения стоит свериться на сайте СФР перед расчётом.</p>
+
+    <h2>Формула расчёта</h2>
+    <div class="formula-box">Страховая пенсия = ИПК × Стоимость балла + Фиксированная выплата</div>
+    <p>Например, при 100 накопленных баллах, стоимости балла 145 ₽ и фиксированной выплате 8 907 ₽ пенсия составит 100 × 145 + 8 907 = 23 407 ₽ в месяц.</p>
+
+    <h2>Что не учитывает калькулятор</h2>
+    <ul>
+      <li>Премиальные коэффициенты за более поздний выход на пенсию (отложенную пенсию)</li>
+      <li>Повышенную фиксированную выплату для отдельных категорий (инвалиды, работавшие на Крайнем Севере, лица старше 80 лет)</li>
+      <li>Социальную доплату до прожиточного минимума пенсионера, если итоговая сумма окажется ниже него</li>
+    </ul>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как формируется ИПК?</summary>
+        <p>Баллы начисляются ежегодно от уплаченных страховых взносов (зависят от официальной зарплаты) и за нестраховые периоды — армию, декрет и другие.</p>
+      </details>
+      <details>
+        <summary>Что такое фиксированная выплата?</summary>
+        <p>Гарантированная базовая часть пенсии, не зависящая от баллов, с повышением для отдельных категорий. Индексируется ежегодно.</p>
+      </details>
+      <details>
+        <summary>Как узнать свои баллы?</summary>
+        <p>В личном кабинете на Госуслугах или в приложении СФР, раздел «Индивидуальный лицевой счёт».</p>
+      </details>
+      <details>
+        <summary>Что даёт более поздний выход на пенсию?</summary>
+        <p>Премиальные коэффициенты увеличивают и фиксированную выплату, и стоимость балла — чем дольше отсрочка, тем выше прибавка.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="trudovoy-stazh.html">Трудовой стаж →</a></p>
+    <p><a href="ndfl.html">Калькулятор НДФЛ →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер и использует введённые вами значения стоимости балла и фиксированной выплаты. Официальный расчёт пенсии выполняет Социальный фонд России.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Пенсионный калькулятор · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const pointsEl = document.getElementById('points');
+  const pointValueEl = document.getElementById('pointValue');
+  const fixedPaymentEl = document.getElementById('fixedPayment');
+  const pointsValueEl = document.getElementById('pointsValue');
+  const totalPensionEl = document.getElementById('totalPension');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function calculate() {
+    const points = Math.max(0, parse(pointsEl.value));
+    const pointValue = Math.max(0, parse(pointValueEl.value));
+    const fixedPayment = Math.max(0, parse(fixedPaymentEl.value));
+
+    const pointsValue = points * pointValue;
+    const total = pointsValue + fixedPayment;
+
+    pointsValueEl.value = format(pointsValue);
+    totalPensionEl.value = format(total);
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'pension_calculation');
+    }, 1200);
+  }
+
+  [pointsEl, pointValueEl, fixedPaymentEl].forEach(function (el) { el.addEventListener('input', calculate); });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Пенсионный калькулятор',
+      text: 'Онлайн-калькулятор страховой пенсии по баллам ИПК',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
