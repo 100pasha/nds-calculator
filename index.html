@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Онлайн-калькуляторы — НДС, ипотека и другие расчёты | onecalc.ru</title>
-<meta name="description" content="Бесплатные онлайн-калькуляторы без регистрации: НДС, ипотека и другие финансовые расчёты с формулами и примерами. Считают прямо в браузере.">
+<meta name="description" content="Бесплатные онлайн-калькуляторы без регистрации: НДС, ипотека, кредит, НДФЛ и другие финансовые расчёты с формулами и примерами. Считают прямо в браузере.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://onecalc.ru/">
 <meta name="google-site-verification" content="dva4WliETWz_Ky9qgqxlhZXeaKUem5Q_urhogoks3zM" />
@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Онлайн-калькуляторы — onecalc.ru">
-<meta property="og:description" content="Бесплатные онлайн-калькуляторы без регистрации: НДС, ипотека и другие финансовые расчёты.">
+<meta property="og:description" content="Бесплатные онлайн-калькуляторы без регистрации: НДС, ипотека, кредит, НДФЛ и другие финансовые расчёты.">
 <meta property="og:url" content="https://onecalc.ru/">
 <meta property="og:image" content="https://onecalc.ru/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -26,7 +26,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Онлайн-калькуляторы — onecalc.ru">
-<meta name="twitter:description" content="Бесплатные онлайн-калькуляторы без регистрации: НДС, ипотека и другие финансовые расчёты.">
+<meta name="twitter:description" content="Бесплатные онлайн-калькуляторы без регистрации: НДС, ипотека, кредит, НДФЛ и другие финансовые расчёты.">
 <meta name="twitter:image" content="https://onecalc.ru/og-image.png">
 
 <!-- Yandex.Metrika counter -->
@@ -91,51 +91,177 @@
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #f2f4f7;
-    color: #1a1a1a;
-    padding: 40px 16px 64px;
+    background: #f8fafc;
+    color: #0f172a;
   }
-  .page {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  .card {
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    padding: 32px;
+    border-bottom: 1px solid #e5e7eb;
   }
-  h1 {
-    font-size: 24px;
-    margin: 0 0 8px;
-  }
-  .subtitle {
-    color: #6b7280;
-    font-size: 14px;
-    margin: 0 0 28px;
-  }
-  .calc-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .calc-card {
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 14px 16px;
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 18px;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 17px;
+    flex: none;
+  }
+  .logo-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    flex: none;
+  }
+  .search-wrap {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    pointer-events: none;
+  }
+  #searchInput {
+    width: 100%;
+    padding: 9px 14px 9px 36px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    background: #f8fafc;
+    color: #0f172a;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  #searchInput:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background: #fff;
+  }
+
+  /* Hero */
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 16px 8px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .hero p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 24px;
+  }
+  .badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 8px;
+  }
+  .badge {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Category filter */
+  .categories {
+    max-width: 960px;
+    margin: 24px auto 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cat-pill {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .cat-pill:hover {
+    border-color: #93c5fd;
+  }
+  .cat-pill.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+  }
+
+  /* Calculator grid */
+  .grid-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 16px 8px;
+  }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .calc-card {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.15s, background-color 0.15s;
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
   }
   .calc-card:hover {
-    border-color: #2563eb;
-    background: #f8f9fb;
+    border-color: #93c5fd;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
+    transform: translateY(-1px);
+  }
+  .calc-card.hidden {
+    display: none;
   }
   .calc-icon {
-    flex: none;
     width: 44px;
     height: 44px;
     border-radius: 10px;
@@ -146,26 +272,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 12px;
   }
-  .calc-info {
-    flex: 1;
-    min-width: 0;
+  .calc-arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #cbd5e1;
+    font-size: 16px;
   }
   .calc-title {
     font-size: 15px;
-    font-weight: 600;
-    margin: 0 0 4px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    padding-right: 20px;
   }
   .calc-desc {
     font-size: 13px;
-    color: #6b7280;
-    line-height: 1.5;
+    color: #64748b;
+    line-height: 1.55;
     margin: 0;
   }
-  .calc-arrow {
-    flex: none;
+  .no-results {
+    display: none;
+    text-align: center;
     color: #9ca3af;
-    font-size: 18px;
+    font-size: 14px;
+    padding: 32px 16px;
+  }
+  .no-results.visible {
+    display: block;
   }
   .more-note {
     font-size: 13px;
@@ -174,15 +310,25 @@
     margin: 24px 0 0;
     line-height: 1.6;
   }
-  .articles-card {
-    margin-top: 20px;
+
+  /* Articles section */
+  .section-card {
+    max-width: 720px;
+    margin: 8px auto 0;
+    padding: 16px;
+  }
+  .articles-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
   }
   h2.section-title {
     font-size: 17px;
     margin: 0 0 4px;
   }
   .section-subtitle {
-    color: #6b7280;
+    color: #64748b;
     font-size: 13px;
     margin: 0 0 16px;
   }
@@ -196,13 +342,13 @@
     padding: 10px 12px;
     margin: 0 -12px;
     border-radius: 8px;
-    color: #1a1a1a;
+    color: #0f172a;
     text-decoration: none;
     font-size: 14px;
     transition: background-color 0.15s, color 0.15s;
   }
   .article-list a:hover {
-    background: #f8f9fb;
+    background: #f8fafc;
     color: #2563eb;
   }
   .all-articles-link {
@@ -218,58 +364,86 @@
   .all-articles-link a:hover {
     text-decoration: underline;
   }
+
   .site-footer {
     text-align: center;
     font-size: 12px;
     color: #9ca3af;
-    margin-top: 32px;
-    padding-top: 20px;
-    border-top: 1px solid #e5e7eb;
+    margin-top: 24px;
+    padding: 24px 16px 48px;
     line-height: 1.6;
   }
   .site-footer a {
-    color: #6b7280;
+    color: #64748b;
   }
 
   @media (prefers-color-scheme: dark) {
     body {
-      background: #0f1115;
+      background: #0b0d12;
       color: #e5e7eb;
       color-scheme: dark;
     }
-    .card {
-      background: #1a1d24;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    .site-header {
+      background: #12151b;
+      border-bottom-color: #2a2e37;
     }
-    .subtitle, .more-note, .site-footer, .section-subtitle {
+    .logo {
+      color: #e5e7eb;
+    }
+    #searchInput {
+      background: #0b0d12;
+      border-color: #2a2e37;
+      color: #e5e7eb;
+    }
+    #searchInput:focus {
+      background: #12151b;
+    }
+    .hero p, .more-note, .section-subtitle, .site-footer {
+      color: #9ca3af;
+    }
+    .badge {
+      color: #cbd5e1;
+    }
+    .cat-pill {
+      background: #12151b;
+      border-color: #2a2e37;
+      color: #cbd5e1;
+    }
+    .cat-pill:hover {
+      border-color: #3b82f6;
+    }
+    .cat-pill.active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #fff;
+    }
+    .calc-card, .articles-box {
+      background: #12151b;
+      border-color: #2a2e37;
+    }
+    .calc-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    .calc-icon {
+      background: #1e2a4a;
+      color: #93c5fd;
+    }
+    .calc-arrow {
+      color: #4b5563;
+    }
+    .calc-desc {
       color: #9ca3af;
     }
     .article-list a {
       color: #e5e7eb;
     }
     .article-list a:hover {
-      background: #12151b;
+      background: #0b0d12;
       color: #93c5fd;
     }
     .all-articles-link a {
       color: #93c5fd;
-    }
-    .calc-card {
-      border-color: #2a2e37;
-    }
-    .calc-card:hover {
-      border-color: #2563eb;
-      background: #12151b;
-    }
-    .calc-icon {
-      background: #1e2a4a;
-      color: #93c5fd;
-    }
-    .calc-desc {
-      color: #9ca3af;
-    }
-    .site-footer {
-      border-top-color: #2a2e37;
     }
     .site-footer a {
       color: #9ca3af;
@@ -278,53 +452,72 @@
 </style>
 </head>
 <body>
-<div class="page">
-  <div class="card">
-    <h1>Онлайн-калькуляторы</h1>
-    <p class="subtitle">Бесплатные калькуляторы без регистрации — считают прямо в браузере, ничего не отправляют на сервер</p>
-
-    <div class="calc-list">
-      <a class="calc-card" href="nds.html">
-        <span class="calc-icon">%</span>
-        <span class="calc-info">
-          <span class="calc-title">Калькулятор НДС</span>
-          <span class="calc-desc">Цена с НДС, сумма налога и цена без НДС по ставкам 22%, 20%, 10%, 0%, 5% и 7%</span>
-        </span>
-        <span class="calc-arrow">→</span>
-      </a>
-
-      <a class="calc-card" href="ipoteka.html">
-        <span class="calc-icon">🏠</span>
-        <span class="calc-info">
-          <span class="calc-title">Калькулятор ипотеки</span>
-          <span class="calc-desc">Ежемесячный платёж, переплата и график погашения — аннуитетный и дифференцированный платёж</span>
-        </span>
-        <span class="calc-arrow">→</span>
-      </a>
-
-      <a class="calc-card" href="kredit.html">
-        <span class="calc-icon">💳</span>
-        <span class="calc-info">
-          <span class="calc-title">Кредитный калькулятор</span>
-          <span class="calc-desc">Платёж, переплата и график погашения по любому потребительскому кредиту</span>
-        </span>
-        <span class="calc-arrow">→</span>
-      </a>
-
-      <a class="calc-card" href="ndfl.html">
-        <span class="calc-icon">₽</span>
-        <span class="calc-info">
-          <span class="calc-title">Калькулятор НДФЛ</span>
-          <span class="calc-desc">Зарплата на руки и сумма налога по прогрессивной шкале 13–22%</span>
-        </span>
-        <span class="calc-arrow">→</span>
-      </a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-badge">1</span>
+      onecalc.ru
+    </a>
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Найти калькулятор..." autocomplete="off">
     </div>
+  </div>
+</header>
 
-    <p class="more-note">Новые калькуляторы появляются регулярно — добавьте страницу в закладки.</p>
+<div class="hero">
+  <h1>Бесплатные онлайн-калькуляторы</h1>
+  <p>Простые инструменты для финансовых расчётов — без регистрации и рекламы, всё считается прямо в браузере</p>
+  <div class="badges">
+    <span class="badge">⚡ Быстро</span>
+    <span class="badge">🔒 Приватно</span>
+    <span class="badge">📱 Адаптивно</span>
+  </div>
+</div>
+
+<div class="categories" id="categories">
+  <button type="button" class="cat-pill active" data-category="all">Все калькуляторы</button>
+  <button type="button" class="cat-pill" data-category="credit">Кредиты и вклады</button>
+  <button type="button" class="cat-pill" data-category="tax">Налоги</button>
+</div>
+
+<div class="grid-section">
+  <div class="calc-grid" id="calcGrid">
+    <a class="calc-card" href="nds.html" data-category="tax" data-search="калькулятор ндс цена налог ставка 22 20 10 5 7">
+      <span class="calc-arrow">→</span>
+      <span class="calc-icon">%</span>
+      <span class="calc-title">Калькулятор НДС</span>
+      <p class="calc-desc">Цена с НДС, сумма налога и цена без НДС по ставкам 22%, 20%, 10%, 0%, 5% и 7%</p>
+    </a>
+
+    <a class="calc-card" href="ipoteka.html" data-category="credit" data-search="калькулятор ипотеки платёж переплата аннуитет дифференцированный">
+      <span class="calc-arrow">→</span>
+      <span class="calc-icon">🏠</span>
+      <span class="calc-title">Калькулятор ипотеки</span>
+      <p class="calc-desc">Ежемесячный платёж, переплата и график погашения — аннуитетный и дифференцированный платёж</p>
+    </a>
+
+    <a class="calc-card" href="kredit.html" data-category="credit" data-search="кредитный калькулятор потребительский кредит платёж переплата">
+      <span class="calc-arrow">→</span>
+      <span class="calc-icon">💳</span>
+      <span class="calc-title">Кредитный калькулятор</span>
+      <p class="calc-desc">Платёж, переплата и график погашения по любому потребительскому кредиту</p>
+    </a>
+
+    <a class="calc-card" href="ndfl.html" data-category="tax" data-search="калькулятор ндфл зарплата на руки оклад налог">
+      <span class="calc-arrow">→</span>
+      <span class="calc-icon">₽</span>
+      <span class="calc-title">Калькулятор НДФЛ</span>
+      <p class="calc-desc">Зарплата на руки и сумма налога по прогрессивной шкале 13–22%</p>
+    </a>
   </div>
 
-  <div class="card articles-card">
+  <p class="no-results" id="noResults">Ничего не найдено — попробуйте другой запрос</p>
+  <p class="more-note">Новые калькуляторы появляются регулярно — добавьте страницу в закладки</p>
+</div>
+
+<div class="section-card">
+  <div class="articles-box">
     <h2 class="section-title">Свежие статьи</h2>
     <p class="section-subtitle">Разбираем частные случаи расчёта и уплаты НДС</p>
     <ul class="article-list">
@@ -336,10 +529,42 @@
     </ul>
     <p class="all-articles-link"><a href="stati.html">Все статьи →</a></p>
   </div>
-
-  <footer class="site-footer">
-    <p>© 2026 onecalc.ru · <a href="privacy.html">Политика конфиденциальности</a></p>
-  </footer>
 </div>
+
+<footer class="site-footer">
+  <p>© 2026 onecalc.ru · <a href="privacy.html">Политика конфиденциальности</a></p>
+</footer>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const categoriesEl = document.getElementById('categories');
+  const cards = Array.from(document.querySelectorAll('#calcGrid .calc-card'));
+  const noResults = document.getElementById('noResults');
+  let activeCategory = 'all';
+
+  function applyFilter() {
+    const query = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+    cards.forEach(function (card) {
+      const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+      const matchesQuery = !query || card.dataset.search.includes(query);
+      const visible = matchesCategory && matchesQuery;
+      card.classList.toggle('hidden', !visible);
+      if (visible) visibleCount++;
+    });
+    noResults.classList.toggle('visible', visibleCount === 0);
+  }
+
+  searchInput.addEventListener('input', applyFilter);
+
+  categoriesEl.addEventListener('click', function (e) {
+    const btn = e.target.closest('.cat-pill');
+    if (!btn) return;
+    categoriesEl.querySelectorAll('.cat-pill').forEach(function (p) { p.classList.remove('active'); });
+    btn.classList.add('active');
+    activeCategory = btn.dataset.category;
+    applyFilter();
+  });
+</script>
 </body>
 </html>
