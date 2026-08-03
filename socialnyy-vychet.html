@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор социального налогового вычета — лечение, обучение, фитнес</title>
+<meta name="description" content="Бесплатный калькулятор социального налогового вычета: возврат НДФЛ за лечение, обучение, фитнес и обучение детей с учётом лимитов 150 000 и 110 000 ₽.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onecalc.ru/socialnyy-vychet.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Калькулятор социального вычета">
+<meta property="og:description" content="Возврат НДФЛ за лечение, обучение, фитнес и обучение детей.">
+<meta property="og:url" content="https://onecalc.ru/socialnyy-vychet.html">
+<meta property="og:image" content="https://onecalc.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор социального вычета">
+<meta name="twitter:description" content="Возврат НДФЛ за лечение, обучение и фитнес.">
+<meta name="twitter:image" content="https://onecalc.ru/og-image.png">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111183520', 'ym');
+
+    ym(111183520, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111183520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор социального вычета",
+  "url": "https://onecalc.ru/socialnyy-vychet.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Онлайн-калькулятор социального налогового вычета: возврат НДФЛ за лечение, обучение, фитнес, страхование жизни и обучение детей с учётом лимитов 150 000 и 110 000 ₽.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+  "inLanguage": "ru"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какой лимит у социального вычета?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "150 000 ₽ базы в год — общий лимит на лечение, обучение, фитнес и страхование жизни вместе, то есть максимум 19 500 ₽ возврата. Дорогостоящее лечение по отдельному перечню Правительства РФ не ограничено суммой."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Отдельный ли лимит на обучение детей?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, 110 000 ₽ на каждого ребёнка в год, и этот лимит не входит в общий лимит 150 000 ₽ на собственные расходы — оба вычета можно получить одновременно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что относится к дорогостоящему лечению?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Виды лечения из перечня, утверждённого Правительством РФ (например, сложные операции, ЭКО, трансплантация) — по ним вычет предоставляется в полном размере расходов без ограничения суммой 150 000 ₽. Код услуги «2» в справке об оплате медицинских услуг подтверждает дорогостоящий характер лечения."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Может ли сумма возврата превысить уплаченный НДФЛ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет, вернуть можно не больше суммы НДФЛ, фактически удержанной за год по ставке 13%. Если расходы превышают этот лимит, остаток на следующий год не переносится — в отличие от имущественного вычета."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f2f4f7; color: #1a1a1a; padding: 40px 16px 64px; }
+  .page { max-width: 640px; margin: 0 auto; }
+  .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 420px; margin: 0 auto 48px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 28px; }
+  .breadcrumb { font-size: 13px; margin: 0 0 14px; }
+  .breadcrumb a { color: #6b7280; text-decoration: none; }
+  .breadcrumb a:hover { color: #2563eb; }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .input-wrap { position: relative; }
+  input[type="text"] { width: 100%; padding: 12px 44px 12px 14px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 10px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type="text"]:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  input[type="text"][readonly] { cursor: default; }
+  .currency { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+  .rate-hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
+  .divider { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+  .results { background: #f8f9fb; border-radius: 12px; padding: 16px 16px 4px; margin-bottom: 20px; }
+  .field.result input { color: #2563eb; font-weight: 600; }
+  .field.result:last-child { margin-bottom: 12px; }
+  .share-btn { display: block; width: 100%; margin-top: 4px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #2563eb; background: #eef2ff; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.15s; }
+  .share-btn:hover { background: #e0e7ff; }
+  .article h2 { font-size: 19px; margin: 36px 0 12px; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 12px; }
+  .article ul { padding-left: 20px; margin: 0 0 12px; }
+  .article li { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 4px; }
+  .formula-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin: 0 0 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-x: auto; }
+  .rates-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 10px; overflow: hidden; font-size: 13px; margin-bottom: 12px; }
+  .rates-table th, .rates-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+  .rates-table th { background: #f8f9fb; color: #374151; font-weight: 600; }
+  .rates-table td { color: #4b5563; }
+  .rates-table tr:last-child td { border-bottom: none; }
+  .faq details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .faq summary { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .faq p { margin: 10px 0 0; }
+  .disclaimer { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 32px; line-height: 1.5; }
+  .table-wrap { overflow-x: auto; }
+  .site-footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .site-footer a { color: #6b7280; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1115; color: #e5e7eb; color-scheme: dark; }
+    .card, .formula-box, .rates-table, .faq details { background: #1a1d24; border-color: #2a2e37; }
+    .card { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .results { background: #12151b; }
+    label { color: #cbd5e1; }
+    input[type="text"] { background-color: #12151b; border-color: #2a2e37; color: #e5e7eb; }
+    .subtitle, .rate-hint, .disclaimer, .site-footer { color: #9ca3af; }
+    .breadcrumb a { color: #9ca3af; }
+    .breadcrumb a:hover { color: #93c5fd; }
+    .divider { border-top-color: #2a2e37; }
+    .article p, .article li, .rates-table td { color: #cbd5e1; }
+    .rates-table th { background: #12151b; color: #cbd5e1; }
+    .rates-table th, .rates-table td { border-bottom-color: #2a2e37; }
+    .share-btn { background: #1e2a4a; color: #93c5fd; }
+    .share-btn:hover { background: #26355e; }
+    .site-footer { border-top-color: #2a2e37; }
+    .site-footer a { color: #9ca3af; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <p class="breadcrumb"><a href="index.html">← Все калькуляторы</a></p>
+    <h1>Калькулятор социального вычета</h1>
+    <p class="subtitle">Введите расходы за год — сумма возврата НДФЛ рассчитается автоматически</p>
+
+    <div class="field">
+      <label for="general">Лечение, обучение, фитнес, страхование жизни (своё)</label>
+      <div class="input-wrap">
+        <input type="text" id="general" inputmode="decimal" value="100 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Общий лимит базы — 150 000 ₽ в год на все эти категории вместе</p>
+    </div>
+
+    <div class="field">
+      <label for="expensive">Дорогостоящее лечение</label>
+      <div class="input-wrap">
+        <input type="text" id="expensive" inputmode="decimal" value="300 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">По перечню Правительства РФ — без ограничения суммы</p>
+    </div>
+
+    <div class="field">
+      <label for="childrenEdu">Обучение детей</label>
+      <div class="input-wrap">
+        <input type="text" id="childrenEdu" inputmode="decimal" value="130 000">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Лимит базы — 110 000 ₽ на каждого ребёнка, не входит в общий лимит 150 000 ₽</p>
+    </div>
+
+    <div class="field">
+      <label for="income">Доход за год до вычета НДФЛ</label>
+      <div class="input-wrap">
+        <input type="text" id="income" inputmode="decimal" value="0">
+        <span class="currency">₽</span>
+      </div>
+      <p class="rate-hint">Необязательно. Заполните, чтобы ограничить возврат фактически уплаченным НДФЛ</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="results">
+      <div class="field result">
+        <label for="totalBase">База вычета</label>
+        <div class="input-wrap">
+          <input type="text" id="totalBase" readonly>
+          <span class="currency">₽</span>
+        </div>
+      </div>
+      <div class="field result">
+        <label for="refund">Сумма к возврату</label>
+        <div class="input-wrap">
+          <input type="text" id="refund" readonly>
+          <span class="currency">₽</span>
+        </div>
+        <p class="rate-hint" id="refundHint">—</p>
+      </div>
+    </div>
+
+    <button type="button" class="share-btn" id="shareBtn">Поделиться калькулятором</button>
+  </div>
+
+  <article class="article">
+    <h2>Как работает калькулятор</h2>
+    <p>Калькулятор считает социальный налоговый вычет по статье 219 НК РФ — возврат 13% НДФЛ за собственное лечение, обучение, фитнес, страхование жизни, дорогостоящее лечение и обучение детей. Учитывает раздельные лимиты по каждой группе расходов.</p>
+
+    <h2>Формула расчёта</h2>
+    <div class="formula-box">База = min(Лечение+обучение+фитнес+страхование, 150 000 ₽) + Дорогостоящее лечение + min(Обучение детей, 110 000 ₽)</div>
+    <div class="formula-box">Возврат = База × 13%, не более уплаченного за год НДФЛ</div>
+    <p>Например, при общих расходах 100 000 ₽ (в пределах лимита), дорогостоящем лечении 300 000 ₽ и обучении детей 130 000 ₽ (лимитировано до 110 000 ₽): база = 100 000 + 300 000 + 110 000 = 510 000 ₽ → возврат 66 300 ₽.</p>
+
+    <h2>Лимиты по категориям</h2>
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead><tr><th>Категория</th><th>Лимит базы</th></tr></thead>
+        <tbody>
+          <tr><td>Своё лечение, обучение, фитнес, страхование жизни (вместе)</td><td>150 000 ₽ в год</td></tr>
+          <tr><td>Дорогостоящее лечение</td><td>без ограничения</td></tr>
+          <tr><td>Обучение каждого ребёнка</td><td>110 000 ₽ в год</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Первая группа расходов (лечение, обучение себя, фитнес, страхование жизни) делит один общий лимит 150 000 ₽ — если расходов по нескольким категориям больше лимита, налогоплательщик сам решает, какие расходы заявить в декларации.</p>
+
+    <h2>Дорогостоящее лечение — без ограничения суммы</h2>
+    <p>Отдельный перечень видов лечения, утверждённый Правительством РФ, не ограничивается суммой 150 000 ₽ — вычет предоставляется на всю сумму фактических расходов. Отнесение лечения к дорогостоящему подтверждает код услуги «2» в справке об оплате медицинских услуг, которую выдаёт медицинская организация.</p>
+
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Какой лимит у социального вычета?</summary>
+        <p>150 000 ₽ базы в год на лечение, обучение, фитнес и страхование жизни вместе — максимум 19 500 ₽ возврата. Дорогостоящее лечение не ограничено.</p>
+      </details>
+      <details>
+        <summary>Отдельный ли лимит на обучение детей?</summary>
+        <p>Да, 110 000 ₽ на каждого ребёнка, не входит в общий лимит 150 000 ₽ на свои расходы.</p>
+      </details>
+      <details>
+        <summary>Что относится к дорогостоящему лечению?</summary>
+        <p>Виды лечения из перечня Правительства РФ — код услуги «2» в справке об оплате. Вычет не ограничен суммой.</p>
+      </details>
+      <details>
+        <summary>Может ли возврат превысить уплаченный НДФЛ?</summary>
+        <p>Нет, максимум — сумма НДФЛ, удержанная за год. Остаток на следующий год не переносится.</p>
+      </details>
+    </div>
+
+    <h2>Другие калькуляторы</h2>
+    <p><a href="ndfl.html">Калькулятор НДФЛ →</a></p>
+    <p><a href="imushchestvennyy-vychet.html">Калькулятор имущественного вычета →</a></p>
+    <p><a href="index.html">Все калькуляторы →</a></p>
+
+    <p class="disclaimer">Расчёт носит справочный характер. Сумма возврата ограничена фактически уплаченным за год НДФЛ — если доход не указан, это ограничение не учитывается. Точный порядок уточняйте на сайте ФНС.</p>
+  </article>
+
+  <footer class="site-footer">
+    <p>© 2026 Калькулятор социального вычета · <a href="privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+</div>
+
+<script>
+  const generalEl = document.getElementById('general');
+  const expensiveEl = document.getElementById('expensive');
+  const childrenEduEl = document.getElementById('childrenEdu');
+  const incomeEl = document.getElementById('income');
+  const totalBaseEl = document.getElementById('totalBase');
+  const refundEl = document.getElementById('refund');
+  const refundHintEl = document.getElementById('refundHint');
+
+  function parse(value) {
+    const n = parseFloat(String(value).replace(/\s/g, '').replace(',', '.'));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function format(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function calculate() {
+    const general = Math.max(0, parse(generalEl.value));
+    const expensive = Math.max(0, parse(expensiveEl.value));
+    const childrenEdu = Math.max(0, parse(childrenEduEl.value));
+    const income = Math.max(0, parse(incomeEl.value));
+
+    const baseGeneral = Math.min(general, 150000);
+    const baseChildren = Math.min(childrenEdu, 110000);
+    const totalBase = baseGeneral + expensive + baseChildren;
+    let refund = totalBase * 0.13;
+
+    let hint = '13% от базы вычета';
+    if (income > 0) {
+      const maxRefund = income * 0.13;
+      if (refund > maxRefund) {
+        refund = maxRefund;
+        hint = 'Ограничено уплаченным за год НДФЛ';
+      }
+    }
+
+    totalBaseEl.value = format(totalBase);
+    refundEl.value = format(refund);
+    refundHintEl.textContent = hint;
+
+    trackCalculation();
+  }
+
+  let calcTrackTimeout = null;
+  function trackCalculation() {
+    clearTimeout(calcTrackTimeout);
+    calcTrackTimeout = setTimeout(function () {
+      if (typeof ym === 'function') ym(111183520, 'reachGoal', 'socialnyy_vychet_calculation');
+    }, 1200);
+  }
+
+  [generalEl, expensiveEl, childrenEduEl, incomeEl].forEach(function (el) { el.addEventListener('input', calculate); });
+
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async function () {
+    const shareData = {
+      title: 'Калькулятор социального вычета',
+      text: 'Онлайн-калькулятор возврата НДФЛ за лечение, обучение и фитнес',
+      url: location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (err) { /* закрыто пользователем */ }
+    } else {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = 'Ссылка скопирована';
+        setTimeout(function () { shareBtn.textContent = originalText; }, 2000);
+      } catch (err) { prompt('Скопируйте ссылку:', location.href); }
+    }
+  });
+
+  calculate();
+</script>
+</body>
+</html>
