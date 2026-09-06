@@ -23,6 +23,17 @@
     border-radius:20px; padding:8px 18px; color:#ffe9b8; font-size:16px;
     display:flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(0,0,0,0.35);
   }
+  #starHud { display:inline-flex; align-items:center; gap:3px; margin-left:4px; transition:transform 0.25s; }
+  #starHud.pulse { animation:starPulse 0.5s ease; }
+  @keyframes starPulse {
+    0% { transform:scale(1); }
+    35% { transform:scale(1.5); }
+    100% { transform:scale(1); }
+  }
+  .flyingStar {
+    position:fixed; z-index:8; font-size:22px; pointer-events:none;
+    transition:left 0.6s cubic-bezier(.2,.6,.3,1), top 0.6s cubic-bezier(.2,.6,.3,1), opacity 0.6s, transform 0.6s;
+  }
 
   #hint {
     position:fixed; bottom:max(150px, calc(150px + env(safe-area-inset-bottom))); left:0; width:100%;
@@ -117,7 +128,7 @@
 <canvas id="game"></canvas>
 
 <div id="hud">
-  <div id="hudCard">🍩🍦 Кракозябры: <span id="krakoCount">0</span>/<span id="krakoTotal">5</span> <span id="turboTag" style="display:none;margin-left:6px;color:#7fe0ff;">💨 ТУРБО</span></div>
+  <div id="hudCard">🍩🍦 Кракозябры: <span id="krakoCount">0</span>/<span id="krakoTotal">5</span> <span id="turboTag" style="display:none;margin-left:6px;color:#7fe0ff;">💨 ТУРБО</span> <span id="starHud">⭐ <span id="starCount">0</span></span></div>
 </div>
 
 <div id="hint"></div>
@@ -137,6 +148,7 @@
     <p>У пончика и мороженого была вода. Подойди к светящемуся гиганту и полей его водой — получится пасялл! Потуши его, и он превратится в дружелюбную кракозябру.</p>
     <p>Но берегись — светодиод стоит под током, пока ты его не полил!</p>
     <p>После полива вода закончится, и включится турбо-скорость 💨 — беги за колодцем на ножках и догони его, чтобы набрать воды для следующего гиганта.</p>
+    <p>Успей поймать колодец быстро — за это дают ⭐ звёздочку! Если он убежит слишком далеко, звёздочка потеряна (но вода всё равно достанется).</p>
     <button class="btn" id="startBtn">Играть</button>
   </div>
 </div>
@@ -146,6 +158,9 @@
     <h1>Ура, лес спасён! 🎉</h1>
     <div class="emoji-row">🍩 🍦 ✨ 👾👾👾👾👾</div>
     <p>Пончик и мороженое полили водой всех светящихся гигантов. Пасялл потушен, и лес полон добрых кракозябр!</p>
+    <p id="starsSummary" style="font-size:19px;font-weight:800;color:#ffe08a;"></p>
+    <div class="emoji-row" id="starsRow" style="font-size:28px;margin:8px 0;"></div>
+    <p id="starsNote" style="font-size:14px;opacity:0.85;"></p>
     <button class="btn" id="restartBtn">Играть снова</button>
   </div>
 </div>
@@ -232,6 +247,36 @@
   const well = { x:0, y:0, active:false, legPhase:0 };
   let turboActive = false;
 
+  // ---------- STAR POINTS (за пойманного колодца в течение турбо-режима) ----------
+  const TURBO_STAR_WINDOW = 6.0; // секунд на поимку колодца, иначе звёздочка сгорает
+  let stars = 0;
+  let starChances = 0;
+  let turboTimer = 0;
+  let wellStarPending = false;
+  const starHudEl = document.getElementById('starHud');
+  const starCountEl = document.getElementById('starCount');
+
+  function flyStarToHud(worldX, worldY){
+    const star = document.createElement('div');
+    star.className = 'flyingStar';
+    star.textContent = '⭐';
+    star.style.left = (worldX - cam.x) + 'px';
+    star.style.top = (worldY - cam.y) + 'px';
+    document.body.appendChild(star);
+    const target = starHudEl.getBoundingClientRect();
+    requestAnimationFrame(()=>{
+      star.style.left = (target.left + target.width/2 - 11) + 'px';
+      star.style.top = (target.top + target.height/2 - 11) + 'px';
+      star.style.transform = 'scale(0.4)';
+      star.style.opacity = '0.2';
+    });
+    setTimeout(()=>{
+      star.remove();
+      starHudEl.classList.add('pulse');
+      setTimeout(()=>starHudEl.classList.remove('pulse'), 500);
+    }, 600);
+  }
+
   function spawnWell(){
     let wx, wy, tries=0;
     do{
@@ -245,7 +290,10 @@
     well.legPhase = 0;
     turboActive = true;
     player.speed = TURBO_SPEED;
-    showToast('Турбо-скорость! 💨 Догони колодец!');
+    starChances++;
+    turboTimer = TURBO_STAR_WINDOW;
+    wellStarPending = true;
+    showToast('Турбо-скорость! 💨 Догони колодец за звёздочкой!');
   }
 
   function catchWell(){
@@ -255,7 +303,14 @@
     player.water = 1;
     spawnConfetti(well.x, well.y-20, 18);
     spawnWaterDrops(well.x, well.y-20, well.x, well.y-40);
-    showToast('Набрали воды! 💧');
+    if(wellStarPending){
+      stars++;
+      starCountEl.textContent = stars;
+      flyStarToHud(well.x, well.y-20);
+      showToast('+1 ⭐ Звёздочка!');
+    } else {
+      showToast('Набрали воды, но без звёздочки 💧');
+    }
     if(navigator.vibrate) navigator.vibrate([20,30,20]);
   }
 
@@ -453,6 +508,15 @@
     }
     turboTag.style.display = turboActive ? 'inline' : 'none';
 
+    if(turboActive && wellStarPending){
+      turboTimer -= dt;
+      if(turboTimer <= 0){
+        wellStarPending = false;
+        showToast('Колодец убежал! Звёздочка потеряна 💨');
+        if(navigator.vibrate) navigator.vibrate(80);
+      }
+    }
+
     updateCamera();
 
     // find nearest interactable giant
@@ -476,7 +540,13 @@
 
     // hint text
     if(turboActive){
-      setHint('Турбо-скорость! Догони колодец на ножках 💨🪣');
+      if(wellStarPending && turboTimer < 2){
+        setHint('Быстрее! Звёздочка вот-вот убежит ⏳⭐');
+      } else if(wellStarPending){
+        setHint('Турбо-скорость! Догони колодец за звёздочкой 💨⭐');
+      } else {
+        setHint('Догони колодец, чтобы набрать воды 💨🪣');
+      }
     } else if(krakoCount >= giants.length){
       // handled by win check below
     } else if(activeGiant && activeGiant.state==='charged'){
@@ -550,6 +620,19 @@
           if(krakoCount >= giants.length){
             setTimeout(()=>{
               running = false;
+              document.getElementById('starsSummary').textContent =
+                'Собрано звёздочек: ' + stars + ' из ' + starChances;
+              const row = document.getElementById('starsRow');
+              row.innerHTML = '';
+              for(let i=0;i<starChances;i++){
+                row.innerHTML += i < stars
+                  ? '⭐'
+                  : '<span style="opacity:0.3;filter:grayscale(1);">⭐</span>';
+              }
+              document.getElementById('starsNote').textContent =
+                starChances > 0 && stars < starChances
+                  ? 'Некоторые звёздочки убежали вместе с колодцем!'
+                  : (starChances > 0 ? 'Все звёздочки собраны, отличная работа! 🌟' : '');
               document.getElementById('winScreen').style.display = 'flex';
             }, 900);
           }
